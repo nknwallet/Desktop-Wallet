@@ -9,7 +9,10 @@
     "start": "electron ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": ["Tron", "Wallet"],
+  "keywords": [
+    "Tron",
+    "Wallet"
+  ],
   "author": "Matin Kaboli <matinkaboli@aol.com>",
   "license": "CC0-1.0",
   "dependencies": {
@@ -26,7 +29,6 @@
     "uuid": "^3.3.2"
   },
   "devDependencies": {
-    "electron": "^4.0.1",
     "@babel/core": "^7.1.6",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/preset-env": "^7.1.6",
@@ -35,11 +37,12 @@
     "babel-loader": "^8.0.4",
     "css-loader": "^1.0.1",
     "del": "^3.0.0",
-    "eslint": "^5.9.0",
+    "electron": "^4.0.1",
+    "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-react": "^7.12.3",
     "file-loader": "^2.0.0",
     "gulp": "^3.9.1",
     "gulp-cli": "^2.0.1",

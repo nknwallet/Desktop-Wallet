@@ -1,5 +1,3 @@
-/* eslint-disable */
-
 const gulp = require('gulp');
 const del = require('del');
 const lint = require('gulp-eslint');

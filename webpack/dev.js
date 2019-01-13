@@ -6,7 +6,7 @@ module.exports = Object.assign(common, {
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
-    })
+    }),
   ],
   devtool: 'source-map',
 });

@@ -1,7 +1,7 @@
 {
-  "name": "nkn",
+  "name": "tron-wallet",
   "version": "1.0.0",
-  "description": "Tron App",
+  "description": "Tron Wallet",
   "main": "build/electron.js",
   "scripts": {
     "dev:build": "NODE_ENV=development ./node_modules/.bin/gulp dev",
@@ -9,10 +9,8 @@
     "start": "electron ."
   },
   "repository": "https://github.com/electron/electron-quick-start",
-  "keywords": [
-    "Tron"
-  ],
-  "author": "GitHub",
+  "keywords": ["Tron", "Wallet"],
+  "author": "Matin Kaboli <matinkaboli@aol.com>",
   "license": "CC0-1.0",
   "dependencies": {
     "babel-polyfill": "^6.26.0",

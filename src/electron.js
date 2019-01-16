@@ -1,6 +1,6 @@
-import { app, BrowserWindow } from 'electron';
-import { resolve } from 'path';
 import { env } from 'process';
+import { resolve } from 'path';
+import { app, BrowserWindow } from 'electron';
 
 let win;
 

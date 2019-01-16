@@ -1,7 +1,13 @@
 import React from 'react';
 import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+
+import store from './store';
+import App from './components';
 
 render(
-  <h1>Hello Bitch</h1>,
-  document.getElementById('react'),
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  global.document.getElementById('react'),
 );

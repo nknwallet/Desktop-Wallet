@@ -6,10 +6,14 @@ let win;
 
 function createWindow() {
   win = new BrowserWindow({
-    width: 800,
-    height: 600,
-    title: 'Speedster',
+    width: 1200,
+    height: 800,
+    minWidth: 1200,
+    minHeight: 800,
+    title: 'Wallet',
   });
+
+  win.maximize();
 
   win.loadURL(`file://${resolve(__dirname, 'index.html#/initializing')}`);
 

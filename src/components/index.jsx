@@ -1,11 +1,11 @@
 import React from 'react';
 
-import styles from './styles.less';
+import Background from './Background';
 
 function App() {
   return (
     <div>
-      <div className={styles.background}>aaa</div>
+      <Background />
     </div>
   );
 }

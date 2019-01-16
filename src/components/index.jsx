@@ -1,8 +1,12 @@
 import React from 'react';
 
+import styles from './styles.less';
+
 function App() {
   return (
-    <h1>Hello Bitches</h1>
+    <div>
+      <div className={styles.background}>aaa</div>
+    </div>
   );
 }
 

@@ -2,6 +2,8 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 
+import 'Root/styles/main.less';
+
 import store from './store';
 import App from './components';
 

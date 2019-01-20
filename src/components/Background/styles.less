@@ -3,11 +3,59 @@
 :local(.background) {
   width: 40%;
   height: 100vh;
-  background-image: linear-gradient(to right bottom, @start-background, @end-background);
+  background-image: linear-gradient(to bottom, @start-background, @end-background);
 }
 
 :local(.nknName) {
   color: #2e3852;
   font-size: 100px;
-  padding: 80px 50px;
+  padding-top: 76px;
+  padding-left: 80px;
+  font-family: SFProTextBold;
+}
+
+:local(.walletName) {
+  color: white;
+  font-size: 100px;
+  font-weight: bold;
+  margin-top: -20px;
+  margin-left: 80px;
+  font-family: GoogleSans;
+}
+
+:local(.details) {
+  color: #5093e4;
+  font-size: 18px;
+  padding-left: 80px;
+  padding-top: 18px;
+  font-family: SFProText;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+:local(.circle) {
+  display: inline;
+  background-color: #5093e4;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin: 0 20px;
+}
+
+:local(.logoWithName) {
+  position: absolute;
+  bottom: 25px;
+  left: 35px;
+}
+
+:local(.logo) {
+  width: 480px;
+  height: 454px;
+  opacity: 0.25;
+  background-image: url('~Root/images/logo.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: absolute;
+  bottom: 0; 
 }

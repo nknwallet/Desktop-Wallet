@@ -23,6 +23,7 @@
     "electron": "^4.0.1",
     "fs-extra": "^7.0.1",
     "history": "^4.7.2",
+    "normalize.css": "^8.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
     "react-dom": "^16.6.3",

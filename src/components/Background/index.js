@@ -1,6 +1,5 @@
 import React from 'react';
 
-import logo from 'Root/images/logo.png';
 import logoWithName from 'Root/images/LogoWithName.png';
 
 import styles from './styles.less';
@@ -18,7 +17,7 @@ function Background() {
         Safe
       </div>
 
-      <div src={logo} alt="Logo" className={styles.logo} />
+      <div className={styles.logo} />
 
       <img src={logoWithName} alt="Logo" className={styles.logoWithName} />
     </div>

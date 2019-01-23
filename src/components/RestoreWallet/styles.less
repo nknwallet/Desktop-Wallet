@@ -23,3 +23,21 @@
   font-weight: 600;
   font-family: SFProText;
 }
+
+:local(.links) {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 5px 5px 0;
+
+  a {
+    font-size: 18px;
+    color: #9199b6;
+    transition: color 300ms;
+
+    &:hover, &:active {
+      color: #333;
+    }
+  }
+}

@@ -2,9 +2,16 @@ import React from 'react';
 
 import styles from './styles.less';
 
-function TextField() {
+function TextField(props) {
   return (
-    <input className={styles.input} />
+    <div className={styles.container}>
+      <input
+        className={styles.input}
+        placeholder={props.placeholder}
+      />
+
+      {props.invisible && <span className={styles.invisible}>aa</span>}
+    </div>
   );
 }
 

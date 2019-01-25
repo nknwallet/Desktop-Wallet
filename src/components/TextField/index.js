@@ -9,13 +9,13 @@ class TextField extends Component {
   state = {
     eyeImg: eyeOn,
     type: this.props.type,
-    eye: this.props.type === 'password' ? 'on' : 'off',
+    eye: this.props.type === 'password',
   };
 
   handleClick = () => {
     this.setState(state => ({
-      eye: state.eye === 'on' ? 'off' : 'on',
-      eyeImg: state.eye === 'on' ? eyeOff : eyeOn,
+      eye: !state.eye,
+      eyeImg: state.eye ? eyeOff : eyeOn,
       type: state.type === 'password' ? 'text' : 'password',
     }));
   }

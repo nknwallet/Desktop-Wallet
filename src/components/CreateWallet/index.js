@@ -24,8 +24,8 @@ function CreateWallet() {
         <TextField placeholder="8-20 characters" type="password" />
 
         <div className={styles.links}>
-          <Link to="/restore-private">Restore from private key!</Link>
-          <Link to="/restore-wallet">Open wallet</Link>
+          <Link to="/restore-wallet">Restore from private key!</Link>
+          <Link to="/open-wallet">Open wallet</Link>
         </div>
 
         <Button>

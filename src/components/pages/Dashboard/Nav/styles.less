@@ -1,0 +1,26 @@
+@import '~Root/styles/mixins.less';
+
+:local(.navBar) {
+  padding: 0 67px;
+  width: 100%;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  background-color: white;
+  justify-content: space-between;
+
+  img {
+    width: 26px;
+    height: 26px;
+    cursor: pointer;
+    transition: transform 700ms;
+
+    &:active {
+      transform: rotate(-360deg);
+    }
+  }
+
+  p {
+    .title();
+  }
+}

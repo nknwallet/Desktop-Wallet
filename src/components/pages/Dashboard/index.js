@@ -1,15 +1,14 @@
 import React from 'react';
 
 import Box from 'Root/components/tools/Box';
+import Nav from './Nav';
 
 import styles from './styles.less';
 
 function Dashboard() {
   return (
     <div className={styles.container}>
-      <div className={styles.navBar}>
-        <p>Block: 000</p>
-      </div>
+      <Nav />
 
       <div className={styles.info}>
         <div className={styles.column1}>

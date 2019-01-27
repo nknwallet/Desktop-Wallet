@@ -34,8 +34,9 @@ class TextField extends Component {
             <span className={styles.invisible}>
               <img
                 alt="Eye"
+                role="presentation"
                 src={this.state.eyeImg}
-                onClick={this.handleClick}
+                onKeyDown={this.handleClick}
               />
             </span>
           )

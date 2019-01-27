@@ -1,9 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import Button from 'Root/components/Button';
-import TextField from 'Root/components/TextField';
-import Background from 'Root/components/Background';
+import Button from 'Root/components/tools/Button';
+import TextField from 'Root/components/tools/TextField';
+import Background from 'Root/components/pages/Background';
 
 import styles from './styles.less';
 

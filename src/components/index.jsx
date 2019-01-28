@@ -14,7 +14,7 @@ function App() {
         <Route exact path="/open-wallet" component={OpenWallet} />
         <Route exact path="/create-wallet" component={CreateWallet} />
         <Route exact path="/restore-wallet" component={RestoreWallet} />
-        <Route component={Dashboard} />
+        <Route component={OpenWallet} />
       </Switch>
     </Router>
   );

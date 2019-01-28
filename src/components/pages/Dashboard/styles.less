@@ -12,3 +12,115 @@
   margin-left: 60px;
   margin-right: 67px;
 }
+
+:local(.balance) {
+  display: flex;
+  padding: 27px 36px;
+  align-items: center;
+
+  img {
+    width: 61px;
+    height: 65px;
+    margin-right: 56px;
+  }
+}
+
+:local(.title) {
+  .title();
+  padding-bottom: 13px;
+}
+
+:local(.balanceNumber) {
+  color: #5093e4;
+  font-size: 21px;
+  font-weight: 600;
+  font-family: SFProText;
+}
+
+:local(.desciption) {
+  padding: 27px 24px;
+}
+
+:local(.textGrey) {
+  .grey();
+  font-size: 17px;
+}
+
+:local(.textGrey2) {
+  .grey();
+  font-size: 17px;
+  margin-top: 25px;
+}
+
+:local(.button) {
+  width: 161px;
+  height: 42px;
+  margin: 20px 0;
+  color: #5093e4;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 2px;
+  background-color: white;
+  border: 2px solid #5093e4;
+  transition: color 300ms, background-color 300ms;
+
+  &:hover {
+    color: white;
+    background-color: #5093e4;
+  }
+}
+
+:local(.accountBox) {
+  padding-left: 24px;
+}
+
+:local(.accoutData) {
+  color: #262728;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-right: 13px;
+}
+
+:local(.accoutData2) {
+  color: #262728;
+  display: inline;
+  font-size: 15px;
+  padding-right: 13px;
+}
+
+:local(.accoutTitle) {
+  .grey();
+  font-size: 17px;
+  padding-top: 36px;
+}
+
+:local(.qrBox) {
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+  align-content: center;
+}
+
+:local(.qrCode) {
+  width: 19px;
+  height: 19px;
+}
+
+:local(.submitIcon) {
+  width: 14px;
+  height: 14px;
+}
+
+:local(.submitButton) {
+  display: flex;
+  font-size: 17px;
+  font-weight: 400;
+  align-items: center;
+  font-family: SFProText;
+  justify-content: space-between;
+
+  & > * {
+    margin: 0 3px;
+  }
+}

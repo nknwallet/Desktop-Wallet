@@ -1,11 +1,12 @@
-import { createStore, applyMiddleware } from 'redux';
 import thunk from 'redux-thunk';
+import { createStore, applyMiddleware } from 'redux';
+
 import reducers from './reducers';
 
-let store = createStore(reducers, applyMiddleware(thunk));
+const store = createStore(reducers, applyMiddleware(thunk));
 
 if (process.env.NODE_ENV === 'development') {
-  window.store = store;
+  global.store = store;
 }
 
 export default store;

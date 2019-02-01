@@ -3,19 +3,20 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Dashboard from './pages/Dashboard';
 import OpenWallet from './pages/OpenWallet';
+import LoggedRoute from './tools/LoggedRoute';
 import CreateWallet from './pages/CreateWallet';
 import RestoreWallet from './pages/RestoreWallet';
-import ProtectedRoute from './tools/ProtectedRoute';
+import NotLoggedRoute from './tools/NotLoggedRoute';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/open-wallet" component={OpenWallet} />
-        <Route exact path="/create-wallet" component={CreateWallet} />
-        <Route exact path="/restore-wallet" component={RestoreWallet} />
-        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
-        <ProtectedRoute component={Dashboard} />
+        <NotLoggedRoute exact path="/open-wallet" component={OpenWallet} />
+        <NotLoggedRoute exact path="/create-wallet" component={CreateWallet} />
+        <NotLoggedRoute xact path="/restore-wallet" component={RestoreWallet} />
+        <LoggedRoute exact path="/dashboard" component={Dashboard} />
+        <LoggedRoute component={Dashboard} />
       </Switch>
     </Router>
   );

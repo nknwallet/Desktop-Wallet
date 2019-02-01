@@ -2,9 +2,9 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
-function ProtectedRoute(props) {
-  if (!props.user.logged) {
-    return <Redirect to="/restore-wallet" />;
+function NotLoggedRoute(props) {
+  if (props.user.logged) {
+    return <Redirect to="/dashboard" />;
   }
 
   return (
@@ -14,4 +14,4 @@ function ProtectedRoute(props) {
 
 export default connect(state => ({
   user: state.user,
-}))(ProtectedRoute);
+}))(NotLoggedRoute);

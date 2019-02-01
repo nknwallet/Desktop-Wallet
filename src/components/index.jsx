@@ -5,16 +5,17 @@ import Dashboard from './pages/Dashboard';
 import OpenWallet from './pages/OpenWallet';
 import CreateWallet from './pages/CreateWallet';
 import RestoreWallet from './pages/RestoreWallet';
+import ProtectedRoute from './tools/ProtectedRoute';
 
 function App() {
   return (
     <Router>
       <Switch>
-        <Route exact path="/dashboard" component={Dashboard} />
         <Route exact path="/open-wallet" component={OpenWallet} />
         <Route exact path="/create-wallet" component={CreateWallet} />
         <Route exact path="/restore-wallet" component={RestoreWallet} />
-        <Route component={Dashboard} />
+        <ProtectedRoute exact path="/dashboard" component={Dashboard} />
+        <ProtectedRoute component={Dashboard} />
       </Switch>
     </Router>
   );

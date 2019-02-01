@@ -8,12 +8,17 @@ import 'Root/styles/main.less';
 import store from './store';
 import App from './components';
 import history from './history';
+import checkToken from './actions/user/checkToken';
 
-render(
-  <Provider store={store}>
-    <Router history={history}>
-      <App />
-    </Router>
-  </Provider>,
-  global.document.getElementById('react'),
-);
+(async () => {
+  await checkToken();
+
+  render(
+    <Provider store={store}>
+      <Router history={history}>
+        <App />
+      </Router>
+    </Provider>,
+    global.document.getElementById('react'),
+  );
+})();

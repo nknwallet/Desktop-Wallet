@@ -16,7 +16,7 @@ function OpenWallet() {
         <p className={styles.title}>OPEN WALLET</p>
 
         <p className={styles.label}>Wallet file to open</p>
-        <TextField placeholder="Upload wallet file" type="text" />
+        <TextField placeholder="Upload wallet file" type="upload" />
 
         <p className={styles.label}>Password</p>
         <TextField placeholder="Password of the wallet to open" type="password" />

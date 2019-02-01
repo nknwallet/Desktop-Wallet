@@ -1,3 +1,6 @@
 export default {
-  test: 'test',
+  user: {
+    LOGIN: 'user/LOGIN',
+    LOGOUT: 'user/LOGOUT',
+  },
 };

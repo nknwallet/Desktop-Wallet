@@ -29,20 +29,29 @@ class TextField extends Component {
     console.log(this.input.files[0]);
   }
 
+  handleChange = () => {
+    if (this.props.inputRef) {
+      this.props.inputRef(this.textField.value);
+    }
+  }
+
   render() {
     return (
-      <div className={styles.container}>
-        {this.props.type !== 'upload'
+      <Fragment>
+        <div className={styles.container}>
+          {this.props.type !== 'upload'
           && (
-          <input
-            type={this.state.type}
-            className={styles.input}
-            placeholder={this.props.placeholder}
-          />
+            <input
+              type={this.state.type}
+              className={styles.input}
+              onChange={this.handleChange}
+              ref={(r) => { this.textField = r; }}
+              placeholder={this.props.placeholder}
+            />
           )
         }
 
-        {this.props.type === 'password'
+          {this.props.type === 'password'
           && (
             <span className={styles.invisible}>
               <img
@@ -54,37 +63,40 @@ class TextField extends Component {
           )
         }
 
-        {this.props.type === 'upload'
-          && (
-            <Fragment>
-              <input
-                type="file"
-                onChange={this.inputWallet}
-                className={styles.inputWallet}
-                ref={(c) => { this.input = c; }}
-              />
-
-              <div
-                role="presentation"
-                onClick={this.openInput}
-                className={styles.openInputContainer}
-              >
+          {this.props.type === 'upload'
+            && (
+              <Fragment>
                 <input
-                  type="text"
-                  placeholder="Upload wallet file"
-                  className={styles.openInputField}
+                  type="file"
+                  onChange={this.inputWallet}
+                  className={styles.inputWallet}
+                  ref={(c) => { this.input = c; }}
                 />
 
                 <div
-                  className={styles.openInputIconContainer}
+                  role="presentation"
+                  onClick={this.openInput}
+                  className={styles.openInputContainer}
                 >
-                  <img src={uploadIcon} alt="Upload Icon" />
+                  <input
+                    type="text"
+                    className={styles.openInputField}
+                    placeholder={this.props.placeholder}
+                  />
+
+                  <div
+                    className={styles.openInputIconContainer}
+                  >
+                    <img src={uploadIcon} alt="Upload Icon" />
+                  </div>
                 </div>
-              </div>
-            </Fragment>
-          )
-        }
-      </div>
+              </Fragment>
+            )
+          }
+        </div>
+
+        <p className={styles.error}>{this.props.error || ''}</p>
+      </Fragment>
     );
   }
 }

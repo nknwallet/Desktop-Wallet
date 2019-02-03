@@ -3,7 +3,7 @@ export default (value) => {
     return false;
   }
 
-  if (!value < 8 || value > 20) {
+  if (value.length < 8 || value.length > 20) {
     return false;
   }
 

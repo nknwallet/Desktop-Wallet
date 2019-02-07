@@ -8,7 +8,7 @@ import 'Root/styles/main.less';
 import store from './store';
 import App from './components';
 import history from './history';
-import checkToken from './actions/user/checkToken';
+import checkToken from './actions/wallet/checkToken';
 
 (async () => {
   await checkToken();

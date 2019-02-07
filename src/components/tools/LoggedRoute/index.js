@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { Route, Redirect } from 'react-router-dom';
 
 function LoggedRoute(props) {
-  if (!props.user.logged) {
+  if (!props.token.logged) {
     return <Redirect to="/restore-wallet" />;
   }
 
@@ -13,5 +13,5 @@ function LoggedRoute(props) {
 }
 
 export default connect(state => ({
-  user: state.user,
+  token: state.token,
 }))(LoggedRoute);

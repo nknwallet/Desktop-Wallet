@@ -66,7 +66,7 @@ module.exports = {
   target: 'node',
   externals: [
     nodeExternals({
-      whitelist: ['antd/dist/antd.less'],
+      whitelist: ['rodal/lib/rodal.css'],
     }),
   ],
   node: {

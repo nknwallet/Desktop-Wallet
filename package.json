@@ -6,7 +6,11 @@
   "scripts": {
     "start": "electron .",
     "dev:build": "NODE_ENV=development ./node_modules/.bin/gulp dev",
-    "prod:build": "NODE_ENV=production ./node_modules/.bin/gulp prod"
+    "prod:build": "NODE_ENV=production ./node_modules/.bin/gulp prod",
+    "build:win": "electron-packager . Wallet --platform win32 --asar",
+    "build:mac": "electron-packager . Wallet --platform darwin --asar",
+    "build:linux": "electron-packager . Wallet --platform linux --asar",
+    "build:all": "electron-packager . Wallet --platform all --asar"
   },
   "repository": "https://github.com/electron/electron-quick-start",
   "keywords": [
@@ -51,6 +55,8 @@
     "babel-plugin-transform-runtime": "^6.23.0",
     "css-loader": "^1.0.1",
     "del": "^3.0.0",
+    "electron-installer-debian": "^1.1.0",
+    "electron-packager": "^13.0.1",
     "eslint": "^5.12.0",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-plugin-import": "^2.14.0",

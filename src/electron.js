@@ -6,11 +6,12 @@ let win;
 
 function createWindow() {
   win = new BrowserWindow({
-    width: 1200,
-    height: 800,
-    minWidth: 1200,
-    minHeight: 800,
+    width: 1450,
+    height: 1040,
+    minWidth: 1440,
+    minHeight: 1030,
     title: 'Wallet',
+    center: true,
   });
 
   win.maximize();

@@ -4,6 +4,7 @@ export default {
     LOGOUT: 'token/LOGOUT',
   },
   wallet: {
+    OPEN: 'wallet/OPEN',
     CREATE: 'wallet/CREATE',
   },
   modal: {

@@ -5,8 +5,8 @@ import styles from './styles.less';
 function Button(props) {
   return (
     <button
-      type="button"
       className={styles.button}
+      type={props.type || 'button'}
       style={{ padding: props.padding || '18px 32px' }}
     >
       {props.children}

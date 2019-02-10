@@ -1,3 +1,5 @@
+@import 'colors.less';
+
 .container() {
   padding: 84px 150px 90px 72px;
 }
@@ -18,15 +20,15 @@
   cursor: pointer;
   font-weight: bold;
   border-radius: 4px;
+  background-color: @blue;
+  border: 2px solid @blue;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.27);
-  background-color: #5093e4;
-  border: 2px solid #5093e4;
 }
 
 .box() {
   margin: 17.8px;
   border-radius: 6px;
-  background-color: #ffffff;
+  background-color: white;
   box-shadow: 0 1px 5px -2px rgba(7, 45, 79, 0.07);
 }
 
@@ -41,4 +43,51 @@
   color: #9199b6;
   font-weight: 600;
   font-family: SFProText;
+}
+
+.textField() {
+  border: 2px solid #e0e3eb;
+  background-color: #f8f9fc;
+  border-radius: 2px;
+  width: 100%;
+  height: 100%;
+  padding: 0 21px;
+  font-size: 16px;
+  color: black;
+  transition: border 300ms;
+
+  &:active, &:focus {
+    outline: 0;
+    border: 2px solid @blue;
+  }
+
+  &::placeholder {
+    color: #9199b6;
+  }
+}
+
+.pageTitle() {
+  font-size: 35px;
+  font-weight: bold;
+  color: @page-title;
+  margin-bottom: 30px;
+  font-family: SFProText;
+}
+
+.linkBox() {
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 5px 5px 5px 0;
+
+  a {
+    font-size: 18px;
+    color: #9199b6;
+    transition: color 300ms;
+
+    &:hover, &:active {
+      color: #333;
+    }
+  }
 }

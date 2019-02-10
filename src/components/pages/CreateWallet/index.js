@@ -25,6 +25,8 @@ class CreateWallet extends Component {
   }
 
   handleSubmit = (e) => {
+    e.preventDefault();
+
     const errors = {
       name: '',
       password: '',
@@ -33,15 +35,12 @@ class CreateWallet extends Component {
 
     let hasError = false;
 
-    e.preventDefault();
-
     if (this.name) {
       if (!validate(this.name)) {
         hasError = true;
         errors.name = 'This field is not valid';
       }
     }
-
 
     if (!validate(this.password)) {
       hasError = true;

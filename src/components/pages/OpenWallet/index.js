@@ -1,37 +1,51 @@
-import React from 'react';
+import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Button from 'Root/components/tools/Button';
+import Page from 'Root/components/tools/Page';
 import TextField from 'Root/components/tools/TextField';
-import Background from 'Root/components/pages/Background';
+import TextLabel from 'Root/components/tools/TextField/Label';
 
-import styles from './styles.less';
+const links = (
+  <Fragment>
+    <Link to="/restore-wallet">Restore from private key!</Link>
+    <Link to="/create-wallet">Create wallet</Link>
+  </Fragment>
+);
 
-function OpenWallet() {
-  return (
-    <div style={{ display: 'flex' }}>
-      <Background />
+class OpenWallet extends Component {
+  state = {
+    error: '',
+  };
 
-      <div className={styles.container}>
-        <p className={styles.title}>OPEN WALLET</p>
+  handleSubmit = (e) => {
+    e.preventDefault();
+  }
 
-        <p className={styles.label}>Wallet file to open</p>
-        <TextField placeholder="Upload wallet file" type="upload" />
+  render() {
+    return (
+      <Page
+        links={links}
+        buttonTitle="OPEN"
+        title="OPEN WALLET"
+        handleSubmit={this.handleSubmit}
+      >
+        <TextLabel>Wallet file to open</TextLabel>
+        <TextField
+          required
+          type="upload"
+          placeholder="Upload wallet file"
+        />
 
-        <p className={styles.label}>Password</p>
-        <TextField placeholder="Password of the wallet to open" type="password" />
+        <TextLabel>Password</TextLabel>
+        <TextField
+          type="password"
+          error={this.state.error}
+          placeholder="Password of the wallet to open"
+        />
 
-        <div className={styles.links}>
-          <Link to="/restore-wallet">Restore from private key!</Link>
-          <Link to="/create-wallet">Create wallet</Link>
-        </div>
-
-        <Button>
-          OPEN
-        </Button>
-      </div>
-    </div>
-  );
+      </Page>
+    );
+  }
 }
 
 export default OpenWallet;

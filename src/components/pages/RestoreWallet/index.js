@@ -1,42 +1,44 @@
-import React from 'react';
+import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom';
 
-import Button from 'Root/components/tools/Button';
+import Page from 'Root/components/tools/Page';
 import TextField from 'Root/components/tools/TextField';
-import Background from 'Root/components/pages/Background';
+import TextLabel from 'Root/components/tools/TextField/Label';
 
-import styles from './styles.less';
+const links = (
+  <Fragment>
+    <Link to="/open-wallet">Open Wallet</Link>
+    <Link to="/create-wallet">Create Wallet</Link>
+  </Fragment>
+);
 
-function RestoreWallet() {
-  return (
-    <div style={{ display: 'flex' }}>
-      <Background />
+class RestoreWallet extends Component {
+  handleSubmit = (e) => {
+    e.preventDefault();
+  };
 
-      <div className={styles.container}>
-        <p className={styles.title}>RESTORE WALLET</p>
-        <p className={styles.label}>Wallet name</p>
+  render() {
+    return (
+      <Page
+        links={links}
+        buttonTitle="RESTORE"
+        title="RESTORE WALLET"
+        handleSubmit={this.handleSubmit}
+      >
+        <TextLabel>Wallet name</TextLabel>
         <TextField placeholder="8-20 characters, default to MyWallet" type="text" />
 
-        <p className={styles.label}>Private Key</p>
+        <TextLabel>Private Key</TextLabel>
         <TextField placeholder="Your private key" type="text" />
 
-        <p className={styles.label}>Password</p>
+        <TextLabel>Password</TextLabel>
         <TextField placeholder="8-20 characters" type="password" />
 
-        <p className={styles.label}>Confirm Password</p>
+        <TextLabel>Confirm Password</TextLabel>
         <TextField placeholder="8-20 characters" type="password" />
-
-        <div className={styles.links}>
-          <Link to="/restore-wallet">Restore from private key!</Link>
-          <Link to="/create-wallet">Create Wallet</Link>
-        </div>
-
-        <Button>
-          RESTORE
-        </Button>
-      </div>
-    </div>
-  );
+      </Page>
+    );
+  }
 }
 
 export default RestoreWallet;

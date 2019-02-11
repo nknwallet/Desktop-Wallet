@@ -74,17 +74,18 @@ class TextField extends Component {
                 />
 
                 <div
-                  role="presentation"
-                  onClick={this.openInput}
                   className={styles.openInputContainer}
                 >
                   <input
                     type="text"
+                    onChange={this.inputWallet}
                     className={styles.openInputField}
                     placeholder={this.props.placeholder}
                   />
 
                   <div
+                    role="presentation"
+                    onClick={this.openInput}
                     className={styles.openInputIconContainer}
                   >
                     <img src={uploadIcon} alt="Upload Icon" />

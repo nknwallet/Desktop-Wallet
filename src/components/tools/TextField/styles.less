@@ -12,9 +12,9 @@
 }
 
 :local(.invisible) {
-  position: absolute;
-  right: 15px;
   top: 18px;
+  right: 15px;
+  position: absolute;
 
   img {
     cursor: pointer;
@@ -26,16 +26,15 @@
 }
 
 :local(.openInputContainer) {
-  cursor: pointer;
   width: 100%;
   height: 100%;
-  border-radius: 2px;
-  border: 2px solid #5093e4;
-  font-size: 16px;
   color: black;
+  display: flex;
+  font-size: 16px;
+  border-radius: 2px;
+  border: 2px solid @blue;
   transition: border 300ms;
   background-color: #f8f9fc;
-  display: flex;
 
   &:active, &:focus {
     outline: 0;
@@ -46,7 +45,6 @@
   width: 450px;
   height: 100%;
   padding: 0 21px;
-  cursor: pointer;
 
   &::placeholder {
     color: #9199b6;
@@ -56,10 +54,11 @@
 :local(.openInputIconContainer) {
   width: 58px;
   height: 100%;
-  background-color: #dde0e8;
   display: flex;
-  justify-content: center;
+  cursor: pointer;
   align-items: center;
+  justify-content: center;
+  background-color: #dde0e8;
 
   img {
     width: 18px;

@@ -6,6 +6,7 @@ export default {
   wallet: {
     OPEN: 'wallet/OPEN',
     CREATE: 'wallet/CREATE',
+    RESTORE: 'wallet/RESTORE',
   },
   modal: {
     OPEN: 'modal/OPEN',

@@ -1,0 +1,35 @@
+@import '~Root/styles/mixins.less';
+
+:local(.desciption) {
+  padding: 27px 24px;
+}
+
+:local(.textGrey) {
+  .grey();
+  font-size: 17px;
+}
+
+:local(.textGrey2) {
+  .grey();
+  font-size: 17px;
+  margin-top: 25px;
+}
+
+:local(.button) {
+  width: 161px;
+  height: 42px;
+  margin: 20px 0;
+  color: #5093e4;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 2px;
+  background-color: white;
+  border: 2px solid #5093e4;
+  transition: color 300ms, background-color 300ms;
+
+  &:hover {
+    color: white;
+    background-color: #5093e4;
+  }
+}

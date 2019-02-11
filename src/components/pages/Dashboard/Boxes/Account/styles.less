@@ -1,0 +1,55 @@
+@import '~Root/styles/mixins.less';
+
+:local(.accountBox) {
+  padding-left: 24px;
+}
+
+:local(.accoutData) {
+  color: #262728;
+  font-size: 15px;
+  padding-top: 10px;
+  padding-right: 13px;
+}
+
+:local(.accoutData2) {
+  color: #262728;
+  display: inline;
+  font-size: 15px;
+  padding-right: 13px;
+}
+
+:local(.accoutTitle) {
+  .grey();
+  font-size: 17px;
+  padding-top: 36px;
+}
+
+:local(.qrBox) {
+  display: flex;
+  padding-top: 10px;
+  align-items: center;
+  align-content: center;
+}
+
+:local(.qrCode) {
+  width: 19px;
+  height: 19px;
+}
+
+:local(.submitIcon) {
+  width: 14px;
+  height: 14px;
+}
+
+:local(.submitButton) {
+  display: flex;
+  font-size: 17px;
+  font-weight: 400;
+  align-items: center;
+  font-family: SFProText;
+  justify-content: space-between;
+
+  & > * {
+    margin: 0 3px;
+  }
+}

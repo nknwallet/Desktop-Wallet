@@ -43,6 +43,11 @@ class RestoreWallet extends Component {
       }
     }
 
+    if (!this.privateKey) {
+      hasError = true;
+      errors.privateKey = 'This field is not valid';
+    }
+
     if (!validate(this.password)) {
       hasError = true;
       errors.password = 'This field is not valid';

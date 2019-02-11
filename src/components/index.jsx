@@ -19,7 +19,7 @@ function App(props) {
           <NotLoggedRoute exact path="/create-wallet" component={CreateWallet} />
           <NotLoggedRoute exact path="/restore-wallet" component={RestoreWallet} />
           <LoggedRoute exact path="/dashboard" component={Dashboard} />
-          <LoggedRoute component={Dashboard} />
+          <NotLoggedRoute component={Dashboard} />
         </Switch>
       </Router>
 

@@ -5,9 +5,27 @@
 }
 
 :local(.title) {
-  .pageTitle();
+  font-size: 35px;
+  font-weight: bold;
+  color: @page-title;
+  margin-bottom: 30px;
+  font-family: SFProText;
 }
 
 :local(.links) {
-  .linkBox();
+  width: 500px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 25px 5px 5px 0;
+
+  a {
+    font-size: 18px;
+    color: #9199b6;
+    transition: color 300ms;
+
+    &:hover, &:active {
+      color: #333;
+    }
+  }
 }

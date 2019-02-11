@@ -60,7 +60,7 @@ function Dashboard() {
             </div>
           </Box>
 
-          <Box title="Title" width={398} height={324} line>
+          <Box title="Title" width={398} height={318} line>
             <div className={styles.desciption}>
               <p className={styles.textGrey}>Download Wallet from here</p>
 

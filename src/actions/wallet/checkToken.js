@@ -2,7 +2,7 @@ import store from 'Root/store';
 import types from 'Root/actions';
 
 export default async () => new Promise((resolve) => {
-  const token = global.localStorage.getItem('privateKy');
+  const token = global.localStorage.getItem('privateKey');
 
   if (token !== null) {
     store.dispatch({

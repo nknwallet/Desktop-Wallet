@@ -4,12 +4,17 @@ import Rodal from 'rodal';
 import closeModalAction from 'Root/actions/modal/close';
 
 import 'rodal/lib/rodal.css';
-import styles from './styles.less';
 
 function Modal(props) {
   return (
-    <Rodal visible={props.visible} animation="slideDown" onClose={closeModalAction}>
-      <div className={styles.container}>
+    <Rodal
+      width={594}
+      height={338}
+      animation="slideDown"
+      visible={props.visible}
+      onClose={closeModalAction}
+    >
+      <div>
         {props.children}
       </div>
     </Rodal>

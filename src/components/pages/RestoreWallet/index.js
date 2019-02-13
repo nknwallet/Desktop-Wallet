@@ -74,9 +74,9 @@ class RestoreWallet extends Component {
 
     if (!hasError) {
       restoreWalletAction({
-        name: this.name,
         password: this.password,
         privateKey: this.privateKey,
+        name: this.name || 'MyWallet',
       });
     }
   };

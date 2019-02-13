@@ -17,7 +17,7 @@ const links = (
 class OpenWallet extends Component {
   state = {
     errors: {
-      upload: '',
+      file: '',
       password: '',
     },
   };
@@ -26,10 +26,11 @@ class OpenWallet extends Component {
     e.preventDefault();
 
     const errors = {
-      upload: '',
+      file: '',
       password: '',
     };
 
+    let data;
     let hasError;
 
     if (!validate(this.password)) {
@@ -37,16 +38,28 @@ class OpenWallet extends Component {
       errors.password = 'This field is not valid.';
     }
 
+    if (this.file.error) {
+      hasError = true;
+      errors.file = this.file.error;
+    }
+
+    try {
+      data = JSON.parse(this.file.data);
+    } catch (err) {
+      hasError = true;
+      errors.file = 'File must be JSON.';
+    }
+
     this.setState({
       errors: {
-        upload: errors.upload,
+        file: errors.file,
         password: errors.password,
       },
     });
 
     if (!hasError) {
       openWalletAction({
-        upload: this.upload,
+        file: data,
         password: this.password,
       });
     }
@@ -64,9 +77,9 @@ class OpenWallet extends Component {
         <TextField
           required
           type="upload"
-          error={this.state.errors.upload}
+          error={this.state.errors.file}
           placeholder="Upload wallet file"
-          inputRef={(r) => { this.upload = r; }}
+          inputRef={(r) => { this.file = r; }}
         />
 
         <TextLabel>Password</TextLabel>

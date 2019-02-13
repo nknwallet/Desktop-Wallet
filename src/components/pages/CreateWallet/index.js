@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import React, { Fragment, Component } from 'react';
 
 import validate from 'Root/helpers/validate';
@@ -67,8 +67,9 @@ class CreateWallet extends Component {
 
     if (!hasError) {
       createWalletAction({
-        name: this.name || 'MyWallet',
         password: this.password,
+        name: this.name || 'MyWallet',
+        push: this.props.history.push,
       });
     }
   }
@@ -109,4 +110,4 @@ class CreateWallet extends Component {
   }
 }
 
-export default CreateWallet;
+export default withRouter(CreateWallet);

@@ -5,7 +5,6 @@ export default (filename, text) => {
     'href',
     `data:application/json;charset=utf-8,${text}`,
   );
-
   element.setAttribute('download', filename);
   element.style.display = 'none';
 

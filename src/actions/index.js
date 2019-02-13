@@ -5,6 +5,7 @@ export default {
   },
   wallet: {
     OPEN: 'wallet/OPEN',
+    LOGOUT: 'wallet/LOGOUT',
     CREATE: 'wallet/CREATE',
     RESTORE: 'wallet/RESTORE',
   },

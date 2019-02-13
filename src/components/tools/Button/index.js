@@ -5,6 +5,7 @@ import styles from './styles.less';
 function Button(props) {
   return (
     <button
+      onClick={props.onClick}
       className={styles.button}
       type={props.type || 'button'}
       style={{ padding: props.padding || '18px 32px' }}

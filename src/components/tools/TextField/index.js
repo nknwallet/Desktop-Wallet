@@ -22,11 +22,33 @@ class TextField extends Component {
   }
 
   openInput = () => {
-    this.input.click();
+    this.inputFile.click();
   }
 
   inputWallet = () => {
-    console.log(this.input.files[0]);
+    const { inputRef } = this.props;
+    const file = this.inputFile.files[0];
+    const reader = new global.FileReader();
+
+    if (!inputRef) {
+      return;
+    }
+
+    if (!file) {
+      inputRef({
+        error: 'No file selected!',
+      });
+
+      return;
+    }
+
+    reader.addEventListener('loadend', () => {
+      inputRef({
+        data: reader.result,
+      });
+    });
+
+    reader.readAsText(file, 'utf8');
   }
 
   handleChange = () => {
@@ -70,10 +92,12 @@ class TextField extends Component {
                   type="file"
                   onChange={this.inputWallet}
                   className={styles.inputWallet}
-                  ref={(c) => { this.input = c; }}
+                  ref={(c) => { this.inputFile = c; }}
                 />
 
                 <div
+                  role="presentation"
+                  onClick={this.openInput}
                   className={styles.openInputContainer}
                 >
                   <input
@@ -83,11 +107,7 @@ class TextField extends Component {
                     placeholder={this.props.placeholder}
                   />
 
-                  <div
-                    role="presentation"
-                    onClick={this.openInput}
-                    className={styles.openInputIconContainer}
-                  >
+                  <div className={styles.openInputIconContainer}>
                     <img src={uploadIcon} alt="Upload Icon" />
                   </div>
                 </div>

@@ -8,6 +8,10 @@ export default (state = {}, action) => {
       };
     }
 
+    case types.wallet.LOGOUT: {
+      return {};
+    }
+
     default: {
       return state;
     }

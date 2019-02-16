@@ -4,6 +4,7 @@ import eyeOn from 'Root/images/eye-on.svg';
 import eyeOff from 'Root/images/eye-off.svg';
 import uploadIcon from 'Root/images/upload.png';
 
+import Error from './Error';
 import styles from './styles.less';
 
 class TextField extends Component {
@@ -116,7 +117,7 @@ class TextField extends Component {
           }
         </div>
 
-        <p className={styles.error}>{this.props.error || ''}</p>
+        <Error text={this.props.error} />
       </Fragment>
     );
   }

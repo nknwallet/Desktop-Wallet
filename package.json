@@ -31,7 +31,6 @@
     "normalize.css": "^8.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.6.3",
-    "react-chartjs-2": "^2.7.4",
     "react-chartkick": "^0.3.0",
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",

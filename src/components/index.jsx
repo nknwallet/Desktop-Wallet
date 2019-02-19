@@ -2,9 +2,10 @@ import { connect } from 'react-redux';
 import React, { Fragment, Component } from 'react';
 import { BrowserRouter as Router, Switch } from 'react-router-dom';
 
-import checkInternet from 'Root/actions/other/internet';
+import checkInternet from 'Root/actions/modal/internet';
 
 import Modal from './tools/Modal';
+import Loading from './pages/Loading';
 import Download from './pages/Download';
 import Dashboard from './pages/Dashboard';
 import OpenWallet from './pages/OpenWallet';
@@ -23,12 +24,13 @@ class App extends Component {
       <Fragment>
         <Router>
           <Switch>
+            <NotLoggedRoute exact path="/loading" component={Loading} />
             <NotLoggedRoute exact path="/open-wallet" component={OpenWallet} />
             <NotLoggedRoute exact path="/create-wallet" component={CreateWallet} />
             <NotLoggedRoute exact path="/restore-wallet" component={RestoreWallet} />
             <LoggedRoute exact path="/download" component={Download} />
             <LoggedRoute exact path="/dashboard" component={Dashboard} />
-            <NotLoggedRoute component={Download} />
+            <LoggedRoute component={Dashboard} />
           </Switch>
         </Router>
 

@@ -5,7 +5,7 @@ import chart from 'Root/helpers/chart';
 export default async () => new Promise(async (resolve) => {
   const { wallet } = store.getState().wallet;
 
-  const { priceUsd } = await chart(wallet.address);
+  const priceUsd = await chart(wallet.address).price_usd;
 
   store.dispatch({
     priceUsd,

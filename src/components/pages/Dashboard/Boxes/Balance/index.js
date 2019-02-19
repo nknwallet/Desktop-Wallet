@@ -21,6 +21,7 @@ function Balance(props) {
           <p className={styles.title}>Available Balance</p>
           <p className={styles.balanceNumber}>
             {props.wallet.balance}
+            &nbsp;
             NKN
           </p>
         </div>

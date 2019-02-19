@@ -9,7 +9,6 @@ export default async ({ push }) => {
     await balance();
 
     push('/dashboard');
-    console.log('done');
   } catch (error) {
     console.log(error);
   }

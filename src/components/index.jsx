@@ -24,10 +24,10 @@ class App extends Component {
       <Fragment>
         <Router>
           <Switch>
-            <NotLoggedRoute exact path="/loading" component={Loading} />
             <NotLoggedRoute exact path="/open-wallet" component={OpenWallet} />
             <NotLoggedRoute exact path="/create-wallet" component={CreateWallet} />
             <NotLoggedRoute exact path="/restore-wallet" component={RestoreWallet} />
+            <LoggedRoute exact path="/loading" component={Loading} />
             <LoggedRoute exact path="/download" component={Download} />
             <LoggedRoute exact path="/dashboard" component={Dashboard} />
             <LoggedRoute component={Loading} />

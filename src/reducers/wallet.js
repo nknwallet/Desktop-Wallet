@@ -8,6 +8,13 @@ export default (state = {}, action) => {
       };
     }
 
+    case types.wallet.QRCODE: {
+      return {
+        ...state,
+        qrCode: action.qrCode,
+      };
+    }
+
     case types.wallet.BALANCE: {
       return {
         ...state,

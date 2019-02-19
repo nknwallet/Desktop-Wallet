@@ -1,0 +1,45 @@
+@import '~Root/styles/mixins';
+
+:local(.container) {
+  margin: 40px 53px;
+}
+
+:local(.title) {
+  .title();
+  font-size: 22px;
+  padding-bottom: 42px;
+}
+
+:local(.label) {
+  color: #5e6ea7;
+  font-size: 16px;
+  font-weight: 600;
+  padding-bottom: 13px;
+  font-family: SFProText;
+}
+
+:local(.input) {
+  width: 478px;
+  height: 44px;
+  font-size: 14px;
+  padding-left: 15px;
+  border-radius: 3px;
+  margin-bottom: 32px;
+  background-color: #f4f5f9;
+
+  &::placeholder {
+    color: #9199b6;
+  }
+}
+
+:local(.button) {
+  width: 112px;
+  height: 44px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 3px;
+  font-family: SFProText;
+  background-color: #5093e4;
+}

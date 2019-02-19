@@ -1,17 +1,22 @@
 import React from 'react';
-import { Line } from 'react-chartjs-2';
+import Chart from 'chart.js';
+import ReactChartkick, { LineChart } from 'react-chartkick';
 
 import styles from './styles.less';
 
-function Chart() {
+ReactChartkick.addAdapter(Chart);
+
+function ChartComponent() {
   return (
     <div className={styles.container}>
-      <Line
-        width={801}
-        height={371}
+      <LineChart
+        data={{
+          '2017-05-13': 2,
+          '2017-05-14': 5,
+        }}
       />
     </div>
   );
 }
 
-export default Chart;
+export default ChartComponent;

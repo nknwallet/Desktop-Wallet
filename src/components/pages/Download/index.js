@@ -1,14 +1,15 @@
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
-import { push } from 'Root/history';
 import copyText from 'Root/helpers/copy';
 import copyIcon from 'Root/images/copy.svg';
 import download from 'Root/helpers/download';
 import walletIcon from 'Root/images/wallet.svg';
-import Button from 'Root/components/tools/Button';
+import rightArrowIcon from 'Root/images/right-arrow.svg';
 import TextLabel from 'Root/components/tools/TextField/Label';
 
+import Button from './Button';
 import styles from './styles.less';
 
 class DownloadWindow extends Component {
@@ -17,7 +18,7 @@ class DownloadWindow extends Component {
   }
 
   handleNext = () => {
-    push('/dashboard');
+    this.props.history.push('/loading');
   }
 
   handleCopy = text => () => {
@@ -31,30 +32,64 @@ class DownloadWindow extends Component {
           <img src={walletIcon} alt="Wallet" />
         </div>
 
-        <p className={styles.infoText}>Download your wallet file and save the private key</p>
+        <p className={styles.infoText}>
+          Download your wallet file and save
+        </p>
 
-        <TextLabel>Your private key</TextLabel>
-        <div className={styles.value}>{this.props.wallet.wallet.getPrivateKey()}</div>
-        <img
-          alt="Copy"
-          src={copyIcon}
-          className={styles.copyIcon}
-          onClick={this.handleCopy(this.props.wallet.wallet.getPrivateKey())}
-        />
+        <p className={styles.infoText2}>
+          the private key
+        </p>
 
-        <TextLabel>Your address</TextLabel>
-        <div className={styles.value}>{this.props.wallet.wallet.address}</div>
-        <img
-          alt="Copy"
-          src={copyIcon}
-          onClick={this.handleCopy(this.props.wallet.wallet.address)}
-          className={styles.copyIcon}
-        />
+        <div className={styles.values}>
+          <TextLabel>Your private key</TextLabel>
+
+          <div className={styles.valueContainer}>
+            <div className={styles.value}>{this.props.wallet.wallet.getPrivateKey()}</div>
+
+            <div className={styles.copyIcon}>
+              <img
+                alt="Copy"
+                src={copyIcon}
+                onClick={this.handleCopy(this.props.wallet.wallet.getPrivateKey())}
+              />
+            </div>
+          </div>
+
+          <TextLabel>Your address</TextLabel>
+
+          <div className={styles.valueContainer}>
+            <div className={styles.value}>{this.props.wallet.wallet.address}</div>
+
+            <div className={styles.copyIcon}>
+              <img
+                alt="Copy"
+                src={copyIcon}
+                onClick={this.handleCopy(this.props.wallet.wallet.address)}
+              />
+            </div>
+          </div>
+        </div>
+
 
         <div className={styles.buttons}>
-          <Button onClick={this.handleDownload}>Download</Button>
+          <Button
+            color="blue"
+            onClick={this.handleDownload}
+          >
+            Download
+          </Button>
 
-          <Button onClick={this.handleNext}>Next</Button>
+          <Button
+            color="grey"
+            onClick={this.handleNext}
+          >
+            Next
+            <img
+              alt="Right Arrow"
+              src={rightArrowIcon}
+              className={styles.rightArrow}
+            />
+          </Button>
         </div>
 
         <p className={styles.note}>
@@ -66,6 +101,6 @@ class DownloadWindow extends Component {
   }
 }
 
-export default connect(state => ({
+export default withRouter(connect(state => ({
   wallet: state.wallet,
-}))(DownloadWindow);
+}))(DownloadWindow));

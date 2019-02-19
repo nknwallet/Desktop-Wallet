@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 import errorIcon from 'Root/images/error.svg';
 import Button from 'Root/components/tools/Button';
-import retryConnection from 'Root/actions/other/retryConnection';
+import retryConnection from 'Root/actions/modal/retryConnection';
 
 import styles from './styles.less';
 

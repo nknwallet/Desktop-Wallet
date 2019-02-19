@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import validate from 'Root/helpers/validate';
 import Page from 'Root/components/tools/Page';
@@ -77,6 +77,7 @@ class RestoreWallet extends Component {
         password: this.password,
         privateKey: this.privateKey,
         name: this.name || 'MyWallet',
+        push: this.props.history.push,
       });
     }
   };
@@ -125,4 +126,4 @@ class RestoreWallet extends Component {
   }
 }
 
-export default RestoreWallet;
+export default withRouter(RestoreWallet);

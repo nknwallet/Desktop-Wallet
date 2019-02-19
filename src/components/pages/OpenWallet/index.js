@@ -1,5 +1,5 @@
 import React, { Fragment, Component } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import validate from 'Root/helpers/validate';
 import Page from 'Root/components/tools/Page';
@@ -38,7 +38,7 @@ class OpenWallet extends Component {
       errors.password = 'This field is not valid.';
     }
 
-    if (this.file.error) {
+    if (this.file && this.file.error) {
       hasError = true;
       errors.file = this.file.error;
     }
@@ -47,7 +47,7 @@ class OpenWallet extends Component {
       data = JSON.parse(this.file.data);
     } catch (err) {
       hasError = true;
-      errors.file = 'File must be JSON.';
+      errors.file = 'File format must be JSON or DAT.';
     }
 
     this.setState({
@@ -61,6 +61,8 @@ class OpenWallet extends Component {
       openWalletAction({
         file: data,
         password: this.password,
+        push: this.props.history.push,
+        setState: this.setState.bind(this),
       });
     }
   }
@@ -89,10 +91,9 @@ class OpenWallet extends Component {
           inputRef={(r) => { this.password = r; }}
           placeholder="Password of the wallet to open"
         />
-
       </Page>
     );
   }
 }
 
-export default OpenWallet;
+export default withRouter(OpenWallet);

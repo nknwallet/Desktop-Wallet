@@ -3,8 +3,14 @@ import qrcode from './qrcode';
 import balance from './balance';
 
 export default async ({ push }) => {
-  Promise.all([chart, qrcode, balance]).then(() => {
+  try {
+    await chart();
+    await qrcode();
+    await balance();
+
     push('/dashboard');
-  }).catch(() => {
-  });
+    console.log('done');
+  } catch (error) {
+    console.log(error);
+  }
 };

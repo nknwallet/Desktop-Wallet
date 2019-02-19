@@ -10,8 +10,8 @@ import openQrCodeAction from 'Root/actions/modal/qrcode';
 import styles from './styles.less';
 
 class Account extends Component {
-  handleQrCodeClick = address => () => {
-    openQrCodeAction(address);
+  handleQrCodeClick = () => {
+    openQrCodeAction();
   }
 
   render() {
@@ -30,7 +30,7 @@ class Account extends Component {
               src={qrIcon}
               alt="QR Code"
               className={styles.qrCode}
-              onClick={this.handleQrCodeClick(this.props.wallet.wallet.address)}
+              onClick={this.handleQrCodeClick}
             />
           </div>
 

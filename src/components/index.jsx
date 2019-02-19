@@ -30,7 +30,7 @@ class App extends Component {
             <NotLoggedRoute exact path="/restore-wallet" component={RestoreWallet} />
             <LoggedRoute exact path="/download" component={Download} />
             <LoggedRoute exact path="/dashboard" component={Dashboard} />
-            <LoggedRoute component={Dashboard} />
+            <LoggedRoute component={Loading} />
           </Switch>
         </Router>
 

@@ -1,1 +1,1 @@
-# Tron Wallet
+# NKN Wallet

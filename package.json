@@ -26,6 +26,7 @@
     "electron": "^4.0.1",
     "fs-extra": "^7.0.1",
     "history": "^4.7.2",
+    "moment": "^2.24.0",
     "nkn-wallet": "^0.2.0",
     "node-fetch": "^2.3.0",
     "normalize.css": "^8.0.1",

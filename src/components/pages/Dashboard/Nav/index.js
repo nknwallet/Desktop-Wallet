@@ -1,3 +1,4 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
@@ -30,7 +31,11 @@ class Nav extends Component {
           onClick={this.handleRefresh}
         />
 
-        <p>Block: 000</p>
+        <p>
+          Block:
+          &nbsp;
+          {this.props.wallet.block}
+        </p>
 
         <img
           alt="Logout"
@@ -42,4 +47,6 @@ class Nav extends Component {
   }
 }
 
-export default withRouter(Nav);
+export default withRouter(connect(state => ({
+  wallet: state.wallet,
+}))(Nav));

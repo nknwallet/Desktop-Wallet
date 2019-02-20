@@ -1,0 +1,27 @@
+@import '~Root/styles/mixins';
+
+:local(.container) {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+:local(.icon) {
+  width: 58px;
+  height: 58px;
+  margin-top: 15px;
+}
+
+:local(.title) {
+  .title();
+  font-size: 22px;
+  padding-top: 24px;
+  padding-bottom: 12px;
+}
+
+:local(.hash) {
+  color: @blue;
+  font-size: 16px;
+  padding: 15px 125px;
+}

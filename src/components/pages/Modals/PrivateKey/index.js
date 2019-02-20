@@ -1,10 +1,19 @@
 import React, { Component } from 'react';
 
+import showPrivateKeyAction from 'Root/actions/other/showPrivateKey';
+
 import styles from './styles.less';
 
 class ShowPrivateKey extends Component {
+  state = {
+    error: '',
+  }
+
   handleShow = () => {
-    console.log(this.input.value);
+    showPrivateKeyAction({
+      password: this.input.value,
+      setState: this.setState.bind(this),
+    });
   }
 
   render() {
@@ -15,11 +24,13 @@ class ShowPrivateKey extends Component {
         <p className={styles.label}>Password</p>
 
         <input
-          type="text"
+          type="password"
           className={styles.input}
           ref={(c) => { this.input = c; }}
           placeholder="Your wallet password"
         />
+
+        <p className={styles.error}>{this.state.error}</p>
 
         <button
           type="button"

@@ -29,7 +29,17 @@ class ChartComponent extends Component {
     return (
       <div className={styles.container}>
         <LineChart
-          data={this.state.data}
+          min={0}
+          max={0.6}
+          height="371px"
+          colors={['#38a3df']}
+          dataset={{ borderWidth: 1, pointRadius: 0 }}
+          data={[
+            {
+              name: 'USD',
+              data: this.state.data,
+            },
+          ]}
         />
       </div>
     );

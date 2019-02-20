@@ -8,6 +8,13 @@ export default (state = {}, action) => {
       };
     }
 
+    case types.wallet.BLOCK: {
+      return {
+        ...state,
+        block: action.block,
+      };
+    }
+
     case types.wallet.QRCODE: {
       return {
         ...state,
@@ -31,6 +38,13 @@ export default (state = {}, action) => {
 
     case types.wallet.LOGOUT: {
       return {};
+    }
+
+    case types.wallet.TRANSACTIONS: {
+      return {
+        ...state,
+        transactions: action.list,
+      };
     }
 
     default: {

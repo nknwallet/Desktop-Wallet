@@ -1,6 +1,6 @@
 import React from 'react';
 
-import logoWithName from 'Root/images/LogoWithName.png';
+import newLogo from 'Root/images/newLogo.png';
 
 import styles from './styles.less';
 
@@ -19,7 +19,7 @@ function Background() {
 
       <div className={styles.logo} />
 
-      <img src={logoWithName} alt="Logo" className={styles.logoWithName} />
+      <img src={newLogo} alt="Logo" className={styles.logoWithName} />
     </div>
   );
 }

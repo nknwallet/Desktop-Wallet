@@ -1,29 +1,41 @@
-import React from 'react';
 import moment from 'moment';
+import { shell } from 'electron';
+import React, { Component } from 'react';
 
 import styles from './styles.less';
 
-function Transaction(props) {
-  return (
-    <div className={styles.container}>
-      <p className={styles.height}>
-        {props.data.Height}
-      </p>
+class Transaction extends Component {
+  handleClick = (e) => {
+    e.preventDefault();
 
-      <p className={styles.hash}>
-        {props.data.Hash}
-      </p>
+    shell.openExternal(`https://testnet.nkn.org/detail/tx/${this.props.data.Hash}`);
+  }
 
-      <p className={styles.value}>
-        {props.data.Value}
-      </p>
+  render() {
+    return (
+      <div className={styles.container}>
+        <p className={styles.height}>
+          {this.props.data.Height}
+        </p>
 
-      <p className={styles.time}>
-        {moment(props.data.Timestamp).fromNow()}
-      </p>
-    </div>
-  );
+        <a
+          className={styles.hash}
+          onClick={this.handleClick}
+          href={`https://testnet.nkn.org/detail/tx/${this.props.data.Hash}`}
+        >
+          {this.props.data.Hash}
+        </a>
+
+        <p className={styles.value}>
+          {this.props.data.Value}
+        </p>
+
+        <p className={styles.time}>
+          {moment(new Date(`${this.props.data.Timestamp} UTC`)).fromNow()}
+        </p>
+      </div>
+    );
+  }
 }
-
 
 export default Transaction;

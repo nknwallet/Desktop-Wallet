@@ -1,4 +1,6 @@
-import React from 'react';
+import React, { Component } from 'react';
+
+import refreshInterval from 'Root/actions/wallet/refreshInterval';
 
 import Nav from './Nav';
 import Title from './Boxes/Title';
@@ -8,28 +10,34 @@ import Balance from './Boxes/Balance';
 import Account from './Boxes/Account';
 import Transactions from './Boxes/Transactions';
 
-function Dashboard() {
-  return (
-    <div className={styles.container}>
-      <Nav />
+class Dashboard extends Component {
+  componentDidMount() {
+    refreshInterval();
+  }
 
-      <div className={styles.info}>
-        <div className={styles.column1}>
-          <Sales />
+  render() {
+    return (
+      <div className={styles.container}>
+        <Nav />
 
-          <Transactions />
-        </div>
+        <div className={styles.info}>
+          <div className={styles.column1}>
+            <Sales />
 
-        <div className={styles.column2}>
-          <Balance />
+            <Transactions />
+          </div>
 
-          <Account />
+          <div className={styles.column2}>
+            <Balance />
 
-          <Title />
+            <Account />
+
+            <Title />
+          </div>
         </div>
       </div>
-    </div>
-  );
+    );
+  }
 }
 
 export default Dashboard;

@@ -40,6 +40,11 @@ class Transfer extends Component {
       errors.password = 'This field is invalid.';
     }
 
+    if (Number.isNaN(Number.parseFloat(this.amount.value))) {
+      hasError = true;
+      errors.amount = 'Please enter a number.';
+    }
+
     this.setState({
       errors: {
         amount: errors.amount,
@@ -74,7 +79,8 @@ class Transfer extends Component {
 
           <TextLabel>NKN amount</TextLabel>
           <input
-            type="text"
+            type="number"
+            step="0.0001"
             className={styles.input}
             ref={(c) => { this.amount = c; }}
             placeholder="How much NKN to transfer"

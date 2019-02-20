@@ -13,7 +13,27 @@
   font-family: SFProText;
 }
 
+:local(.privateKeyContainer) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 :local(.privateKey) {
   font-size: 14px;
   padding-top: 20px;
+}
+
+:local(.icon) {
+  cursor: pointer;
+  padding-top: 18px;
+  padding-left: 15px;
+}
+
+:local(.button) {
+  .smallButton();
+
+  width: 112px;
+  height: 44px;
+  margin-top: 25px;
 }

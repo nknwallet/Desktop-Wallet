@@ -12,7 +12,8 @@
     "package:windows": "./node_modules/.bin/electron-packager ./ nkn-wallet --platform=win32 --asar --arch=x64 --icon=./src/images/icons/256x256.ico --out=dist --overwrite",
     "build:deb": "./node_modules/.bin/electron-installer-debian --config ./packager/deb.json",
     "build:dmg": "./node_modules/.bin/electron-installer-dmg ./dist/nkn-wallet-darwin-x64/nkn-wallet.app nkn-wallet --icon=./src/images/icons/256x256.icns --out=./dist/installers/ --title=nkn-wallet --overwrite",
-    "release:deb": "npm run package:linux; npm run build:deb"
+    "release:deb": "npm run package:linux; npm run build:deb",
+    "release:dmg": "npm run package:macos; npm run build:dmg"
   },
   "repository": "https://github.com/matinkaboli/wallet",
   "keywords": [

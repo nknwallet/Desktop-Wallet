@@ -1,5 +1,5 @@
 import { env } from 'process';
-import { resolve } from 'path';
+import { join, resolve } from 'path';
 import { app, BrowserWindow } from 'electron';
 
 let win;
@@ -12,6 +12,7 @@ function createWindow() {
     minHeight: 1030,
     title: 'Wallet',
     center: true,
+    icon: join(__dirname, 'src/images/icons/256x256.png'),
   });
 
   win.maximize();

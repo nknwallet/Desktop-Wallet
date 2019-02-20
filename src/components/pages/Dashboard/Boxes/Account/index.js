@@ -6,12 +6,17 @@ import Box from 'Root/components/tools/Box';
 import submitIcon from 'Root/images/submit.png';
 import Button from 'Root/components/tools/Button';
 import openQrCodeAction from 'Root/actions/modal/qrcode';
+import openTransferAction from 'Root/actions/modal/transfer';
 
 import styles from './styles.less';
 
 class Account extends Component {
   handleQrCodeClick = () => {
     openQrCodeAction();
+  }
+
+  handleTransfer = () => {
+    openTransferAction();
   }
 
   render() {
@@ -34,9 +39,13 @@ class Account extends Component {
             />
           </div>
 
-          <Button padding="11px 33px">
+          <Button
+            padding="11px 33px"
+            onClick={this.handleTransfer}
+          >
             <div className={styles.submitButton}>
               <img src={submitIcon} alt="Submit" className={styles.submitIcon} />
+
               <p>SEND</p>
             </div>
           </Button>

@@ -34,7 +34,12 @@ class App extends Component {
           </Switch>
         </Router>
 
-        <Modal visible={this.props.modal.visible}>{this.props.modal.children}</Modal>
+        <Modal
+          height={this.props.modal.height}
+          visible={this.props.modal.visible}
+        >
+          {this.props.modal.children}
+        </Modal>
       </Fragment>
     );
   }

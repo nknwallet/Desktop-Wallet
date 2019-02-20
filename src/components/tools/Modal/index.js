@@ -9,10 +9,10 @@ function Modal(props) {
   return (
     <Rodal
       width={594}
-      height={338}
       animation="slideDown"
       visible={props.visible}
       onClose={closeModalAction}
+      height={props.height || 338}
     >
       <div>
         {props.children}

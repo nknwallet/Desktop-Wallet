@@ -18,10 +18,16 @@
   margin-top: 15px;
   padding-left: 15px;
   border-radius: 3px;
+  transition: border 600ms;
   background-color: #f4f5f9;
+  border: 2px solid #f4f5f9;
 
   &::placeholder {
     color: #9199b6;
+  }
+
+  &:active, &:focus {
+    border: 2px solid @blue;
   }
 }
 

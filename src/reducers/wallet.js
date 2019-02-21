@@ -29,6 +29,13 @@ export default (state = {}, action) => {
       };
     }
 
+    case types.wallet.PRICE: {
+      return {
+        ...state,
+        price: action.price,
+      };
+    }
+
     case types.wallet.PRICE_USD: {
       return {
         ...state,

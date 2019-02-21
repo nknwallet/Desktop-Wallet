@@ -21,8 +21,6 @@ class Loading extends Component {
           alt="Loading Icon"
           className={styles.icon}
         />
-
-        <p className={styles.text}>Loading ...</p>
       </div>
     );
   }

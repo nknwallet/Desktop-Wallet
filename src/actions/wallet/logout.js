@@ -14,5 +14,5 @@ export default async ({ push }) => {
   global.localStorage.removeItem('password');
   global.localStorage.removeItem('privateKey');
 
-  push('/restore-wallet');
+  push('/open-wallet');
 };

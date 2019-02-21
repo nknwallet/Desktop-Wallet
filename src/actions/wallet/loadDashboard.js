@@ -1,4 +1,4 @@
-import price from 'Root/helpers/price';
+import price from './price';
 import chart from './chart';
 import block from './blocks';
 import qrcode from './qrcode';

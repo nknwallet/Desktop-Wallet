@@ -7,5 +7,5 @@ export default async () => {
     block();
     balance();
     transactions();
-  }, 20000);
+  }, 10000);
 };

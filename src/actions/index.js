@@ -6,6 +6,7 @@ export default {
   wallet: {
     OPEN: 'wallet/OPEN',
     BLOCK: 'wallet/BLOCK',
+    PRICE: 'wallet/PRICE',
     LOGOUT: 'wallet/LOGOUT',
     CREATE: 'wallet/CREATE',
     QRCODE: 'wallet/QRCODE',

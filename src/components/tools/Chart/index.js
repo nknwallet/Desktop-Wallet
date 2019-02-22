@@ -33,7 +33,7 @@ class ChartComponent extends Component {
           max={0.6}
           height="371px"
           colors={['#38a3df']}
-          dataset={{ borderWidth: 3, pointRadius: 0 }}
+          dataset={{ borderWidth: 3, pointRadius: 1 }}
           data={[
             {
               name: 'USD',

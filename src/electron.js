@@ -6,12 +6,10 @@ let win;
 
 function createWindow() {
   win = new BrowserWindow({
-    width: 1450,
-    height: 1040,
-    minWidth: 1000,
+    center: true,
+    minWidth: 1118,
     minHeight: 800,
     title: 'Wallet',
-    center: true,
     icon: join(__dirname, 'src/images/icons/256x256.png'),
   });
 

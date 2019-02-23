@@ -9,6 +9,7 @@ import styles from './styles.less';
 
 class TextField extends Component {
   state = {
+    fileName: '',
     eyeImg: eyeOn,
     type: this.props.type,
     eye: this.props.type === 'password',
@@ -46,6 +47,10 @@ class TextField extends Component {
     reader.addEventListener('loadend', () => {
       inputRef({
         data: reader.result,
+      });
+
+      this.setState({
+        fileName: file.name,
       });
     });
 
@@ -91,6 +96,7 @@ class TextField extends Component {
               <Fragment>
                 <input
                   type="file"
+                  accept=".dat,.json"
                   onChange={this.inputWallet}
                   className={styles.inputWallet}
                   ref={(c) => { this.inputFile = c; }}
@@ -103,6 +109,7 @@ class TextField extends Component {
                 >
                   <input
                     type="text"
+                    value={this.state.fileName}
                     onChange={this.inputWallet}
                     className={styles.openInputField}
                     placeholder={this.props.placeholder}

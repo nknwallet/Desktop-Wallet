@@ -11,7 +11,7 @@ function Transactions(props) {
   const transactions = props.transactions.slice(0, 4);
 
   return (
-    <Box title="Last Transactions" width={890} height={317}>
+    <Box title="Last Transactions" width={691} height={246}>
       <div className={styles.labels}>
         <p className={styles.label1}>Height</p>
         <p className={styles.label2}>Txid</p>

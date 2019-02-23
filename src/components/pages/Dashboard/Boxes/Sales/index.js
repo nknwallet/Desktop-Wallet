@@ -8,7 +8,7 @@ import styles from './styles.less';
 
 function Sales(props) {
   return (
-    <Box title="Sales" width={891} height={519} line>
+    <Box title="Sales" width={692} height={408} line>
       <div className={styles.container}>
         <div className={styles.dollarSign}>
           <p>$</p>

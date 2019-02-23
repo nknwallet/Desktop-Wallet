@@ -31,7 +31,8 @@ class ChartComponent extends Component {
         <LineChart
           min={0}
           max={0.6}
-          height="371px"
+          width="622px"
+          height="288px"
           colors={['#38a3df']}
           dataset={{ borderWidth: 3, pointRadius: 1 }}
           data={[

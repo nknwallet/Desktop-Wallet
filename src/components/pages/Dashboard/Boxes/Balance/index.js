@@ -9,8 +9,8 @@ import styles from './styles.less';
 function Balance(props) {
   return (
     <Box
-      width={394}
-      height={119}
+      width={306}
+      height={92}
     >
       <div className={styles.balance}>
         <div>

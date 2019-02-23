@@ -1,17 +1,17 @@
 @import '~Root/styles/mixins.less';
 
 :local(.navBar) {
-  padding: 0 67px;
   width: 100%;
-  height: 72px;
+  height: 55px;
   display: flex;
+  padding: 0 67px;
   align-items: center;
   background-color: white;
   justify-content: space-between;
 
   img {
-    width: 26px;
-    height: 26px;
+    width: 20px;
+    height: 20px;
     cursor: pointer;
     transition: transform 700ms;
 
@@ -22,5 +22,6 @@
 
   p {
     .title();
+    font-size: 14px;
   }
 }

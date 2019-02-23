@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import qrIcon from 'Root/images/qr.png';
 import Box from 'Root/components/tools/Box';
 import submitIcon from 'Root/images/submit.png';
-import Button from 'Root/components/tools/Button';
 import openQrCodeAction from 'Root/actions/modal/qrcode';
 import openTransferAction from 'Root/actions/modal/transfer';
 
@@ -21,7 +20,7 @@ class Account extends Component {
 
   render() {
     return (
-      <Box title="Account" width={395} height={383} line>
+      <Box title="Account" width={306} height={297} line>
         <div className={styles.accountBox}>
           <p className={styles.accoutTitle}>Name:</p>
           <p className={styles.accoutData}>{this.props.wallet.name}</p>
@@ -39,8 +38,9 @@ class Account extends Component {
             />
           </div>
 
-          <Button
-            padding="11px 33px"
+          <button
+            type="button"
+            className={styles.button}
             onClick={this.handleTransfer}
           >
             <div className={styles.submitButton}>
@@ -48,7 +48,7 @@ class Account extends Component {
 
               <p>SEND</p>
             </div>
-          </Button>
+          </button>
         </div>
       </Box>
     );

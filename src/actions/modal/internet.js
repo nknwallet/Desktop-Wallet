@@ -2,6 +2,7 @@ import React from 'react';
 
 import store from 'Root/store';
 import types from 'Root/actions';
+import history from 'Root/history';
 import loadDashboard from 'Root/actions/wallet/loadDashboard';
 import InternetConnectionModal from 'Root/components/pages/Modals/InternetConnection';
 
@@ -17,8 +18,12 @@ export default async () => {
 
   const { wallet } = store.getState();
 
+  console.log(history);
+
   if (wallet.name) {
-    loadDashboard();
+    loadDashboard({
+      push: history.push,
+    });
   }
 
   return true;

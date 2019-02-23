@@ -1,27 +1,27 @@
 @import '~Root/styles/mixins.less';
 
 :local(.accountBox) {
-  padding-left: 24px;
+  padding-left: 19px;
 }
 
 :local(.accoutData) {
   color: #262728;
-  font-size: 15px;
-  padding-top: 10px;
-  padding-right: 13px;
+  font-size: 12px;
+  padding-top: 8px;
+  padding-right: 3px;
 }
 
 :local(.accoutData2) {
   color: #262728;
   display: inline;
-  font-size: 15px;
-  padding-right: 13px;
+  font-size: 12px;
+  padding-right: 9px;
 }
 
 :local(.accoutTitle) {
   .grey();
-  font-size: 17px;
-  padding-top: 36px;
+  font-size: 13px;
+  padding-top: 25px;
 }
 
 :local(.qrBox) {
@@ -32,8 +32,8 @@
 }
 
 :local(.qrCode) {
-  width: 19px;
-  height: 19px;
+  width: 15px;
+  height: 15px;
   cursor: pointer;
 }
 
@@ -42,15 +42,31 @@
   height: 14px;
 }
 
+:local(.button) {
+  width: 98px;
+  color: white;
+  height: 33px;
+  cursor: pointer;
+  margin-top: 46px;
+  border-radius: 2px;
+  font-family: SFProText;
+  padding: 0 16px 0 16px;
+  background-color: #5093e4;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.17);
+}
+
 :local(.submitButton) {
   display: flex;
-  font-size: 17px;
+  font-size: 13px;
   font-weight: 400;
   align-items: center;
-  font-family: SFProText;
   justify-content: space-between;
 
   & > * {
     margin: 0 3px;
+  }
+
+  p {
+    font-weight: 600;
   }
 }

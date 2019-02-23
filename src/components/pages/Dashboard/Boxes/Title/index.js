@@ -18,7 +18,7 @@ class Title extends Component {
 
   render() {
     return (
-      <Box title="Title" width={398} height={318} line>
+      <Box title="Title" width={309} height={249} line>
         <div className={styles.desciption}>
           <p className={styles.textGrey}>Download Wallet from here</p>
 

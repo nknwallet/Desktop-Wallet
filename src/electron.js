@@ -9,7 +9,7 @@ function createWindow() {
     width: 1450,
     height: 1040,
     minWidth: 1440,
-    minHeight: 1030,
+    minHeight: 800,
     title: 'Wallet',
     center: true,
     icon: join(__dirname, 'src/images/icons/256x256.png'),

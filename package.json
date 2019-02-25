@@ -33,6 +33,7 @@
     "chart.js": "^2.7.3",
     "classnames": "^2.2.6",
     "electron": "^4.0.1",
+    "electron-squirrel-startup": "^1.0.0",
     "fs-extra": "^7.0.1",
     "history": "^4.7.2",
     "moment": "^2.24.0",

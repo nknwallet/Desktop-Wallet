@@ -26,6 +26,11 @@
   position: absolute;
   padding-left: 30px;
   font-family: SFProText;
+  transition: color 300ms;
+
+  &:hover, &:active {
+    color: darken(@blue, 10%);
+  }
 }
 
 :local(.value) {

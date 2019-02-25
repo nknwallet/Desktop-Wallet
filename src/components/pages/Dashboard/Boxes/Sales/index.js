@@ -16,7 +16,7 @@ function Sales(props) {
 
         <p className={styles.price}>
           $
-          {props.wallet.price}
+          {Number.parseFloat(props.wallet.price, 10).toFixed(4)}
         </p>
       </div>
       <Chart />

@@ -8,6 +8,7 @@ export default async () => {
   store.dispatch({
     width: 231,
     height: 313,
+    showCloseButton: false,
     type: types.modal.OPEN,
     children: <QrCodeModal />,
   });

@@ -40,6 +40,7 @@ class App extends Component {
           width={this.props.modal.width}
           height={this.props.modal.height}
           visible={this.props.modal.visible}
+          showCloseButton={this.props.modal.showCloseButton}
         >
           {this.props.modal.children}
         </Modal>

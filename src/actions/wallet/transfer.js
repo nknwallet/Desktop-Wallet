@@ -43,6 +43,8 @@ export default async ({
   wallet.wallet.transferTo(address, amount, password).then((data) => {
     setTimeout(() => {
       store.dispatch({
+        width: 461,
+        height: 262,
         type: types.modal.OPEN,
         children: <SuccessfulTransfer hash={data} />,
       });
@@ -50,6 +52,8 @@ export default async ({
   }).catch(() => {
     setTimeout(() => {
       store.dispatch({
+        width: 461,
+        height: 262,
         type: types.modal.OPEN,
         children: <SuccessfulTransfer failure />,
       });

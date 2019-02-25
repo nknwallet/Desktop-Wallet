@@ -21,6 +21,8 @@ export default async ({ password, setState }) => {
 
   setTimeout(() => {
     store.dispatch({
+      width: 461,
+      height: 262,
       type: types.modal.OPEN,
       children: <ShowPrivateKeyModal />,
     });

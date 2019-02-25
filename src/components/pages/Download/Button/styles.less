@@ -7,17 +7,26 @@
   cursor: pointer;
   font-size: 14px;
   font-weight: bold;
-  border-radius: 3.4px;
-  box-shadow: 0 2px 11px -3px rgba(7, 45, 79, 0.07);
-  display: inline-flex;
   align-items: center;
+  border-radius: 3.4px;
+  display: inline-flex;
   justify-content: center;
+  transition: background-color 300ms;
+  box-shadow: 0 2px 11px -3px rgba(7, 45, 79, 0.07);
 }
 
 :local(.blue) {
   background-color: @blue;
+
+  &:hover, &:active {
+    background-color: darken(@blue, 10%);
+  }
 }
 
 :local(.grey) {
   background-color: @grey;
+
+  &:hover, &:active {
+    background-color: darken(@grey, 10%);
+  }
 }

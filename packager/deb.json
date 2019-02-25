@@ -2,7 +2,7 @@
   "arch": "amd64",
   "name": "NKNWallet",
   "dest": "./dist/installers/",
-  "src": "./dist/nkn-wallet-linux-x64",
+  "src": "./dist/NKNWallet-linux-x64",
   "icon": "./src/images/icons/256x256.png",
   "categories": [
     "Utility"

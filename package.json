@@ -1,5 +1,5 @@
 {
-  "name": "nkn-wallet",
+  "name": "NKNWallet",
   "version": "1.0.0",
   "description": "NKNWallet",
   "main": "build/electron.js",

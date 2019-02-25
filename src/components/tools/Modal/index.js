@@ -8,10 +8,10 @@ import 'rodal/lib/rodal.css';
 function Modal(props) {
   return (
     <Rodal
-      width={594}
       animation="slideDown"
       visible={props.visible}
       onClose={closeModalAction}
+      width={props.width || 594}
       height={props.height || 338}
     >
       <div>

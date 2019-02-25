@@ -1,0 +1,46 @@
+@import '~Root/styles/mixins';
+
+:local(.container) {
+  display: flex;
+  min-height: 100vh;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+:local(.noInternet) {
+  width: 101px;
+  height: 101px;
+  margin-bottom: 12px;
+}
+
+:local(.title) {
+  color: #262728;
+  font-weight: 600;
+  font-size: 23.3px;
+  font-family: SFProText;
+}
+
+:local(.info) {
+  color: #9199b6;
+  font-size: 15.5px;
+  padding-top: 15.5px;
+  padding-bottom: 28px;
+  font-family: SFProText;
+}
+
+:local(.button) {
+  color: white;
+  width: 87px;
+  height: 34.2px;
+  cursor: pointer;
+  font-weight: bold;
+  border-radius: 2.3px;
+  background-color: @blue;
+  transition: background-color 300ms;
+
+  &:hover, &:active {
+    background-color: darken(@blue, 10%);
+  }
+}

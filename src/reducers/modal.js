@@ -5,6 +5,7 @@ export default (state = {}, action) => {
     case types.modal.OPEN: {
       return {
         visible: true,
+        width: action.width,
         height: action.height,
         children: action.children,
       };

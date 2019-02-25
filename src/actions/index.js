@@ -19,4 +19,8 @@ export default {
     OPEN: 'modal/OPEN',
     CLOSE: 'modal/CLOSE',
   },
+  internet: {
+    ONLINE: 'internet/ONLINE',
+    OFFLINE: 'internet/OFFLINE',
+  },
 };

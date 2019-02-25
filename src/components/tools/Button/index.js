@@ -8,7 +8,7 @@ function Button(props) {
       onClick={props.onClick}
       className={styles.button}
       type={props.type || 'button'}
-      style={{ padding: props.padding || '18px 32px' }}
+      style={{ padding: props.padding || '14px 24px' }}
     >
       {props.children}
     </button>

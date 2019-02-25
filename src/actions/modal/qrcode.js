@@ -6,6 +6,8 @@ import QrCodeModal from 'Root/components/pages/Modals/QrCode';
 
 export default async () => {
   store.dispatch({
+    width: 231,
+    height: 313,
     type: types.modal.OPEN,
     children: <QrCodeModal />,
   });

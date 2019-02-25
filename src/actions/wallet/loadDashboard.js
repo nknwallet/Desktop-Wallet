@@ -16,6 +16,8 @@ export default async ({ push }) => {
       transactions(),
     ]);
 
+    console.log('I am done');
+
     push('/dashboard');
   } catch (error) {
     console.log(error);

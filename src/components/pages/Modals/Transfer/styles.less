@@ -6,14 +6,14 @@
 
 :local(.title) {
   .title();
-  font-size: 22px;
-  padding-top: 20px;
-  padding-bottom: 20px;
+  font-size: 17px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 :local(.input) {
-  width: 478px;
-  height: 44px;
+  width: 371px;
+  height: 34px;
   font-size: 14px;
   margin-top: 15px;
   padding-left: 15px;
@@ -33,20 +33,26 @@
 
 :local(.error) {
   color: #e00543;
-  margin: 10px 0;
-  font-size: 15px;
+  margin: 5px 0;
+  font-size: 12px;
   font-weight: 600;
 }
 
 :local(.button) {
-  width: 112px;
-  height: 44px;
+  width: 87px;
+  height: 34px;
   color: white;
   cursor: pointer;
-  font-size: 16px;
-  margin-top: 25px;
+  margin-top: 15px;
   font-weight: bold;
+  font-size: 12.4px;
   border-radius: 3px;
   font-family: SFProText;
   background-color: #5093e4;
+  transition: background-color 300ms;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.17);
+
+  &:hover, &:active {
+    background-color: darken(@blue, 10%);
+  }
 }

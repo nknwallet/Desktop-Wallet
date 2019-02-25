@@ -1,18 +1,20 @@
 @import '~Root/styles/mixins';
 
 :local(.container) {
-  margin: 40px 53px;
+  margin: 20px 30px;
 }
 
 :local(.title) {
   .title();
-  font-size: 22px;
-  padding-bottom: 42px;
+  font-size: 17.1px;
+  padding-bottom: 32px;
+  padding-top: 0;
+  padding-left: 0;
 }
 
 :local(.inputContainer) {
-  width: 480px;
-  height: 45px;
+  width: 370px;
+  height: 34px;
   display: flex;
   position: relative;
   align-items: center;
@@ -35,7 +37,7 @@
 :local(.input) {
   width: 100%;
   height: 100%;
-  font-size: 14px;
+  font-size: 11px;
   border-radius: 3px;
   padding-left: 15px;
   transition: border 600ms;
@@ -54,14 +56,15 @@
 :local(.error) {
   color: #e00543;
   margin: 10px 0;
-  font-size: 15px;
+  font-size: 12px;
   font-weight: 600;
 }
 
 :local(.button) {
   .smallButton();
 
-  width: 112px;
-  height: 44px;
+  width: 87px;
+  height: 34px;
+  font-size: 12px;
   margin-top: 25px;
 }

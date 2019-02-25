@@ -1,7 +1,7 @@
 @import 'colors.less';
 
 .container() {
-  padding: 84px 150px 90px 72px;
+  padding: 84px 150px 0 72px;
 }
 
 .label() {
@@ -16,13 +16,17 @@
 
 .button() {
   color: white;
-  font-size: 22px;
+  font-size: 17px;
   cursor: pointer;
   font-weight: bold;
   border-radius: 4px;
   background-color: @blue;
-  border: 2px solid @blue;
+  transition: background-color 300ms;
   box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.27);
+
+  &:hover, &:active {
+    background-color: darken(@blue, 10%);
+  }
 }
 
 .title() {
@@ -43,7 +47,7 @@
   height: 100%;
   color: black;
   padding: 0 21px;
-  font-size: 16px;
+  font-size: 12.4px;
   border-radius: 2px;
   transition: border 300ms;
   border: 2px solid #e0e3eb;
@@ -66,5 +70,11 @@
   font-weight: bold;
   border-radius: 3px;
   font-family: SFProText;
-  background-color: #5093e4;
+  background-color: @blue;
+  transition: background-color 300ms;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.17);
+
+  &:hover, &:active {
+    background-color: darken(@blue, 10%);
+  }
 }

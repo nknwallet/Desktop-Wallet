@@ -6,6 +6,8 @@ import ShowPrivateKeyModal from 'Root/components/pages/Modals/PrivateKey';
 
 export default async () => {
   store.dispatch({
+    width: 461,
+    height: 270,
     type: types.modal.OPEN,
     children: <ShowPrivateKeyModal />,
   });

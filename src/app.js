@@ -9,9 +9,14 @@ import store from './store';
 import App from './components';
 import history from './history';
 import checkToken from './actions/wallet/checkToken';
+import checkInternet from './actions/other/checkInternet';
 
 (async () => {
-  await checkToken();
+  const onLine = await checkInternet();
+
+  if (onLine) {
+    await checkToken();
+  }
 
   render(
     <Provider store={store}>

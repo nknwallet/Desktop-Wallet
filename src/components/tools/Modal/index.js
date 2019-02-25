@@ -13,6 +13,7 @@ function Modal(props) {
       onClose={closeModalAction}
       width={props.width || 594}
       height={props.height || 338}
+      showCloseButton={props.showCloseButton}
     >
       <div>
         {props.children}

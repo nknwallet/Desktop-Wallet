@@ -7,6 +7,8 @@ let win;
 function createWindow() {
   win = new BrowserWindow({
     center: true,
+    width: 1118,
+    height: 800,
     minWidth: 1118,
     minHeight: 800,
     title: 'Wallet',

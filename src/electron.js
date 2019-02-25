@@ -13,8 +13,6 @@ function createWindow() {
     icon: join(__dirname, 'src/images/icons/256x256.png'),
   });
 
-  win.maximize();
-
   win.loadURL(`file://${resolve(__dirname, 'index.html#/initializing')}`);
 
   if (env.NODE_ENV === 'development') {

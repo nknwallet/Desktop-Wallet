@@ -5,8 +5,8 @@
   "main": "build/electron.js",
   "scripts": {
     "start": "electron .",
-    "dev:build": "cross-env NODE_ENV=development ./node_modules/.bin/gulp dev",
-    "prod:build": "cross-env NODE_ENV=production ./node_modules/.bin/gulp prod",
+    "dev": "cross-env NODE_ENV=development ./node_modules/.bin/gulp dev",
+    "prod": "cross-env NODE_ENV=production ./node_modules/.bin/gulp prod",
     "package:linux": "./node_modules/.bin/electron-packager ./ nkn-wallet --platform=linux --asar --arch=x64 --icon=./src/images/icons/256x256.png --out=dist --overwrite",
     "package:macos": "./node_modules/.bin/electron-packager ./ nkn-wallet --platform=darwin --asar --arch=x64 --icon=./src/images/icons/256x256.icns --out=dist --overwrite",
     "package:windows": "./node_modules/.bin/electron-packager ./ nkn-wallet --platform=win32 --asar --arch=x64 --icon=./src/images/icons/256x256.ico --out=dist --overwrite",

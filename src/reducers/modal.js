@@ -8,6 +8,7 @@ export default (state = {}, action) => {
         width: action.width,
         height: action.height,
         children: action.children,
+        showCloseButton: action.showCloseButton,
       };
     }
 

@@ -11,7 +11,7 @@ function createWindow() {
     height: 800,
     minWidth: 1118,
     minHeight: 800,
-    title: 'Wallet',
+    title: 'NKNWallet',
     icon: join(__dirname, 'src/images/icons/256x256.png'),
   });
 

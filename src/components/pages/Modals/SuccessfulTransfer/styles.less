@@ -15,7 +15,7 @@
 
 :local(.title) {
   .title();
-  font-size: 22px;
+  font-size: 17px;
   padding-top: 24px;
   padding-bottom: 12px;
 }
@@ -23,13 +23,20 @@
 :local(.hash) {
   color: @blue;
   font-size: 16px;
-  padding: 15px 125px;
+  text-align: center;
+  word-break: break-all;
+  padding: 15px 30px 5px 30px;
+
+  &:hover, &:active {
+    color: darken(@blue, 10%);
+  }
 }
 
 :local(.button) {
   .smallButton();
 
-  width: 112px;
-  height: 44px;
-  margin-top: 25px;
+  width: 87px;
+  height: 34px;
+  margin-top: 15px;
+  font-size: 12.5px;
 }

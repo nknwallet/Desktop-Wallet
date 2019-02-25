@@ -1,7 +1,7 @@
 {
   "name": "nkn-wallet",
   "version": "1.0.0",
-  "description": "NKN Wallet",
+  "description": "NKNWallet",
   "main": "build/electron.js",
   "scripts": {
     "start": "electron .",
@@ -21,7 +21,7 @@
     "release:flatpak": "npm run package:linux; npm run build:flatpak",
     "release:snap": "npm run package:linux; npm run build:snap"
   },
-  "repository": "https://github.com/matinkaboli/wallet",
+  "repository": "https://github.com/nknwallet/desktopwallet",
   "keywords": [
     "NKN",
     "Wallet"

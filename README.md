@@ -2,6 +2,8 @@
 
 NKNWallet is a cross-platform wallet built on Electron.
 
+![NKN Mockup](https://raw.githubusercontent.com/nknwallet/desktopwallet/master/src/images/mockup.png)
+
 ## Features
 
   - Open Wallet from a file

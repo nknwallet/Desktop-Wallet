@@ -1,23 +1,12 @@
 # NKN Wallet
 
-## Running the project
+NKNWallet is a cross-platform wallet built on Electron.
 
-Clone the project, then change the current directory, like this:
+## Current Project Team Members
 
-```bash
-  git clone https://github.com/nknwallet/desktopwallet
-  cd desktopwallet
-```
-
-Then build the project, this command will bundle all the src/ content in the build/
-folder.
-
-```
-npm run dev
-```
-
-Now you can run the project using this command:
-
-```
-npm start
-```
+- [amir1373ansari](https://twitter.com/amir1373ansari) - **Amir Ansari**
+[<amir1373ansari@gmail.com>](mailto:amir1373ansari@gmail.com) (Manager)
+  - [matinkaboli](https://github.com/matinkaboli) - **Matin Kaboli**
+[<matinkaboli@aol.com>](mailto:matinkaboli@aol.com) (Developer)
+  - [Mojtaba_msv](https://twitter.com/Mojtaba_msv) - **Mojtaba Mousavi**
+[<mojtabaaa.mousavi@gmail.com>](mailto:mojtabaaa.mousavi@gmail.com) (Designer)

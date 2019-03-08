@@ -32,7 +32,7 @@
   display: flex;
   font-size: 16px;
   border-radius: 2px;
-  border: 2px solid @blue;
+  border: 2px solid #e0e3eb;
   transition: border 300ms;
   background-color: #f8f9fc;
 
@@ -41,11 +41,16 @@
   }
 }
 
+:local(.inputFilledContainer) {
+  border: 2px solid @blue !important;
+}
+
 :local(.openInputField) {
   width: 450px;
   height: 100%;
   padding: 0 21px;
   cursor: pointer;
+  background-color: #f8f9fc;
 
   &::placeholder {
     color: #9199b6;

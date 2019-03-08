@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React, { Fragment, Component } from 'react';
 
 import eyeOn from 'Root/images/eye-on.svg';
@@ -13,6 +14,7 @@ class TextField extends Component {
     eyeImg: eyeOn,
     type: this.props.type,
     eye: this.props.type === 'password',
+    openInputStyles: styles.openInputContainer,
   };
 
   handleClick = () => {
@@ -43,6 +45,10 @@ class TextField extends Component {
 
       return;
     }
+
+    this.setState({
+      openInputStyles: classnames(styles.openInputContainer, styles.inputFilledContainer),
+    });
 
     reader.addEventListener('loadend', () => {
       inputRef({
@@ -105,7 +111,7 @@ class TextField extends Component {
                 <div
                   role="presentation"
                   onClick={this.openInput}
-                  className={styles.openInputContainer}
+                  className={this.state.openInputStyles}
                 >
                   <input
                     type="text"

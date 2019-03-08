@@ -1,7 +1,6 @@
 import React, { Fragment, Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
-import validate from 'Root/helpers/validate';
 import Page from 'Root/components/tools/Page';
 import openWalletAction from 'Root/actions/wallet/open';
 import TextField from 'Root/components/tools/TextField';
@@ -33,7 +32,7 @@ class OpenWallet extends Component {
     let data;
     let hasError;
 
-    if (!validate(this.password)) {
+    if (!this.password) {
       hasError = true;
       errors.password = 'This field is not valid.';
     }

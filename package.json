@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "NKNWallet",
   "main": "build/electron.js",
-  "homepage": "https://nknwallet.io/wallet",
+  "homepage": "http://nknwallet.github.io/wallet",
   "scripts": {
     "start": "electron .",
     "predeploy": "npm run prod",

@@ -4,6 +4,7 @@ const common = require('./common');
 
 module.exports = Object.assign(common, {
   mode: 'production',
+  watch: false,
   plugins: [
     new webpack.DefinePlugin({
       'process.env': {

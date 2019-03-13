@@ -24,7 +24,6 @@ module.exports = {
             '@babel/preset-react',
           ],
           plugins: [
-            ['@babel/transform-runtime'],
             'transform-async-to-generator',
             '@babel/plugin-proposal-class-properties',
           ],
@@ -62,7 +61,6 @@ module.exports = {
       NODE_ENV: 'development',
     }),
   ],
-  watch: true,
   target: 'node',
   externals: [
     nodeExternals({

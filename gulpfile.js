@@ -1,53 +1,45 @@
-const gulp = require('gulp');
 const del = require('del');
-const lint = require('gulp-eslint');
+const gulp = require('gulp');
 const webpack = require('webpack');
+const lint = require('gulp-eslint');
 
-gulp.task('clean', cb =>
-  del(
-    'build/**',
-    cb
-  )
-);
+const dev = require('./webpack/dev.js');
+const prod = require('./webpack/prod.js');
 
-gulp.task('copy', ['clean'], () =>
-  gulp.src('src/index.html')
-  .pipe(gulp.dest('build/'))
-);
+gulp.task('clean', cb => del('build/**', cb));
+
+gulp.task('copy', ['clean'], () => gulp.src('src/index.html').pipe(gulp.dest('build/')));
 
 gulp.task('dev:build', ['clean'], () => {
-  webpack(require('./webpack/dev.js'), (err, stats) => {
+  webpack(dev, (err, stats) => {
     if (err) {
       throw new Error('webpack build failed', err);
     }
 
     console.log(stats.toString({
       assets: true,
-      colors: true
+      colors: true,
     }));
   });
 });
 
-gulp.task('prod:build', ['lint', 'clean'], cb =>
-  webpack(require('./webpack/prod.js'), (err, stats) => {
-    if (err) {
-      throw new Error('webpack build failed', err);
-    }
+gulp.task('prod:build', ['lint', 'clean'], cb => webpack(prod, (err, stats) => {
+  if (err) {
+    throw new Error('webpack build failed', err);
+  }
 
-    console.log(stats.toString({
-      assets: true,
-      colors: true
-    }));
-    cb();
-  })
-);
+  console.log(stats.toString({
+    assets: true,
+    colors: true,
+  }));
 
-gulp.task('lint', () =>
-  gulp.src('src/**/*.js')
+  cb();
+}));
+
+gulp.task('lint', () => gulp.src('src/**/*.js')
   .pipe(lint())
   .pipe(lint.format())
-  .pipe(lint.failAfterError())
-);
+  .pipe(lint.failAfterError()));
 
 gulp.task('default', ['clean', 'copy', 'dev:build']);
 gulp.task('dev', ['clean', 'copy', 'dev:build']);

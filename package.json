@@ -14,7 +14,7 @@
     "package:macos": "./node_modules/.bin/electron-packager ./ NKNWallet --platform=darwin --asar --arch=x64 --icon=./src/images/icons/256x256.icns --out=dist --overwrite",
     "package:windows": "./node_modules/.bin/electron-packager ./ NKNWallet --platform=win32 --asar --arch=x64 --icon=./src/images/icons/256x256.ico --out=dist --overwrite",
     "build:deb": "./node_modules/.bin/electron-installer-debian --arch amd64 --config ./packager/deb.json",
-    "build:dmg": "./node_modules/.bin/electron-installer-dmg ./dist/nkn-wallet-darwin-x64/nkn-wallet.app NKNWallet --icon=./src/images/icons/256x256.icns --out=./dist/installers/ --title=NKNWallet --overwrite",
+    "build:dmg": "./node_modules/.bin/electron-installer-dmg ./dist/NKNWallet-darwin-x64/NKNWallet.app NKNWallet --icon=./src/images/icons/256x256.icns --out=./dist/installers/ --title=NKNWallet --overwrite",
     "build:rpm": "./node_modules/.bin/electron-installer-redhat --src ./dist/NKNWallet-linux-x64 --arch x86_64 --config ./packager/rpm.json",
     "build:flatpak": "./node_modules/.bin/electron-installer-flatpak --src ./dist/NKNWallet-linux-x64 --arch x86_64 --config ./packager/flatpak.json",
     "build:snap": "./node_modules/.bin/electron-installer-snap --src=./dist/NKNWallet-linux-x64 --name NKNWallet --dest=./dist/installer",

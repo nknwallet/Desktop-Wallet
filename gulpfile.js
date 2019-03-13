@@ -8,7 +8,14 @@ const prod = require('./webpack/prod.js');
 
 gulp.task('clean', cb => del('build/**', cb));
 
-gulp.task('copy', ['clean'], () => gulp.src('src/index.html').pipe(gulp.dest('build/')));
+gulp.task(
+  'copy',
+  ['clean'],
+  () => [
+    gulp.src('src/index.html').pipe(gulp.dest('build')),
+    gulp.src('src/images/favicon/**/*').pipe(gulp.dest('build/favicon')),
+  ],
+);
 
 gulp.task('dev:build', ['clean'], () => {
   webpack(dev, (err, stats) => {

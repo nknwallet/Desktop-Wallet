@@ -3,9 +3,9 @@ import React, { Component } from 'react';
 import refreshInterval from 'Root/actions/wallet/refreshInterval';
 
 import Nav from './Nav';
-import Title from './Boxes/Title';
-import Sales from './Boxes/Sales';
+import Price from './Boxes/Price';
 import styles from './styles.less';
+import Backup from './Boxes/Backup';
 import Balance from './Boxes/Balance';
 import Account from './Boxes/Account';
 import Transactions from './Boxes/Transactions';
@@ -22,7 +22,7 @@ class Dashboard extends Component {
 
         <div className={styles.info}>
           <div className={styles.column1}>
-            <Sales />
+            <Price />
 
             <Transactions />
           </div>
@@ -32,7 +32,7 @@ class Dashboard extends Component {
 
             <Account />
 
-            <Title />
+            <Backup />
           </div>
         </div>
       </div>

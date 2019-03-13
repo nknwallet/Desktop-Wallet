@@ -6,9 +6,9 @@ import Chart from 'Root/components/tools/Chart';
 
 import styles from './styles.less';
 
-function Sales(props) {
+function Price(props) {
   return (
-    <Box title="Sales" width={692} height={408} line>
+    <Box title="Price" width={692} height={408} line>
       <div className={styles.container}>
         <div className={styles.dollarSign}>
           <p>$</p>
@@ -26,4 +26,4 @@ function Sales(props) {
 
 export default connect(state => ({
   wallet: state.wallet,
-}))(Sales);
+}))(Price);

@@ -7,7 +7,7 @@ import openPrivateKeyModal from 'Root/actions/modal/privateKey';
 
 import styles from './styles.less';
 
-class Title extends Component {
+class Backup extends Component {
   handleDownloadClick = () => {
     download(`${this.props.wallet.name}.dat`, this.props.wallet.wallet.toJSON());
   }
@@ -18,7 +18,7 @@ class Title extends Component {
 
   render() {
     return (
-      <Box title="Title" width={309} height={249} line>
+      <Box title="Backup" width={309} height={249} line>
         <div className={styles.desciption}>
           <p className={styles.textGrey}>Download Wallet from here</p>
 
@@ -47,4 +47,4 @@ class Title extends Component {
 
 export default connect(state => ({
   wallet: state.wallet,
-}))(Title);
+}))(Backup);

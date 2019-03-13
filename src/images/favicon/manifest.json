@@ -1,5 +1,7 @@
 {
- "name": "App",
+ "name": "NKNWallet",
+ "short_name": "NKNWallet",
+ "description": "A cross-platform wallet for NKN network.",
  "icons": [
   {
    "src": "\/android-icon-36x36.png",

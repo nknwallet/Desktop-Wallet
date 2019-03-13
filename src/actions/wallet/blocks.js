@@ -4,13 +4,13 @@ import store from 'Root/store';
 import types from 'Root/actions';
 
 export default async () => new Promise((resolve, reject) => {
-  fetch('https://api.nknx.org/blocks')
+  fetch('https://testnet.nkn.org/api/v1/block_list/0')
     .then(res => res.json())
     .then((res) => {
-      const { data } = res;
+      const { Data } = res;
 
       store.dispatch({
-        block: data[0].height,
+        block: Data[0].Height,
         type: types.wallet.BLOCK,
       });
 

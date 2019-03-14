@@ -1,6 +1,6 @@
 {
   "name": "NKNWallet",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "NKNWallet",
   "main": "build/electron.js",
   "homepage": "http://nknwallet.github.io/wallet",
@@ -10,19 +10,21 @@
     "deploy": "./node_modules/.bin/gh-pages -d build",
     "dev": "cross-env NODE_ENV=development ./node_modules/.bin/gulp dev",
     "prod": "cross-env NODE_ENV=production ./node_modules/.bin/gulp prod",
-    "package:linux": "npm run predeploy; ./node_modules/.bin/electron-packager ./ NKNWallet --platform=linux --asar --arch=x64 --icon=./src/images/icons/256x256.png --out=dist --overwrite",
     "package:macos": "npm run predeploy; ./node_modules/.bin/electron-packager ./ NKNWallet --platform=darwin --asar --arch=x64 --icon=./src/images/icons/256x256.icns --out=dist --overwrite",
+    "package:linux": "npm run predeploy; ./node_modules/.bin/electron-packager ./ NKNWallet --platform=linux --asar --arch=x64 --icon=./src/images/icons/256x256.png --out=dist --overwrite",
     "package:windows": "npm run predeploy; ./node_modules/.bin/electron-packager ./ NKNWallet --platform=win32 --asar --arch=x64 --icon=./src/images/icons/256x256.ico --out=dist --overwrite",
-    "build:deb": "./node_modules/.bin/electron-installer-debian --arch amd64 --config ./packager/deb.json",
     "build:dmg": "./node_modules/.bin/electron-installer-dmg ./dist/NKNWallet-darwin-x64/NKNWallet.app NKNWallet --icon=./src/images/icons/256x256.icns --out=./dist/installers/ --title=NKNWallet --overwrite",
+    "build:deb": "./node_modules/.bin/electron-installer-debian --arch amd64 --config ./packager/deb.json",
     "build:rpm": "./node_modules/.bin/electron-installer-redhat --src ./dist/NKNWallet-linux-x64 --arch x86_64 --config ./packager/rpm.json",
     "build:flatpak": "./node_modules/.bin/electron-installer-flatpak --src ./dist/NKNWallet-linux-x64 --arch x86_64 --config ./packager/flatpak.json",
     "build:snap": "./node_modules/.bin/electron-installer-snap --src=./dist/NKNWallet-linux-x64 --name NKNWallet --dest=./dist/installer",
-    "release:deb": "npm run package:linux; npm run build:deb",
+    "build:windows": "nodejs packager/win.js",
     "release:dmg": "npm run package:macos; npm run build:dmg",
+    "release:deb": "npm run package:linux; npm run build:deb",
     "release:rpm": "npm run package:linux; npm run build:rpm",
     "release:flatpak": "npm run package:linux; npm run build:flatpak",
-    "release:snap": "npm run package:linux; npm run build:snap"
+    "release:snap": "npm run package:linux; npm run build:snap",
+    "release:windows": "npm run package:windows; npm run build:windows"
   },
   "repository": "https://github.com/nknwallet/desktopwallet",
   "keywords": [

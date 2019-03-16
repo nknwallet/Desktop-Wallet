@@ -1,6 +1,8 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
+import language from 'Root/helpers/language';
 import noInternetIcon from 'Root/images/nointernet.svg';
 import internetAction from 'Root/actions/other/internet';
 
@@ -18,9 +20,9 @@ class NoInternet extends Component {
       <div className={styles.container}>
         <img src={noInternetIcon} alt="No Internet" className={styles.noInternet} />
 
-        <p className={styles.title}>Internet not connecting!</p>
+        <p className={styles.title}>{language.internetNotConnecting[this.props.language]}</p>
 
-        <p className={styles.info}>Please check your connection to internet.</p>
+        <p className={styles.info}>{language.pleaseCheckYourInternet[this.props.language]}</p>
 
         <button onClick={this.handleRefresh} className={styles.button}>
           Refresh
@@ -30,4 +32,6 @@ class NoInternet extends Component {
   }
 }
 
-export default withRouter(NoInternet);
+export default withRouter(connect(state => ({
+  language: state.language,
+}))(NoInternet));

@@ -1,7 +1,11 @@
 @import '~Root/styles/mixins.less';
 
+:local(.page) {
+  display: flex;
+}
+
 :local(.container) {
-  .container();
+  padding: 84px 150px 0 72px;
 }
 
 :local(.title) {
@@ -27,5 +31,11 @@
     &:hover, &:active {
       color: #333;
     }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  :local(.container) {
+    padding: 20px;
   }
 }

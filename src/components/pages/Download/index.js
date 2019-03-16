@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import copyText from 'Root/helpers/copy';
 import copyIcon from 'Root/images/copy.svg';
+import language from 'Root/helpers/language';
 import download from 'Root/helpers/download';
 import walletIcon from 'Root/images/wallet.svg';
 import rightArrowIcon from 'Root/images/right-arrow.svg';
@@ -33,15 +34,15 @@ class DownloadWindow extends Component {
         </div>
 
         <p className={styles.infoText}>
-          Download your wallet file and save
+          {language.downloadYourWallet[this.props.language]}
         </p>
 
         <p className={styles.infoText2}>
-          the private key
+          {language.thePrivateKey[this.props.language]}
         </p>
 
         <div className={styles.values}>
-          <TextLabel>Your private key</TextLabel>
+          <TextLabel>{language.yourPrivateKey[this.props.language]}</TextLabel>
 
           <div className={styles.valueContainer}>
             <div className={styles.value}>{this.props.wallet.wallet.getPrivateKey()}</div>
@@ -55,7 +56,7 @@ class DownloadWindow extends Component {
             </div>
           </div>
 
-          <TextLabel>Your address</TextLabel>
+          <TextLabel>{language.yourAddress[this.props.language]}</TextLabel>
 
           <div className={styles.valueContainer}>
             <div className={styles.value}>{this.props.wallet.wallet.address}</div>
@@ -76,7 +77,7 @@ class DownloadWindow extends Component {
             color="blue"
             onClick={this.handleDownload}
           >
-            Download
+            {language.download[this.props.language]}
           </Button>
 
           <Button
@@ -93,8 +94,7 @@ class DownloadWindow extends Component {
         </div>
 
         <p className={styles.note}>
-          Note: Keep your private key very safely, because anyone with the
-          private key can rebuild this wallet!
+          {language.noteKeepYourPrivate[this.props.language]}
         </p>
       </div>
     );
@@ -103,4 +103,5 @@ class DownloadWindow extends Component {
 
 export default withRouter(connect(state => ({
   wallet: state.wallet,
+  language: state.language,
 }))(DownloadWindow));

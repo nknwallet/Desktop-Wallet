@@ -7,7 +7,7 @@ import styles from './styles.less';
 
 function Page(props) {
   return (
-    <div style={{ display: 'flex' }}>
+    <div className={styles.page}>
       <Background />
 
       <div className={styles.container}>

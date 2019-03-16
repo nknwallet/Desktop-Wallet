@@ -1,20 +1,22 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import language from 'Root/helpers/language';
 import newLogo from 'Root/images/newLogo.png';
 
 import styles from './styles.less';
 
-function Background() {
+function Background(props) {
   return (
     <div className={styles.background}>
       <p className={styles.nknName}>NKN</p>
-      <p className={styles.walletName}>Wallet</p>
+      <p className={styles.walletName}>{language.wallet[props.language]}</p>
       <div className={styles.details}>
-        Open Source
+        {language.openSource[props.language]}
         <div className={styles.circle} />
-        Fast
+        {language.fast[props.language]}
         <div className={styles.circle} />
-        Safe
+        {language.safe[props.language]}
       </div>
 
       <div className={styles.logo} />
@@ -24,4 +26,6 @@ function Background() {
   );
 }
 
-export default Background;
+export default connect(state => ({
+  language: state.language,
+}))(Background);

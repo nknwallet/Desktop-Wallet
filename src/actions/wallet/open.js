@@ -2,6 +2,7 @@ import nknWallet from 'nkn-wallet';
 
 import store from 'Root/store';
 import types from 'Root/actions';
+import language from 'Root/helpers/language';
 
 export default async ({
   push,
@@ -11,11 +12,12 @@ export default async ({
   name = 'MyWallet',
 }) => {
   const wallet = nknWallet.loadJsonWallet(JSON.stringify(file), password);
+  const currentLanguage = store.getState().language;
 
   if (wallet.code === 3) {
     setState({
       errors: {
-        password: 'Password is incorrect.',
+        password: language.passwordIsIncorrect[currentLanguage],
       },
     });
 
@@ -25,7 +27,7 @@ export default async ({
   if (wallet.code === 4) {
     setState({
       errors: {
-        file: 'Invalid file format.',
+        file: language.invalidFileFormat[currentLanguage],
       },
     });
 
@@ -35,7 +37,7 @@ export default async ({
   if (wallet.code) {
     setState({
       errors: {
-        file: 'Error.',
+        file: language.error[currentLanguage],
       },
     });
   }

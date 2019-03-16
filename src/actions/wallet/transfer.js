@@ -2,6 +2,7 @@ import React from 'react';
 
 import store from 'Root/store';
 import types from 'Root/actions';
+import language from 'Root/helpers/language';
 import SuccessfulTransfer from 'Root/components/pages/Modals/SuccessfulTransfer';
 
 export default async ({
@@ -11,11 +12,12 @@ export default async ({
   setState,
 }) => {
   const realPass = global.localStorage.getItem('password');
+  const currentLanguage = store.getState().language;
 
   if (realPass !== password) {
     setState({
       errors: {
-        password: 'Password is incorrect.',
+        password: language.passwordIsIncorrect[currentLanguage],
       },
     });
 
@@ -29,7 +31,7 @@ export default async ({
   if (Number.parseFloat(amount) > balance) {
     setState({
       errors: {
-        amount: 'Not enough balance.',
+        amount: language.notEnoughBalance[currentLanguage],
       },
     });
 

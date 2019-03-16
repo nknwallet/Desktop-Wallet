@@ -1,17 +1,21 @@
+import { connect } from 'react-redux';
 import React, { Fragment, Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+import language from 'Root/helpers/language';
 import Page from 'Root/components/tools/Page';
 import openWalletAction from 'Root/actions/wallet/open';
 import TextField from 'Root/components/tools/TextField';
 import TextLabel from 'Root/components/tools/TextField/Label';
 
-const links = (
-  <Fragment>
-    <Link to="/restore-wallet">Restore from private key!</Link>
-    <Link to="/create-wallet">Create wallet</Link>
-  </Fragment>
-);
+function Links(props) {
+  return (
+    <Fragment>
+      <Link to="/restore-wallet">{language.restoreFromPrivateKey[props.language]}</Link>
+      <Link to="/create-wallet">{language.createWallet[props.language]}</Link>
+    </Fragment>
+  );
+}
 
 class OpenWallet extends Component {
   state = {
@@ -34,7 +38,7 @@ class OpenWallet extends Component {
 
     if (!this.password) {
       hasError = true;
-      errors.password = 'This field is not valid.';
+      errors.password = language.thisFieldIsNotValid[this.props.language];
     }
 
     if (this.file && this.file.error) {
@@ -46,7 +50,7 @@ class OpenWallet extends Component {
       data = JSON.parse(this.file.data);
     } catch (err) {
       hasError = true;
-      errors.file = 'File format must be JSON or DAT.';
+      errors.file = language.fileFormatMustBe[this.props.language];
     }
 
     this.setState({
@@ -69,30 +73,32 @@ class OpenWallet extends Component {
   render() {
     return (
       <Page
-        links={links}
-        buttonTitle="OPEN"
-        title="OPEN WALLET"
         handleSubmit={this.handleSubmit}
+        links={<Links language={this.props.language} />}
+        buttonTitle={language.open[this.props.language].toUpperCase()}
+        title={language.openWallet[this.props.language].toUpperCase()}
       >
-        <TextLabel>Wallet file to open</TextLabel>
+        <TextLabel>{language.walletFileToOpen[this.props.language]}</TextLabel>
         <TextField
           required
           type="upload"
           error={this.state.errors.file}
-          placeholder="Upload wallet file"
           inputRef={(r) => { this.file = r; }}
+          placeholder={language.uploadWalletFile[this.props.language]}
         />
 
-        <TextLabel>Password</TextLabel>
+        <TextLabel>{language.password[this.props.language]}</TextLabel>
         <TextField
           type="password"
           error={this.state.errors.password}
           inputRef={(r) => { this.password = r; }}
-          placeholder="Password of the wallet to open"
+          placeholder={language.passwordOfTheWalletToOpen[this.props.language]}
         />
       </Page>
     );
   }
 }
 
-export default withRouter(OpenWallet);
+export default withRouter(connect(state => ({
+  language: state.language,
+}))(OpenWallet));

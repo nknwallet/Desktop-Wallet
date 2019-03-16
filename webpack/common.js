@@ -62,6 +62,7 @@ module.exports = {
       NODE_ENV: 'development',
     }),
   ],
+  watch: true,
   target: 'node',
   externals: [
     nodeExternals({

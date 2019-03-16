@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
+import language from 'Root/helpers/language';
 import logoutIcon from 'Root/images/logout.png';
 import refreshIcon from 'Root/images/refresh.png';
 import logoutAction from 'Root/actions/wallet/logout';
@@ -32,8 +33,8 @@ class Nav extends Component {
         />
 
         <p>
-          Block:
-          &nbsp;
+          {language.block[this.props.language]}
+          :&nbsp;
           {this.props.wallet.block}
         </p>
 
@@ -49,4 +50,5 @@ class Nav extends Component {
 
 export default withRouter(connect(state => ({
   wallet: state.wallet,
+  language: state.language,
 }))(Nav));

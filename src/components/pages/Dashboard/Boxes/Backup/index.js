@@ -3,6 +3,7 @@ import React, { Component } from 'react';
 
 import Box from 'Root/components/tools/Box';
 import download from 'Root/helpers/download';
+import language from 'Root/helpers/language';
 import openPrivateKeyModal from 'Root/actions/modal/privateKey';
 
 import styles from './styles.less';
@@ -18,26 +19,33 @@ class Backup extends Component {
 
   render() {
     return (
-      <Box title="Backup" width={309} height={249} line>
+      <Box
+        line
+        width={309}
+        height={249}
+        title={language.backup[this.props.language]}
+      >
         <div className={styles.desciption}>
-          <p className={styles.textGrey}>Download Wallet from here</p>
+          <p className={styles.textGrey}>
+            {language.downloadWalletFromHere[this.props.language]}
+          </p>
 
           <button
             type="button"
             className={styles.button}
             onClick={this.handleDownloadClick}
           >
-            Download
+            {language.download[this.props.language]}
           </button>
 
-          <p className={styles.textGrey2}>Showing your private key</p>
+          <p className={styles.textGrey2}>{language.showingYourPrivateKey[this.props.language]}</p>
 
           <button
             type="button"
             className={styles.button}
             onClick={this.handlePrivateKeyClick}
           >
-            Show private key
+            {language.showPrivateKey[this.props.language]}
           </button>
         </div>
       </Box>
@@ -47,4 +55,5 @@ class Backup extends Component {
 
 export default connect(state => ({
   wallet: state.wallet,
+  language: state.language,
 }))(Backup);

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Box from 'Root/components/tools/Box';
+import language from 'Root/helpers/language';
 import logoIcon from 'Root/images/logo-small.png';
 
 import styles from './styles.less';
@@ -18,7 +19,8 @@ function Balance(props) {
         </div>
 
         <div>
-          <p className={styles.title}>Available Balance</p>
+          <p className={styles.title}>{language.availableBalance[props.language]}</p>
+
           <p className={styles.balanceNumber}>
             {props.wallet.balance}
             &nbsp;
@@ -32,4 +34,5 @@ function Balance(props) {
 
 export default connect(state => ({
   wallet: state.wallet,
+  language: state.language,
 }))(Balance);

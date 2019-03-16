@@ -3,6 +3,7 @@ import shortid from 'shortid';
 import { connect } from 'react-redux';
 
 import Box from 'Root/components/tools/Box';
+import language from 'Root/helpers/language';
 
 import styles from './styles.less';
 import Transaction from './Transaction';
@@ -11,7 +12,11 @@ function Transactions(props) {
   const transactions = props.transactions.slice(0, 4);
 
   return (
-    <Box title="Last Transactions" width={691} height={246}>
+    <Box
+      width={691}
+      height={246}
+      title={language.lastTransactions[props.language]}
+    >
       <div className={styles.labels}>
         <p className={styles.label1}>Height</p>
         <p className={styles.label2}>Txid</p>
@@ -32,5 +37,6 @@ function Transactions(props) {
 }
 
 export default connect(state => ({
+  language: state.language,
   transactions: state.wallet.transactions,
 }))(Transactions);

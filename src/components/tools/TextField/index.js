@@ -1,8 +1,10 @@
 import classnames from 'classnames';
+import { connect } from 'react-redux';
 import React, { Fragment, Component } from 'react';
 
 import eyeOn from 'Root/images/eye-on.svg';
 import eyeOff from 'Root/images/eye-off.svg';
+import language from 'Root/helpers/language';
 import uploadIcon from 'Root/images/upload.png';
 
 import Error from './Error';
@@ -40,7 +42,7 @@ class TextField extends Component {
 
     if (!file) {
       inputRef({
-        error: 'No file selected!',
+        error: language.noFileSelected[this.props.language],
       });
 
       return;
@@ -136,4 +138,6 @@ class TextField extends Component {
   }
 }
 
-export default TextField;
+export default connect(state => ({
+  language: state.language,
+}))(TextField);

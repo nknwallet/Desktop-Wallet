@@ -23,4 +23,7 @@ export default {
     ONLINE: 'internet/ONLINE',
     OFFLINE: 'internet/OFFLINE',
   },
+  language: {
+    CHANGE: 'language/CHANGE',
+  },
 };

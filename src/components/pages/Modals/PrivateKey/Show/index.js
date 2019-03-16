@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 
 import copyText from 'Root/helpers/copy';
 import copyIcon from 'Root/images/copy.svg';
+import language from 'Root/helpers/language';
 import closeModalAction from 'Root/actions/modal/close';
 
 import styles from './styles.less';
@@ -23,7 +24,7 @@ class Show extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <p className={styles.title}>Private key</p>
+        <p className={styles.title}>{language.privateKey[this.props.language]}</p>
 
         <div className={styles.privateKeyContainer}>
           <p className={styles.privateKey}>{this.state.privateKey}</p>
@@ -37,7 +38,7 @@ class Show extends Component {
         </div>
 
         <button type="button" onClick={this.handleClick} className={styles.button}>
-          OK
+          {language.ok[this.props.language]}
         </button>
       </div>
     );
@@ -46,4 +47,5 @@ class Show extends Component {
 
 export default connect(state => ({
   wallet: state.wallet,
+  language: state.language,
 }))(Show);

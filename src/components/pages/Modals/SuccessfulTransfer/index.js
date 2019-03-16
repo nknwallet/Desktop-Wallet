@@ -1,6 +1,8 @@
-import React, { Component } from 'react';
 import { shell } from 'electron';
+import { connect } from 'react-redux';
+import React, { Component } from 'react';
 
+import language from 'Root/helpers/language';
 import failureIcon from 'Root/images/error.svg';
 import closeModalAction from 'Root/actions/modal/close';
 import successfulIcon from 'Root/images/successful.svg';
@@ -30,7 +32,10 @@ class SuccessfulTransfer extends Component {
         />
 
         <p className={styles.title}>
-          {this.props.failure ? 'ERROR' : 'Successful Sending'}
+          {this.props.failure
+            ? language.error[this.props.language].toUpperCase()
+            : language.successfulSending[this.props.language]
+          }
         </p>
 
         <a
@@ -42,11 +47,13 @@ class SuccessfulTransfer extends Component {
         </a>
 
         <button type="button" onClick={this.handleClick} className={styles.button}>
-          OK
+          {language.ok[this.props.language]}
         </button>
       </div>
     );
   }
 }
 
-export default SuccessfulTransfer;
+export default connect(state => ({
+  language: state.language,
+}))(SuccessfulTransfer);

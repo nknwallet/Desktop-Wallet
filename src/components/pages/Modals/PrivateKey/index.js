@@ -1,7 +1,9 @@
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
 import eyeOn from 'Root/images/eye-on.svg';
 import eyeOff from 'Root/images/eye-off.svg';
+import language from 'Root/helpers/language';
 import showPrivateKeyAction from 'Root/actions/other/showPrivateKey';
 
 import styles from './styles.less';
@@ -32,16 +34,16 @@ class ShowPrivateKey extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <p className={styles.title}>Showing private key of your wallet</p>
+        <p className={styles.title}>{language.showingYourPrivateKey[this.props.language]}</p>
 
-        <p className={styles.label}>Password</p>
+        <p className={styles.label}>{language.password[this.props.language]}</p>
 
         <div className={styles.inputContainer}>
           <input
             type={this.state.type}
             className={styles.input}
             ref={(c) => { this.input = c; }}
-            placeholder="Your wallet password"
+            placeholder={language.yourWalletPassword[this.props.language]}
           />
 
           <img
@@ -52,7 +54,6 @@ class ShowPrivateKey extends Component {
           />
         </div>
 
-
         <p className={styles.error}>{this.state.error}</p>
 
         <button
@@ -60,11 +61,13 @@ class ShowPrivateKey extends Component {
           className={styles.button}
           onClick={this.handleShow}
         >
-          Show
+          {language.show[this.props.language]}
         </button>
       </div>
     );
   }
 }
 
-export default ShowPrivateKey;
+export default connect(state => ({
+  language: state.language,
+}))(ShowPrivateKey);

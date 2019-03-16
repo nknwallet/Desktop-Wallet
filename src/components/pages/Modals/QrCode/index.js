@@ -1,6 +1,8 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
+import language from 'Root/helpers/language';
+
 import styles from './styles.less';
 
 function QrCodeModal(props) {
@@ -10,11 +12,14 @@ function QrCodeModal(props) {
 
       <div className={styles.line} />
 
-      <p className={styles.text}>SCAN QRCODE</p>
+      <p className={styles.text}>
+        {language.scanQrCode[props.language]}
+      </p>
     </div>
   );
 }
 
 export default connect(state => ({
   wallet: state.wallet,
+  language: state.language,
 }))(QrCodeModal);

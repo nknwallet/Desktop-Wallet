@@ -66,7 +66,10 @@ module.exports = {
   target: 'node',
   externals: [
     nodeExternals({
-      whitelist: ['rodal/lib/rodal.css'],
+      whitelist: [
+        'rodal/lib/rodal.css',
+        'rc-dropdown/assets/index.css',
+      ],
     }),
   ],
   node: {

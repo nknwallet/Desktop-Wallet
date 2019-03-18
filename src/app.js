@@ -8,6 +8,7 @@ import 'Root/styles/main.less';
 import store from './store';
 import App from './components';
 import history from './history';
+import 'rc-dropdown/assets/index.css';
 import checkToken from './actions/wallet/checkToken';
 import checkInternet from './actions/other/checkInternet';
 

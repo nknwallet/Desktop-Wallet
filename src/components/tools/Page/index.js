@@ -2,6 +2,7 @@ import React from 'react';
 
 import Button from 'Root/components/tools/Button';
 import Background from 'Root/components/pages/Background';
+import LanguageSelect from 'Root/components/tools/LanguageSelect';
 
 import styles from './styles.less';
 
@@ -9,6 +10,8 @@ function Page(props) {
   return (
     <div className={styles.page}>
       <Background />
+
+      <LanguageSelect />
 
       <div className={styles.container}>
         <form action="/" method="POST" onSubmit={props.handleSubmit}>

@@ -5,7 +5,12 @@
 }
 
 :local(.container) {
+  position: relative;
   padding: 84px 150px 0 72px;
+}
+
+:local(.background) {
+  width: 45%;
 }
 
 :local(.title) {
@@ -34,8 +39,48 @@
   }
 }
 
-@media only screen and (max-width: 600px) {
+:local(.backgroundResponsive) {
+  width: 100%;
+  height: 190px;
+  display: none;
+  padding: 48px 0 48px 18px;
+  background-image: linear-gradient(117deg, @start-background, @end-background);
+
+  p {
+    color: white;
+    font-size: 22px;
+    padding-top: 15px;
+    font-weight: bold;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  :local(.page) {
+    flex-direction: column;
+  }
+
   :local(.container) {
-    padding: 20px;
+    padding: 20px 10px;
+  }
+
+  :local(.background) {
+    display: none;
+  }
+
+  :local(.backgroundResponsive) {
+    display: block;
+  }
+
+  :local(.links) {
+    width: auto;
+    flex-direction: column;
+
+    a {
+      padding-top: 20px;
+    }
+  }
+
+  :local(.title) {
+    display: none;
   }
 }

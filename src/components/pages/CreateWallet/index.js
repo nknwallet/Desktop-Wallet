@@ -83,8 +83,8 @@ class CreateWallet extends Component {
       <Page
         handleSubmit={this.handleSubmit}
         links={<Links language={this.props.language} />}
-        title={language.createNewWallet[this.props.language]}
         buttonTitle={language.create[this.props.language].toUpperCase()}
+        title={language.createNewWallet[this.props.language].toUpperCase()}
       >
         <TextLabel>{language.walletName[this.props.language]}</TextLabel>
         <TextField

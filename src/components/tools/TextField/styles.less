@@ -32,8 +32,8 @@
   display: flex;
   font-size: 12.4px;
   border-radius: 2px;
-  border: 2px solid #e0e3eb;
   transition: border 300ms;
+  border: 2px solid #e0e3eb;
   background-color: #f8f9fc;
 
   &:active, &:focus {
@@ -69,5 +69,11 @@
   img {
     width: 18px;
     height: 24px;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  :local(.container) {
+    width: 100%;
   }
 }

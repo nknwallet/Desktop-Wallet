@@ -21,13 +21,13 @@ class Dashboard extends Component {
         <Nav />
 
         <div className={styles.info}>
-          <div className={styles.column1}>
+          <div className={styles.column}>
             <Price />
 
             <Transactions />
           </div>
 
-          <div className={styles.column2}>
+          <div className={styles.column}>
             <Balance />
 
             <Account />

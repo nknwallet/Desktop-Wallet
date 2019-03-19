@@ -10,3 +10,21 @@
   justify-content: center;
   align-items: flex-start;
 }
+
+@media only screen and (max-width: 1100px) {
+  :local(.info) {
+    align-self: center;
+    align-items: center;
+    align-content: center;
+    justify-content: center;
+    flex-direction: column-reverse;
+  }
+
+  :local(.column) {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+  }
+}

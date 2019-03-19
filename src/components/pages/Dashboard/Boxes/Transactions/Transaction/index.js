@@ -3,6 +3,7 @@ import { shell } from 'electron';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
+import shortHash from 'Root/helpers/shortHash';
 import redArrow from 'Root/images/redArrow.png';
 import greenArrow from 'Root/images/greenArrow.png';
 
@@ -32,8 +33,20 @@ class Transaction extends Component {
           {this.props.data.Hash}
         </a>
 
+        <a
+          onClick={this.handleClick}
+          className={styles.shortHash}
+          href={`https://testnet.nkn.org/detail/tx/${this.props.data.Hash}`}
+        >
+          {shortHash(this.props.data.Hash)}
+        </a>
+
         <p className={styles.value}>
           {this.props.data.Value}
+        </p>
+
+        <p className={styles.shortValue}>
+          {Number.parseFloat(this.props.data.Value, 10).toPrecision(6)}
         </p>
 
         <p className={styles.time}>

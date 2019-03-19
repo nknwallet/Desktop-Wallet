@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React, { Component } from 'react';
 
 import refreshInterval from 'Root/actions/wallet/refreshInterval';
@@ -21,7 +22,7 @@ class Dashboard extends Component {
         <Nav />
 
         <div className={styles.info}>
-          <div className={styles.column}>
+          <div className={classnames(styles.column, styles.column1)}>
             <Price />
 
             <Transactions />

@@ -11,6 +11,12 @@
   align-items: flex-start;
 }
 
+@media only screen and (max-width: 700px) {
+  :local(.column1) > div:first-child {
+    display: none;
+  }
+}
+
 @media only screen and (max-width: 1100px) {
   :local(.info) {
     align-self: center;

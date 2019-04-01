@@ -3,7 +3,7 @@
 :local(.container) {
   height: 43px;
   display: flex;
-  min-width: 200%;
+  min-width: 100%;
   position: relative;
   align-items: center;
   border-top: 1px solid #f4f4f4;
@@ -15,7 +15,6 @@
   font-size: 10px;
   font-weight: 600;
   position: absolute;
-  font-family: SFProText;
 }
 
 :local(.hash) {
@@ -25,7 +24,6 @@
   line-height: 1.67;
   position: absolute;
   padding-left: 30px;
-  font-family: SFProText;
   transition: color 300ms;
 
   &:hover, &:active {
@@ -41,7 +39,6 @@
   line-height: 1.67;
   position: absolute;
   padding-left: 30px;
-  font-family: SFProText;
   transition: color 300ms;
 
   &:hover, &:active {
@@ -54,7 +51,6 @@
   color: #262728;
   font-size: 10px;
   position: absolute;
-  font-family: SFProText;
 }
 
 :local(.shortValue) {
@@ -63,7 +59,6 @@
   display: none;
   font-size: 10px;
   position: absolute;
-  font-family: SFProText;
 }
 
 :local(.time) {
@@ -72,39 +67,9 @@
   font-size: 10px;
   position: absolute;
   padding-left: 30px;
-  font-family: SFProText;
 }
 
 :local(.arrow) {
   left: 650px;
   position: absolute;
 }
-//
-// @media only screen and (max-width: 1100px) {
-//   :local(.hash) {
-//     display: none;
-//   }
-//
-//   :local(.shortHash) {
-//     left: 45px;
-//     display: block;
-//     padding-left: 25px;
-//   }
-//
-//   :local(.value) {
-//     display: none;
-//   }
-//
-//   :local(.shortValue) {
-//     left: 140px;
-//     display: block;
-//   }
-//
-//   :local(.time) {
-//     left: 160px;
-//   }
-//
-//   :local(.arrow) {
-//     left: 250px;
-//   }
-// }

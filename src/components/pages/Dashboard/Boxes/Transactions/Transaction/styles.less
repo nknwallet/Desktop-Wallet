@@ -1,9 +1,9 @@
 @import '~Root/styles/mixins';
 
 :local(.container) {
-  width: 100%;
   height: 43px;
   display: flex;
+  min-width: 200%;
   position: relative;
   align-items: center;
   border-top: 1px solid #f4f4f4;
@@ -76,35 +76,35 @@
 }
 
 :local(.arrow) {
-  right: 20px;
+  left: 650px;
   position: absolute;
 }
-
-@media only screen and (max-width: 1100px) {
-  :local(.hash) {
-    display: none;
-  }
-
-  :local(.shortHash) {
-    left: 45px;
-    display: block;
-    padding-left: 25px;
-  }
-
-  :local(.value) {
-    display: none;
-  }
-
-  :local(.shortValue) {
-    left: 140px;
-    display: block;
-  }
-
-  :local(.time) {
-    left: 160px;
-  }
-
-  :local(.arrow) {
-    left: 250px;
-  }
-}
+//
+// @media only screen and (max-width: 1100px) {
+//   :local(.hash) {
+//     display: none;
+//   }
+//
+//   :local(.shortHash) {
+//     left: 45px;
+//     display: block;
+//     padding-left: 25px;
+//   }
+//
+//   :local(.value) {
+//     display: none;
+//   }
+//
+//   :local(.shortValue) {
+//     left: 140px;
+//     display: block;
+//   }
+//
+//   :local(.time) {
+//     left: 160px;
+//   }
+//
+//   :local(.arrow) {
+//     left: 250px;
+//   }
+// }

@@ -14,7 +14,8 @@ function Transactions(props) {
   return (
     <Box
       width={691}
-      height={246}
+      height={263}
+      overflow="scroll"
       title={language.lastTransactions[props.language]}
     >
       <div className={styles.labels}>

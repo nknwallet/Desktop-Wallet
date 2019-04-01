@@ -1,6 +1,6 @@
 import moment from 'moment';
-import { shell } from 'electron';
 import { connect } from 'react-redux';
+import { shell } from 'electron';
 import React, { Component } from 'react';
 
 import shortHash from 'Root/helpers/shortHash';

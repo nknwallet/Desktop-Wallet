@@ -36,15 +36,15 @@ const fields = {
   },
   eightToTwentyChars: {
     en: '8-20 characters',
-    zh: '8-20个字符',
+    zh: '8到20个字符',
   },
   defaultToMyWallet: {
     en: 'default to MyWallet',
-    zh: '默认为 MyWallet',
+    zh: '缺省至我的钱包',
   },
   yourPrivateKey: {
     en: 'Your private key',
-    zh: '你的私钥',
+    zh: '您的私钥',
   },
   passwordOfTheWalletToOpen: {
     en: 'Password of the wallet to open',
@@ -56,7 +56,7 @@ const fields = {
   },
   walletFileToOpen: {
     en: 'Wallet file to open',
-    zh: '钱包文件打开',
+    zh: '打开钱包文件',
   },
 };
 
@@ -67,7 +67,7 @@ const loginTitle = {
   },
   restoreFromPrivateKey: {
     en: 'Restore from private key!',
-    zh: '从私钥恢复！',
+    zh: '从私钥恢复',
   },
   restore: {
     en: 'Restore',
@@ -83,11 +83,11 @@ const loginTitle = {
   },
   createWallet: {
     en: 'Create Wallet',
-    zh: '创造钱包',
+    zh: '创建钱包',
   },
   createNewWallet: {
     en: 'Create New Wallet',
-    zh: '创造新的钱包',
+    zh: '创建新钱包',
   },
   create: {
     en: 'Create',
@@ -98,31 +98,31 @@ const loginTitle = {
 const errors = {
   thisFieldIsNotValid: {
     en: 'This field is not valid.',
-    zh: '此字段无效',
+    zh: '无效字段',
   },
   passwordAndConfirmNotTheSame: {
     en: 'Password and confirm password are not the same!',
-    zh: '密码和确认密码不一样！',
+    zh: '确认密码不匹配',
   },
   fileFormatMustBe: {
     en: 'File format must be JSON or DAT.',
-    zh: '文件格式必须是JSON或DAT',
+    zh: '必须是JSON或DAT文件格式',
   },
   noFileSelected: {
     en: 'No file selected!',
-    zh: '没有选择文件！',
+    zh: '没有选中文件',
   },
   internetNotConnecting: {
     en: 'Internet not connecting!',
-    zh: '互联网没有连接！',
+    zh: '没有连接网络',
   },
   pleaseCheckYourInternet: {
     en: 'Please check your connection to internet.',
-    zh: '请检查您与互联网的连接',
+    zh: '请检查您的网络连接',
   },
   pleaseEnterANumber: {
     en: 'Please enter a number.',
-    zh: '请输入一个号码',
+    zh: '请输入数字',
   },
   passwordIsIncorrect: {
     en: 'Password is incorrect.',
@@ -134,22 +134,22 @@ const errors = {
   },
   invalidFileFormat: {
     en: 'Invalid file format.',
-    zh: '文件格式无效',
+    zh: '无效的文件格式',
   },
 };
 
 const dashboard = {
   block: {
     en: 'Block',
-    zh: '块',
+    zh: '区块',
   },
   price: {
     en: 'Price',
-    zh: '价钱',
+    zh: '价格',
   },
   lastTransactions: {
     en: 'Last Transactions',
-    zh: '最后交易',
+    zh: '最后一笔交易',
   },
   availableBalance: {
     en: 'Available Balance',
@@ -173,7 +173,7 @@ const dashboard = {
   },
   backup: {
     en: 'Backup',
-    zh: '备用',
+    zh: '备份',
   },
   send: {
     en: 'Send',
@@ -189,53 +189,53 @@ const dashboard = {
   },
   account: {
     en: 'Account',
-    zh: '帐户',
+    zh: '账户',
   },
 };
 
 const download = {
   downloadYourWallet: {
     en: 'Download your wallet file and save',
-    zh: '下载您的钱包文件并保存',
+    zh: '下载您的钱包文件并保存私钥',
   },
   thePrivateKey: {
     en: 'the private key',
-    zh: '私钥',
+    zh: '',
   },
   yourAddress: {
     en: 'Your address',
-    zh: '你的地址',
+    zh: '您的地址',
   },
   noteKeepYourPrivate: {
     en: 'Note: Keep your private key very safely, because anyone with the private key can rebuild this wallet!',
-    zh: '注意：保密私钥Show非常安全，因为拥有私钥的任何人都可以重建这个钱包！',
+    zh: '提示：请安全保管您的私钥，任何人知道您的私钥后都可以动用钱包资产',
   },
 };
 
 const modals = {
   transferNKNTo: {
     en: 'Transfer NKN to',
-    zh: '将NKN转移到',
+    zh: '转NKN至',
   },
   transferToAddress: {
     en: 'Transfer to address',
-    zh: '转移到地址',
+    zh: '转至地址',
   },
   amount: {
     en: 'Amount',
-    zh: '量',
+    zh: '金额',
   },
   howMuchNKNToTransfer: {
     en: 'How much NKN to transfer',
-    zh: 'NKN要转移多少',
+    zh: '转多少NKN',
   },
   yourWalletPassword: {
     en: 'Your wallet password',
-    zh: '你的钱包密码',
+    zh: '您的钱包密码',
   },
   ok: {
     en: 'OK',
-    zh: '好',
+    zh: '确认',
   },
   error: {
     en: 'Error',
@@ -251,7 +251,7 @@ const modals = {
   },
   show: {
     en: 'Show',
-    zh: '节目',
+    zh: '显示',
   },
 };
 

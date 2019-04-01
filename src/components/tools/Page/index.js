@@ -11,6 +11,8 @@ import styles from './styles.less';
 function Page(props) {
   return (
     <div className={styles.page}>
+      <LanguageSelect />
+
       <div className={styles.background}>
         <Background />
       </div>
@@ -24,8 +26,6 @@ function Page(props) {
       </div>
 
       <div className={styles.container}>
-        <LanguageSelect />
-
         <form action="/" method="POST" onSubmit={props.handleSubmit}>
           <p className={styles.title}>{props.title}</p>
 

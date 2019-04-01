@@ -7,8 +7,10 @@ function Box(props) {
     <div
       className={styles.box}
       style={{
+        overflowY: 'hidden',
         width: `${props.width}px`,
         height: `${props.height}px`,
+        overflowX: props.overflow || 'visible',
       }}
     >
       {props.title && <p className={styles.title}>{props.title}</p>}

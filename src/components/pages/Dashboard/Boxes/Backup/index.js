@@ -22,7 +22,7 @@ class Backup extends Component {
       <Box
         line
         width={309}
-        height={249}
+        height={263}
         title={language.backup[this.props.language]}
       >
         <div className={styles.desciption}>

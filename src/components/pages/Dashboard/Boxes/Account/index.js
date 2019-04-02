@@ -58,7 +58,7 @@ class Account extends Component {
             <div className={styles.submitButton}>
               <img src={submitIcon} alt="Submit" className={styles.submitIcon} />
 
-              <p>{language.send[this.props.language].toUpperCase()}</p>
+              <p>{language.send[this.props.language]}</p>
             </div>
           </button>
         </div>

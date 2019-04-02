@@ -20,7 +20,7 @@ class LanguageSelect extends Component {
     const menu = (
       <Menu
         onSelect={this.handleSelect}
-        style={{ width: '100px', cursor: 'pointer' }}
+        style={{ width: '120px', cursor: 'pointer' }}
       >
         <MenuItem key="en">
           <div className={styles.language}>

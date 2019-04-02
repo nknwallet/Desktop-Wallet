@@ -14,6 +14,7 @@ export default (state = {}, action) => {
 
     case types.modal.CLOSE: {
       return {
+        ...state,
         visible: false,
       };
     }

@@ -3,6 +3,7 @@ import React from 'react';
 import store from 'Root/store';
 import types from 'Root/actions';
 import language from 'Root/helpers/language';
+import currentWindow from 'Root/helpers/currentWindow';
 import ShowPrivateKeyModal from 'Root/components/pages/Modals/PrivateKey/Show';
 
 export default async ({ password, setState }) => {
@@ -23,10 +24,10 @@ export default async ({ password, setState }) => {
 
   setTimeout(() => {
     store.dispatch({
-      width: 461,
-      height: 262,
       type: types.modal.OPEN,
       children: <ShowPrivateKeyModal />,
+      width: currentWindow().width > 500 ? 461 : 250,
+      height: currentWindow().width > 500 ? 270 : 330,
     });
   }, 500);
 };

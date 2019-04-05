@@ -3,6 +3,7 @@ import React from 'react';
 import store from 'Root/store';
 import types from 'Root/actions';
 import language from 'Root/helpers/language';
+import currentWindow from 'Root/helpers/currentWindow';
 import SuccessfulTransfer from 'Root/components/pages/Modals/SuccessfulTransfer';
 
 export default async ({
@@ -45,19 +46,19 @@ export default async ({
   wallet.wallet.transferTo(address, amount, password).then((data) => {
     setTimeout(() => {
       store.dispatch({
-        width: 461,
-        height: 262,
         type: types.modal.OPEN,
         children: <SuccessfulTransfer hash={data} />,
+        width: currentWindow().width > 500 ? 461 : 250,
+        height: currentWindow().width > 500 ? 262 : 320,
       });
     }, 500);
   }).catch(() => {
     setTimeout(() => {
       store.dispatch({
-        width: 461,
-        height: 262,
         type: types.modal.OPEN,
         children: <SuccessfulTransfer failure />,
+        width: currentWindow().width > 500 ? 461 : 250,
+        height: currentWindow().width > 500 ? 262 : 320,
       });
     }, 500);
   });

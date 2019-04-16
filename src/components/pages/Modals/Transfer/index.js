@@ -1,3 +1,4 @@
+import nknWallet from 'nkn-wallet';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
@@ -12,7 +13,6 @@ class Transfer extends Component {
     errors: {
       amount: '',
       address: '',
-      password: '',
     },
   }
 
@@ -22,7 +22,6 @@ class Transfer extends Component {
     const errors = {
       amount: '',
       address: '',
-      password: '',
     };
 
     let hasError = false;
@@ -32,14 +31,14 @@ class Transfer extends Component {
       errors.address = language.thisFieldIsNotValid[this.props.language];
     }
 
+    if (!nknWallet.verifyAddress(this.address.value)) {
+      hasError = true;
+      errors.address = language.addressIsInvalid[this.props.language];
+    }
+
     if (!this.amount.value) {
       hasError = true;
       errors.amount = language.thisFieldIsNotValid[this.props.language];
-    }
-
-    if (!this.password.value) {
-      hasError = true;
-      errors.password = language.thisFieldIsNotValid[this.props.language];
     }
 
     if (Number.isNaN(Number.parseFloat(this.amount.value))) {
@@ -51,7 +50,6 @@ class Transfer extends Component {
       errors: {
         amount: errors.amount,
         address: errors.address,
-        password: errors.password,
       },
     });
 
@@ -59,7 +57,6 @@ class Transfer extends Component {
       transferMoneyAction({
         amount: this.amount.value,
         address: this.address.value,
-        password: this.password.value,
         setState: this.setState.bind(this),
       });
     }
@@ -88,15 +85,6 @@ class Transfer extends Component {
             placeholder={language.howMuchNKNToTransfer[this.props.language]}
           />
           <p className={styles.error}>{this.state.errors.amount}</p>
-
-          <TextLabel>{language.password[this.props.language]}</TextLabel>
-          <input
-            type="password"
-            className={styles.input}
-            ref={(c) => { this.password = c; }}
-            placeholder={language.yourWalletPassword[this.props.language]}
-          />
-          <p className={styles.error}>{this.state.errors.password}</p>
 
           <button type="submit" className={styles.button}>
             {language.send[this.props.language].toUpperCase()}

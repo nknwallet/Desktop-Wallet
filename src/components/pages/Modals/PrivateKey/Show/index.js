@@ -10,7 +10,7 @@ import styles from './styles.less';
 
 class Show extends Component {
   state = {
-    privateKey: this.props.wallet.wallet.getPrivateKey(),
+    privateKey: this.props.wallet.wallet.getSeed(),
   }
 
   handleClick = () => {

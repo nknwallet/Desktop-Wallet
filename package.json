@@ -42,7 +42,7 @@
     "fs-extra": "^7.0.1",
     "history": "^4.7.2",
     "moment": "^2.24.0",
-    "nkn-wallet": "^0.2.0",
+    "nkn-wallet": "git://github.com/nknorg/nkn-wallet-js.git#devnet",
     "node-fetch": "^2.3.0",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.6.2",

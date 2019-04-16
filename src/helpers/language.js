@@ -136,6 +136,10 @@ const errors = {
     en: 'Invalid file format.',
     zh: '无效的文件格式',
   },
+  addressIsInvalid: {
+    en: 'Address is invalid.',
+    zh: '地址无效',
+  },
 };
 
 const dashboard = {

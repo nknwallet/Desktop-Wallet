@@ -2,6 +2,10 @@ import store from 'Root/store';
 import types from 'Root/actions';
 import nknWallet from 'nkn-wallet';
 
+nknWallet.configure({
+  rpcAddr: 'https://devnet-seed.nkn.org',
+});
+
 export default async () => new Promise((resolve) => {
   const privateKey = global.localStorage.getItem('privateKey');
 

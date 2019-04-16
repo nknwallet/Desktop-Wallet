@@ -3,6 +3,10 @@ import nknWallet from 'nkn-wallet';
 import store from 'Root/store';
 import types from 'Root/actions';
 
+nknWallet.configure({
+  rpcAddr: 'https://devnet-seed.nkn.org',
+});
+
 export default async ({ push, name, password }) => {
   const wallet = nknWallet.newWallet(password);
 

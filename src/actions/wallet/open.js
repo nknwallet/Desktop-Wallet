@@ -4,6 +4,10 @@ import store from 'Root/store';
 import types from 'Root/actions';
 import language from 'Root/helpers/language';
 
+nknWallet.configure({
+  rpcAddr: 'https://devnet-seed.nkn.org',
+});
+
 export default async ({
   push,
   file,

@@ -7,7 +7,7 @@ import ShowTransferModal from 'Root/components/pages/Modals/Transfer';
 
 export default async () => {
   store.dispatch({
-    height: 453,
+    height: 353,
     type: types.modal.OPEN,
     children: <ShowTransferModal />,
     width: currentWindow().width > 500 ? 461 : 250,

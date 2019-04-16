@@ -4,7 +4,7 @@ import types from 'Root/actions';
 export default async () => new Promise((resolve, reject) => {
   const { wallet } = store.getState().wallet;
 
-  wallet.queryAssetBalance()
+  wallet.getBalance()
     .then((value) => {
       store.dispatch({
         balance: value.toString(),

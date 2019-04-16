@@ -17,7 +17,7 @@ export default async () => new Promise((resolve) => {
   const name = global.localStorage.getItem('name');
   const password = global.localStorage.getItem('password');
 
-  const wallet = nknWallet.restoreWalletByPrivateKey(privateKey, password);
+  const wallet = nknWallet.restoreWalletBySeed(privateKey, password);
 
   store.dispatch({
     name,

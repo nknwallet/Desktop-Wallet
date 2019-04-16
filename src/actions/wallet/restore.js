@@ -9,7 +9,7 @@ export default async ({
   password,
   privateKey,
 }) => {
-  const wallet = nknWallet.restoreWalletByPrivateKey(privateKey, password);
+  const wallet = nknWallet.restoreWalletBySeed(privateKey, password);
 
   store.dispatch({
     name,
@@ -24,7 +24,7 @@ export default async ({
 
   global.localStorage.setItem('name', name);
   global.localStorage.setItem('password', password);
-  global.localStorage.setItem('privateKey', wallet.getPrivateKey());
+  global.localStorage.setItem('privateKey', wallet.getSeed());
 
   push('/loading');
 };

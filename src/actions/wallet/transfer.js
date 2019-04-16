@@ -9,21 +9,9 @@ import SuccessfulTransfer from 'Root/components/pages/Modals/SuccessfulTransfer'
 export default async ({
   amount,
   address,
-  password,
   setState,
 }) => {
-  const realPass = global.localStorage.getItem('password');
   const currentLanguage = store.getState().language;
-
-  if (realPass !== password) {
-    setState({
-      errors: {
-        password: language.passwordIsIncorrect[currentLanguage],
-      },
-    });
-
-    return;
-  }
 
   const { wallet } = store.getState();
 
@@ -43,7 +31,7 @@ export default async ({
     type: types.modal.CLOSE,
   });
 
-  wallet.wallet.transferTo(address, amount, password).then((data) => {
+  wallet.wallet.transferTo(address, amount).then((data) => {
     setTimeout(() => {
       store.dispatch({
         type: types.modal.OPEN,

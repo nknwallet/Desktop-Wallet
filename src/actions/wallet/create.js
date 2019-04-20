@@ -2,9 +2,10 @@ import nknWallet from 'nkn-wallet';
 
 import store from 'Root/store';
 import types from 'Root/actions';
+import { rpcAddr } from 'Root/config.json';
 
 nknWallet.configure({
-  rpcAddr: 'https://devnet-seed.nkn.org',
+  rpcAddr,
 });
 
 export default async ({ push, name, password }) => {

@@ -14,7 +14,7 @@ function Links(props) {
   return (
     <Fragment>
       <Link to="/restore-wallet">{language.restoreFromPrivateKey[props.language]}</Link>
-      <Link to="propslet">{language.openWallet[props.language]}</Link>
+      <Link to="/open-wallet">{language.openWallet[props.language]}</Link>
     </Fragment>
   );
 }

@@ -51,7 +51,7 @@ class DownloadWindow extends Component {
               <img
                 alt="Copy"
                 src={copyIcon}
-                onClick={this.handleCopy(this.props.wallet.wallet.getPrivateKey())}
+                onClick={this.handleCopy(this.props.wallet.wallet.getSeed())}
               />
             </div>
           </div>

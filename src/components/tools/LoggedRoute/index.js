@@ -4,7 +4,7 @@ import { Route, Redirect } from 'react-router-dom';
 
 function LoggedRoute(props) {
   if (!props.token.logged) {
-    return <Redirect to="/restore-wallet" />;
+    return <Redirect to="/login" />;
   }
 
   return (

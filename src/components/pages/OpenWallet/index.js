@@ -1,21 +1,12 @@
 import { connect } from 'react-redux';
-import React, { Fragment, Component } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
 import language from 'Root/helpers/language';
 import Page from 'Root/components/tools/Page';
 import openWalletAction from 'Root/actions/wallet/open';
 import TextField from 'Root/components/tools/TextField';
 import TextLabel from 'Root/components/tools/TextField/Label';
-
-function Links(props) {
-  return (
-    <Fragment>
-      <Link to="/restore-wallet">{language.restoreFromPrivateKey[props.language]}</Link>
-      <Link to="/create-wallet">{language.createWallet[props.language]}</Link>
-    </Fragment>
-  );
-}
 
 class OpenWallet extends Component {
   state = {
@@ -73,8 +64,8 @@ class OpenWallet extends Component {
   render() {
     return (
       <Page
+        back
         handleSubmit={this.handleSubmit}
-        links={<Links language={this.props.language} />}
         buttonTitle={language.open[this.props.language].toUpperCase()}
         title={language.openWallet[this.props.language].toUpperCase()}
       >

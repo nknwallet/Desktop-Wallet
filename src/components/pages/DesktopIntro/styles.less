@@ -1,0 +1,81 @@
+@import '~Root/styles/mixins.less';
+
+:local(.container) {
+  display: flex;
+  min-height: 100vh;
+  text-align: center;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+:local(.title) {
+  .title();
+  font-size: 24px;
+}
+
+:local(.info) {
+  width: 460px;
+  color: #7982a1;
+  font-size: 14px;
+  line-height: 1.36;
+  padding: 15px 0 35px 0;
+}
+
+:local(.button) {
+  width: 200px;
+  color: white;
+  display: flex;
+  padding: 15px;
+  cursor: pointer;
+  border-radius: 4px;
+  align-items: center;
+  justify-content: center;
+  background-color: #072d4f;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.34);
+
+  img {
+    width: 16px;
+    height: 12px;
+    margin-right: 5px;
+  }
+
+  p {
+    font-size: 12px;
+    font-family: "Helvetica Roman";
+  }
+}
+
+:local(.dashboard) {
+  width: 583px;
+  height: 400px;
+  margin-top: 35px;
+}
+
+:local(.back) {
+  top: 35px;
+  left: 100px;
+  display: flex;
+  font-size: 14px;
+  position: absolute;
+
+  img {
+    margin-right: 4px;
+  }
+
+  p {
+    font-family: "Helvetica Roman" !important;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  :local(.back) {
+    top: 25px;
+    left: 50px;
+  }
+
+  :local(.dashboard) {
+    width: 90%;
+    height: auto;
+  }
+}

@@ -18,6 +18,7 @@ export default {
   modal: {
     OPEN: 'modal/OPEN',
     CLOSE: 'modal/CLOSE',
+    CHANGE_MODAL_CONTENT: 'modal/CHANGE_MODAL_CONTENT',
   },
   internet: {
     ONLINE: 'internet/ONLINE',

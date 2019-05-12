@@ -8,7 +8,15 @@ export default (state = {}, action) => {
         width: action.width,
         height: action.height,
         children: action.children,
+        animation: action.animation,
         showCloseButton: action.showCloseButton,
+      };
+    }
+
+    case types.modal.CHANGE_MODAL_CONTENT: {
+      return {
+        ...state,
+        children: action.children,
       };
     }
 

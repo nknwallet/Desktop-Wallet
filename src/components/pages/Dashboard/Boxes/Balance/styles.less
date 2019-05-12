@@ -1,26 +1,72 @@
 @import '~Root/styles/mixins.less';
 
-:local(.balance) {
+:local(.container) {
+  width: 100%;
+  height: 100%;
   display: flex;
-  padding: 21px 28px;
   align-items: center;
+  justify-content: center;
+}
+
+:local(.line) {
+  width: 1px;
+  height: 80%;
+  background-color: #dee0e9;
+}
+
+:local(.nkn) {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
 
   img {
-    width: 47px;
-    height: 50px;
-    margin-right: 44px;
+    width: 22px;
+    height: 24px;
+  }
+
+  p {
+    color: #262728;
+    font-size: 23px;
+    padding-top: 10px;
+    font-family: "Helvetica Bold";
   }
 }
 
-:local(.title) {
-  .title();
-  font-size: 14.8px;
-  padding-bottom: 10px;
+:local(.logoContainer) {
+  display: flex;
+
+  p {
+    color: #9199b6;
+    font-size: 13px;
+    padding-top: 5px;
+    font-family: "Helvetica Roman";
+  }
 }
 
-:local(.balanceNumber) {
-  color: #5093e4;
-  font-weight: 600;
-  font-size: 16.3px;
+:local(.total) {
+  width: 50%;
+  margin-top: 3px;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+:local(.price) {
+  color: #9199b6;
+  font-size: 13px;
+  letter-spacing: 0.9px;
+  font-family: "Helvetica Roman";
+}
+
+:local(.amount) {
+  color: #262728;
+  font-size: 23px;
+  padding-top: 15px;
   font-family: "Helvetica Bold";
+
+  span {
+    font-size: 15px;
+    // margin-top: 10px;
+  }
 }

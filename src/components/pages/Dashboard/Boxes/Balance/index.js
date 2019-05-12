@@ -2,29 +2,37 @@ import React from 'react';
 import { connect } from 'react-redux';
 
 import Box from 'Root/components/tools/Box';
-import language from 'Root/helpers/language';
-import logoIcon from 'Root/images/logo-small.png';
+import logoIcon from 'Root/images/small-logo-grey.png';
 
 import styles from './styles.less';
 
 function Balance(props) {
+  const price = Number.parseFloat(props.wallet.price, 10);
+  const balance = Number.parseFloat(props.wallet.balance, 10);
+
   return (
     <Box
       width={306}
       height={92}
     >
-      <div className={styles.balance}>
-        <div>
-          <img src={logoIcon} alt="Logo" />
+      <div className={styles.container}>
+        <div className={styles.nkn}>
+          <div className={styles.logoContainer}>
+            <img src={logoIcon} alt="Logo" />
+            <p>&nbsp; NKN</p>
+          </div>
+
+          <p>{props.wallet.balance}</p>
         </div>
 
-        <div>
-          <p className={styles.title}>{language.availableBalance[props.language]}</p>
+        <div className={styles.line} />
 
-          <p className={styles.balanceNumber}>
-            {props.wallet.balance}
-            &nbsp;
-            NKN
+        <div className={styles.total}>
+          <p className={styles.price}>Total (USD)</p>
+
+          <p className={styles.amount}>
+            <span>$</span>
+            {(balance * price).toFixed(2)}
           </p>
         </div>
       </div>

@@ -22,35 +22,35 @@ class Transaction extends Component {
     return (
       <div className={styles.container}>
         <p className={styles.height}>
-          {this.props.data.Height}
+          {this.props.data.block_height}
         </p>
 
         <a
           className={styles.hash}
           onClick={this.handleClick}
-          href={`https://testnet.nkn.org/detail/tx/${this.props.data.Hash}`}
+          href={`https://testnet.nkn.org/detail/tx/${this.props.data.hash}`}
         >
-          {this.props.data.Hash}
+          {this.props.data.hash}
         </a>
 
         <a
           onClick={this.handleClick}
           className={styles.shortHash}
-          href={`https://testnet.nkn.org/detail/tx/${this.props.data.Hash}`}
+          href={`https://testnet.nkn.org/detail/tx/${this.props.data.hash}`}
         >
-          {shortHash(this.props.data.Hash)}
+          {shortHash(this.props.data.hash)}
         </a>
 
         <p className={styles.value}>
-          {this.props.data.Value}
+          {this.props.data.nonce}
         </p>
 
         <p className={styles.shortValue}>
-          {Number.parseFloat(this.props.data.Value, 10).toPrecision(6)}
+          {Number.parseFloat(this.props.data.nonce, 10).toPrecision(6)}
         </p>
 
         <p className={styles.time}>
-          {moment(new Date(`${this.props.data.Timestamp} UTC`)).fromNow()}
+          {moment(new Date(`${this.props.data.created_at} UTC`)).fromNow()}
         </p>
 
         <img

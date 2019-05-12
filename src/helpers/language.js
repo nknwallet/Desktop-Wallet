@@ -34,13 +34,17 @@ const fields = {
     en: 'Confirm password',
     zh: '确认密码',
   },
+  eightToTwelveChars: {
+    en: '8-12 characters',
+    zh: '8到12个字符',
+  },
+  defaultToMyWallet: {
+    en: 'default to mywallet',
+    zh: '缺省至我的钱包',
+  },
   eightToTwentyChars: {
     en: '8-20 characters',
     zh: '8到20个字符',
-  },
-  defaultToMyWallet: {
-    en: 'default to MyWallet',
-    zh: '缺省至我的钱包',
   },
   yourPrivateKey: {
     en: 'Your private key',
@@ -139,6 +143,14 @@ const errors = {
   addressIsInvalid: {
     en: 'Address is invalid.',
     zh: '地址无效',
+  },
+  fieldMustBeEightToTwelveCharacters: {
+    en: 'Field must be 8-12 characters',
+    zh: '该字段必须为8-20个字符', // not sure
+  },
+  onlyLowerCaseLetters: {
+    en: 'Field must be only lowercase letters',
+    zh: '字段必须只是小写字母', // not sure
   },
 };
 
@@ -256,6 +268,10 @@ const modals = {
   show: {
     en: 'Show',
     zh: '显示',
+  },
+  transactionSent: {
+    en: 'Transaction Sent',
+    zh: '已发送交易', // not sure
   },
 };
 

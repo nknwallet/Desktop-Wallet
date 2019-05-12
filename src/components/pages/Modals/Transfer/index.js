@@ -87,7 +87,7 @@ class Transfer extends Component {
           <p className={styles.error}>{this.state.errors.amount}</p>
 
           <button type="submit" className={styles.button}>
-            {language.send[this.props.language].toUpperCase()}
+            {language.send[this.props.language]}
           </button>
         </form>
       </div>

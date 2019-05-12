@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
 import language from 'Root/helpers/language';
-import failureIcon from 'Root/images/error.svg';
+import failureIcon from 'Root/images/error.png';
 import closeModalAction from 'Root/actions/modal/close';
 import successfulIcon from 'Root/images/successful.svg';
 
@@ -25,18 +25,20 @@ class SuccessfulTransfer extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <img
-          className={styles.icon}
-          alt="Successful Transaction"
-          src={this.props.failure ? failureIcon : successfulIcon}
-        />
+        <div className={styles.result}>
+          <img
+            className={styles.icon}
+            alt="Successful Transaction"
+            src={this.props.failure ? failureIcon : successfulIcon}
+          />
 
-        <p className={styles.title}>
-          {this.props.failure
-            ? language.error[this.props.language].toUpperCase()
-            : language.successfulSending[this.props.language]
-          }
-        </p>
+          <p className={styles.title}>
+            {this.props.failure
+              ? language.error[this.props.language]
+              : language.transactionSent[this.props.language]
+            }
+          </p>
+        </div>
 
         <a
           className={styles.hash}
@@ -45,6 +47,8 @@ class SuccessfulTransfer extends Component {
         >
           {!this.props.failure && this.props.hash}
         </a>
+
+        <p />
 
         <button type="button" onClick={this.handleClick} className={styles.button}>
           {language.ok[this.props.language]}

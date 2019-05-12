@@ -1,0 +1,29 @@
+:local(.load__icon) {
+  width: 32px;
+  height: 32px;
+  animation: linear load 2s infinite;
+}
+
+:local(.load__iconWrap) {
+  margin: auto;
+  position: relative;
+}
+
+:local(.load) {
+  top: 50%;
+  width: 100%;
+  display: flex;
+  position: absolute;
+  align-items: center;
+  transform: translate(0, -50%);
+}
+
+@keyframes load {
+  from {
+    transform: rotate(0deg) scale(2);
+  }
+
+  to {
+    transform: rotate(360deg) scale(2);
+  }
+}

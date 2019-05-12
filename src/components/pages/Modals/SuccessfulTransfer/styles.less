@@ -1,23 +1,26 @@
 @import '~Root/styles/mixins';
 
 :local(.container) {
+  padding: 100px 40px 0 40px;
+}
+
+:local(.result) {
   display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
+  margin-bottom: 20px;
 }
 
 :local(.icon) {
-  width: 58px;
-  height: 58px;
-  margin-top: 15px;
+  width: 32px;
+  height: 32px;
+  display: inline;
 }
 
 :local(.title) {
   .title();
-  font-size: 17px;
-  padding-top: 24px;
-  padding-bottom: 12px;
+  display: inline;
+  font-size: 18px;
+  padding-top: 5px;
+  padding-left: 15px;
 }
 
 :local(.hash) {
@@ -25,7 +28,6 @@
   font-size: 16px;
   text-align: center;
   word-break: break-all;
-  padding: 15px 30px 5px 30px;
 
   &:hover, &:active {
     color: darken(@blue, 10%);
@@ -33,10 +35,18 @@
 }
 
 :local(.button) {
-  .smallButton();
+  width: 98px;
+  color: @blue;
+  height: 34.2px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-top: 40px;
+  border-radius: 2.3px;
+  background-color: #e1efff;
+  font-family: "Helvetica bold";
+  transition: background-color 300ms;
 
-  width: 87px;
-  height: 34px;
-  margin-top: 15px;
-  font-size: 12.5px;
+  &:hover {
+    background-color: darken(#e1efff, 10%);
+  }
 }

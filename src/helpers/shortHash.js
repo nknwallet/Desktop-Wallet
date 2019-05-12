@@ -1,1 +1,1 @@
-export default hash => `${hash.slice(0, 4)}....${hash.slice(-4)}`;
+export default (hash, count = 4) => `${hash.slice(0, count)}....${hash.slice(-count)}`;

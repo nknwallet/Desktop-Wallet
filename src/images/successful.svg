@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="66px" height="66px" viewBox="0 0 66 66" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 52.3 (67297) - http://www.bohemiancoding.com/sketch -->
-    <title>12799BFE-803D-443A-A05D-09FB80524C0B</title>
+<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 54.1 (76490) - https://sketchapp.com -->
+    <title>95415926-5D99-4B63-A975-8E27FD01719F</title>
     <desc>Created with sketchtool.</desc>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
-        <g id="Successful-sending" transform="translate(-687.000000, -403.000000)" stroke-width="6.4">
-            <g id="Successful---Icon---v2" transform="translate(691.000000, 407.000000)">
-                <path d="M53.4888889,44.4666667 C56.2277778,39.9555556 58,34.8 58,29 C58,13.05 44.95,0 29,0 C13.05,0 0,13.05 0,29 C0,44.95 13.05,58 29,58 C34.6388889,58 39.9555556,56.3888889 44.4666667,53.4888889" id="Circle_4_" stroke="#009863"></path>
-                <path d="M17.7222222,30.6111111 L24.1666667,37.0555556" id="Path" stroke="#8ED561"></path>
-                <path d="M24.1666667,37.0555556 L40.2777778,20.9444444" id="Path" stroke="#8ED561"></path>
+    <g id="New-Version" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Successful-sending" transform="translate(-404.000000, -321.000000)" fill="#4ECE3D" fill-rule="nonzero">
+            <g id="icons8-checked_radio_button_filled" transform="translate(404.000000, 321.000000)">
+                <path d="M16,0 C7.17567071,0 0,7.17567071 0,16 C0,24.8243293 7.17567071,32 16,32 C24.8243293,32 32,24.8243293 32,16 C32,7.17567071 24.8243293,0 16,0 Z M24.7741935,9.29032258 C25.0381935,9.29032258 25.3022255,9.39093574 25.504032,9.59274219 C25.9076449,9.9963551 25.9076449,10.6488062 25.504032,11.0524191 L13.1169352,23.4395159 C12.9156449,23.6408062 12.6513548,23.7419355 12.3870968,23.7419355 C12.1228387,23.7419355 11.8585486,23.6408062 11.6572583,23.4395159 L6.49596779,18.2782255 C6.09235479,17.8746126 6.09235489,17.2221615 6.49596779,16.8185486 C6.8995807,16.4149357 7.55203231,16.4149357 7.95564511,16.8185486 L12.3870968,21.2500005 L24.0443551,9.59274219 C24.2461615,9.39093574 24.5101935,9.29032258 24.7741935,9.29032258 Z" id="Shape"></path>
             </g>
         </g>
     </g>

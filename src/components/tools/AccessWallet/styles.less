@@ -1,0 +1,63 @@
+@import '~Root/styles/mixins';
+
+:local(.container) {
+  width: 465px;
+  height: 80px;
+  cursor: pointer;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 22px;
+  background-color: white;
+  transition: border 300ms;
+  border: 1px solid #e5e5e5;
+  padding: 12px 18px 12px 65px;
+
+  &:hover {
+    border: 1px solid @blue;
+  }
+}
+
+:local(.icon) {
+  top: 12px;
+  left: 18px;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  position: absolute;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: #eef2ff;
+
+  img {
+    width: 15px;
+    height: 15px;
+  }
+}
+
+:local(.title) {
+  .title();
+  font-size: 18px;
+  padding-bottom: 4px;
+}
+
+:local(.description) {
+  color: #9199b6;
+  font-size: 14px;
+  line-height: 1.65;
+}
+
+:local(.comingsoon) {
+  right: 10px;
+  bottom: 10px;
+  color: #9199b6;
+  font-size: 13px;
+  position: absolute;
+  font-family: "Helvetica Roman";
+}
+
+@media only screen and (max-width: 750px) {
+  :local(.container) {
+    width: 90%;
+  }
+}

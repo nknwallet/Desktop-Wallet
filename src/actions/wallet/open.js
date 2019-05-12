@@ -14,7 +14,7 @@ export default async ({
   file,
   password,
   setState,
-  name = 'MyWallet',
+  name = 'mywallet',
 }) => {
   const wallet = nknWallet.loadJsonWallet(JSON.stringify(file), password);
   const currentLanguage = store.getState().language;

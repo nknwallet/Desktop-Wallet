@@ -3,8 +3,7 @@ import React from 'react';
 import store from 'Root/store';
 import types from 'Root/actions';
 import language from 'Root/helpers/language';
-import currentWindow from 'Root/helpers/currentWindow';
-import SuccessfulTransfer from 'Root/components/pages/Modals/SuccessfulTransfer';
+import ConfirmTransfer from 'Root/components/pages/Modals/ConfirmTransfer';
 
 export default async ({
   amount,
@@ -28,26 +27,7 @@ export default async ({
   }
 
   store.dispatch({
-    type: types.modal.CLOSE,
-  });
-
-  wallet.wallet.transferTo(address, amount).then((data) => {
-    setTimeout(() => {
-      store.dispatch({
-        type: types.modal.OPEN,
-        children: <SuccessfulTransfer hash={data} />,
-        width: currentWindow().width > 500 ? 461 : 250,
-        height: currentWindow().width > 500 ? 262 : 320,
-      });
-    }, 500);
-  }).catch(() => {
-    setTimeout(() => {
-      store.dispatch({
-        type: types.modal.OPEN,
-        children: <SuccessfulTransfer failure />,
-        width: currentWindow().width > 500 ? 461 : 250,
-        height: currentWindow().width > 500 ? 262 : 320,
-      });
-    }, 500);
+    type: types.modal.CHANGE_MODAL_CONTENT,
+    children: <ConfirmTransfer amount={amount} to={address} />,
   });
 };

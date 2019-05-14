@@ -10,9 +10,9 @@ export default async ({ push }) => {
     type: types.wallet.LOGOUT,
   });
 
-  global.localStorage.removeItem('name');
-  global.localStorage.removeItem('password');
-  global.localStorage.removeItem('privateKey');
+  global.sessionStorage.removeItem('name');
+  global.sessionStorage.removeItem('password');
+  global.sessionStorage.removeItem('privateKey');
 
-  push('/open-wallet');
+  push('/login');
 };

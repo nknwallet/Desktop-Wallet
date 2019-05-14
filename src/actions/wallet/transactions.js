@@ -3,21 +3,25 @@ import fetch from 'node-fetch';
 import store from 'Root/store';
 import types from 'Root/actions';
 
-export default async () => new Promise(async (resolve, reject) => {
+export default async () => new Promise(async (resolve) => {
   const { wallet } = store.getState().wallet;
 
-  const transactions = await fetch(`https://api2.nknx.org/addresses/${wallet.address}/transactions`).then(res => res.json())
+  const { data } = await fetch(`https://api2.nknx.org/addresses/${wallet.address}/transactions`).then(res => res.json());
 
-// https://api2.nknx.org/transactions/163929/payload
-    .then((data) => {
-      store.dispatch({
-        list: data.data,
-        type: types.wallet.TRANSACTIONS,
-      });
+  const transactions = [];
 
-      resolve();
-    })
-    .catch((error) => {
-      reject(error);
-    });
+  for (const i of data) {
+    const payload = await fetch(`https://api2.nknx.org/transactions/${i.id}/payload`).then(res => res.json());
+
+    transactions.push({ ...i, payload });
+  }
+
+  console.log(transactions);
+
+  store.dispatch({
+    list: transactions,
+    type: types.wallet.TRANSACTIONS,
+  });
+
+  resolve();
 });

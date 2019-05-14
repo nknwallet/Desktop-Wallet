@@ -7,7 +7,7 @@ import currentWindow from 'Root/helpers/currentWindow';
 import ShowPrivateKeyModal from 'Root/components/pages/Modals/PrivateKey/Show';
 
 export default async ({ password, setState }) => {
-  const realPass = global.localStorage.getItem('password');
+  const realPass = global.sessionStorage.getItem('password');
   const currentLanguage = store.getState().language;
 
   if (realPass !== password) {

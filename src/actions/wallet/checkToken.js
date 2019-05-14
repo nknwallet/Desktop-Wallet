@@ -9,7 +9,7 @@ nknWallet.configure({
 });
 
 export default async () => new Promise((resolve) => {
-  const privateKey = global.localStorage.getItem('privateKey');
+  const privateKey = global.sessionStorage.getItem('privateKey');
 
   if (!privateKey) {
     return resolve();
@@ -20,8 +20,8 @@ export default async () => new Promise((resolve) => {
     type: types.token.LOGIN,
   });
 
-  const name = global.localStorage.getItem('name');
-  const password = global.localStorage.getItem('password');
+  const name = global.sessionStorage.getItem('name');
+  const password = global.sessionStorage.getItem('password');
 
   const wallet = nknWallet.restoreWalletBySeed(privateKey, password);
 

@@ -30,9 +30,9 @@ export default async ({ push, name, password }) => {
     token: wallet.getPrivateKey(),
   });
 
-  global.localStorage.setItem('name', name);
-  global.localStorage.setItem('password', password);
-  global.localStorage.setItem('privateKey', wallet.getSeed());
+  global.sessionStorage.setItem('name', name);
+  global.sessionStorage.setItem('password', password);
+  global.sessionStorage.setItem('privateKey', wallet.getSeed());
 
   push('/download');
 };

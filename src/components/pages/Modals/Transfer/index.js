@@ -41,6 +41,11 @@ class Transfer extends Component {
       errors.amount = language.thisFieldIsNotValid[this.props.language];
     }
 
+    if (this.amount.value === '0') {
+      hasError = true;
+      errors.amount = language.thisFieldIsNotValid[this.props.language];
+    }
+
     if (Number.isNaN(Number.parseFloat(this.amount.value))) {
       hasError = true;
       errors.amount = language.pleaseEnterANumber[this.props.language];

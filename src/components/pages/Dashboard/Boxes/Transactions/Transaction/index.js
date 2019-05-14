@@ -17,7 +17,7 @@ class Transaction extends Component {
   }
 
   render() {
-    const isMoneyComing = this.props.data.FromAddr === this.props.wallet.wallet.address;
+    const isMoneyComing = this.props.data.payload.senderWallet === this.props.wallet.wallet.address;
 
     return (
       <div className={styles.container}>
@@ -42,11 +42,11 @@ class Transaction extends Component {
         </a>
 
         <p className={styles.value}>
-          {this.props.data.nonce}
+          {this.props.data.payload.amount}
         </p>
 
         <p className={styles.shortValue}>
-          {Number.parseFloat(this.props.data.nonce, 10).toPrecision(6)}
+          {Number.parseFloat(this.props.data.amount, 10).toPrecision(6)}
         </p>
 
         <p className={styles.time}>

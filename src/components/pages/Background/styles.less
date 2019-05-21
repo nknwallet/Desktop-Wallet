@@ -1,10 +1,10 @@
 @import '~Root/styles/colors.less';
 
 :local(.background) {
-  width: 100%;
+  width: 45%;
+  position: fixed;
   overflow: hidden;
   min-height: 100vh;
-  position: relative;
   background-image: linear-gradient(to bottom, @start-background, @end-background);
 }
 
@@ -43,4 +43,22 @@
   position: absolute;
   bottom: -80px;
   left: -100px;
+}
+
+:local(.contact) {
+  right: 40px;
+  bottom: 25px;
+  display: flex;
+  position: absolute;
+
+  img {
+    cursor: pointer;
+    padding-left: 35px;
+  }
+}
+
+:local(.email) {
+  color: #939eb9;
+  font-size: 14px;
+  font-family: "Helvetica Roman";
 }

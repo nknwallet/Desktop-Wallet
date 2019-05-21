@@ -56,6 +56,32 @@
   }
 }
 
+:local(.priceToUSD) {
+  display: flex;
+  margin: 20px 0;
+
+  & > * {
+    margin: 0 16px 0 0;
+  }
+
+  img {
+    width: 13.4px;
+    height: 5.8px;
+  }
+}
+
+:local(.nknPrice) {
+  color: #262728;
+  font-size: 12px;
+  font-family: "Helvetica Bold";
+}
+
+:local(.usdPrice) {
+  color: #262728;
+  font-size: 12px;
+  font-family: "Helvetica Roman";
+}
+
 @media only screen and (max-width: 500px) {
   :local(.container) {
     margin-left: 10px;

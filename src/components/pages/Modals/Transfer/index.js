@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
 import language from 'Root/helpers/language';
+import equalIcon from 'Root/images/equal.svg';
 import TextLabel from 'Root/components/tools/TextField/Label';
 import transferMoneyAction from 'Root/actions/wallet/transfer';
 
@@ -68,6 +69,9 @@ class Transfer extends Component {
   }
 
   render() {
+    const amount = Number.parseFloat(this.amount.value, 10);
+    const price = Number.parseFloat(this.props.wallet.price, 10);
+
     return (
       <div className={styles.container}>
         <p className={styles.title}>{language.transferNKNTo[this.props.language]}</p>
@@ -91,6 +95,21 @@ class Transfer extends Component {
           />
           <p className={styles.error}>{this.state.errors.amount}</p>
 
+          <div className={styles.priceToUSD}>
+            <p className={styles.nknPrice}>
+              {amount || '0'}
+              &nbsp;
+              NKN
+            </p>
+
+            <img src={equalIcon} alt="Equal" />
+
+            <p className={styles.usdPrice}>
+              $
+              {(price * amount).toFixed(2)}
+            </p>
+          </div>
+
           <button type="submit" className={styles.button}>
             {language.send[this.props.language]}
           </button>
@@ -101,5 +120,6 @@ class Transfer extends Component {
 }
 
 export default connect(state => ({
+  wallet: state.wallet,
   language: state.language,
 }))(Transfer);

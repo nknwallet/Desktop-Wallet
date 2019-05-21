@@ -2,6 +2,7 @@ import { shell } from 'electron';
 import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 
+import config from 'Root/config.json';
 import newLogo from 'Root/images/newLogo.png';
 import Button from 'Root/components/tools/Button';
 import Details from 'Root/components/tools/Details';
@@ -18,7 +19,7 @@ import styles from './styles.less';
 
 class Page extends Component {
   openBrowserWallet = () => {
-    shell.openExternal('https://nknwallet.io');
+    shell.openExternal(config.website);
   }
 
   openComingSoonModal = () => {

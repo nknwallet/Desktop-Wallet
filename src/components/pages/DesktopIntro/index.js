@@ -2,6 +2,7 @@ import { shell } from 'electron';
 import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 
+import config from 'Root/config.json';
 import leftArrow from 'Root/images/left-arrow.svg';
 import desktopIcon from 'Root/images/desktopPlatform.svg';
 import dashboardPhoto from 'Root/images/dashboard-photo.png';
@@ -12,7 +13,7 @@ class DesktopIntro extends Component {
   handleClick = (e) => {
     e.preventDefault();
 
-    shell.openExternal('https://github.com/nknwallet/Desktop-Wallet/releases');
+    shell.openExternal(config.desktopRelease);
   }
 
   render() {

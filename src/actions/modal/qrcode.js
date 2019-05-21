@@ -7,7 +7,6 @@ import QrCodeModal from 'Root/components/pages/Modals/QrCode';
 
 export default async () => {
   store.dispatch({
-    showCloseButton: false,
     type: types.modal.OPEN,
     children: <QrCodeModal />,
     width: currentWindow().width > 500 ? 460 : 250,

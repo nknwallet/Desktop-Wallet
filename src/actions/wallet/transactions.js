@@ -16,8 +16,6 @@ export default async () => new Promise(async (resolve) => {
     transactions.push({ ...i, payload });
   }
 
-  console.log(transactions);
-
   store.dispatch({
     list: transactions,
     type: types.wallet.TRANSACTIONS,

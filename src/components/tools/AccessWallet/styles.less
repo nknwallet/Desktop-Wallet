@@ -17,6 +17,18 @@
   }
 }
 
+:local(.disabled) {
+  width: 465px;
+  height: 80px;
+  cursor: default;
+  position: relative;
+  border-radius: 4px;
+  margin-bottom: 22px;
+  background-color: white;
+  border: 1px solid #e5e5e5;
+  padding: 12px 18px 12px 65px;
+}
+
 :local(.icon) {
   top: 12px;
   left: 18px;
@@ -39,6 +51,7 @@
   .title();
   font-size: 18px;
   padding-bottom: 4px;
+  font-family: "Helvetica Roman" !important;
 }
 
 :local(.description) {
@@ -58,6 +71,10 @@
 
 @media only screen and (max-width: 750px) {
   :local(.container) {
+    width: 90%;
+  }
+
+  :local(.disabled) {
     width: 90%;
   }
 }

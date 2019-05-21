@@ -1,8 +1,9 @@
 import moment from 'moment';
-import { connect } from 'react-redux';
 import { shell } from 'electron';
+import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
+import config from 'Root/config.json';
 import shortHash from 'Root/helpers/shortHash';
 import redArrow from 'Root/images/redArrow.png';
 import greenArrow from 'Root/images/greenArrow.png';
@@ -13,7 +14,7 @@ class Transaction extends Component {
   handleClick = (e) => {
     e.preventDefault();
 
-    shell.openExternal(`https://testnet.nkn.org/detail/tx/${this.props.data.Hash}`);
+    shell.openExternal(`${config.transaction}/${this.props.data.hash}`);
   }
 
   render() {

@@ -19,10 +19,10 @@ function Transactions(props) {
       title={language.lastTransactions[props.language]}
     >
       <div className={styles.labels}>
-        <p className={styles.label1}>Height</p>
-        <p className={styles.label2}>Txid</p>
-        <p className={styles.label3}>Value</p>
-        <p className={styles.label4}>Time</p>
+        <p className={styles.label1}>{language.height[props.language]}</p>
+        <p className={styles.label2}>{language.hash[props.language]}</p>
+        <p className={styles.label3}>{language.value[props.language]}</p>
+        <p className={styles.label4}>{language.time[props.language]}</p>
       </div>
 
       {

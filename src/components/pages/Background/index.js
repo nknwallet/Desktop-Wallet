@@ -27,7 +27,8 @@ class Background extends Component {
 
         <div className={styles.contact}>
           <p className={styles.email}>
-            Contact:
+            {language.contact[this.props.language]}
+            :
             &nbsp;
             {config.email}
           </p>

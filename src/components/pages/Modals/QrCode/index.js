@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 import copyText from 'Root/helpers/copy';
 import copyIcon from 'Root/images/copy.svg';
+import language from 'Root/helpers/language';
 import shortHash from 'Root/helpers/shortHash';
 
 import styles from './styles.less';
@@ -21,7 +22,7 @@ class QrCodeModal extends Component {
             <img src={this.props.wallet.qrCode} alt="Qr Code" className={styles.qrImage} />
           </div>
 
-          <p className={styles.scanMe}>SCAN ME</p>
+          <p className={styles.scanMe}>{language.scanQrCode[this.props.language]}</p>
         </div>
 
         <div className={styles.address}>
@@ -44,4 +45,5 @@ class QrCodeModal extends Component {
 
 export default connect(state => ({
   wallet: state.wallet,
+  language: state.language,
 }))(QrCodeModal);

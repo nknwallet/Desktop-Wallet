@@ -15,6 +15,10 @@ const background = {
     en: 'Safe',
     zh: '安全',
   },
+  contact: {
+    en: 'Contact',
+    zh: '联系',
+  },
 };
 
 const fields = {
@@ -96,6 +100,50 @@ const loginTitle = {
   create: {
     en: 'Create',
     zh: '创建',
+  },
+  back: {
+    en: 'Back',
+    zh: '后退',
+  },
+  phoneWallet: {
+    en: 'Phone Wallet',
+    zh: '手机钱包',
+  },
+  desktopWallet: {
+    en: 'Desktop Wallet',
+    zh: '桌面钱包',
+  },
+  extensionWallet: {
+    en: 'Extension Wallet',
+    zh: '浏览器钱包',
+  },
+  howWouldYouLikeToAccessYourWallet: {
+    en: 'How would you like to access your wallet?',
+    zh: '用何种方式访问您的钱包？',
+  },
+  crossPlatformDesktopWallet: {
+    en: 'A cross-platform desktop wallet',
+    zh: '跨平台桌面钱包',
+  },
+  openWithDatFile: {
+    en: 'Open with a .dat file',
+    zh: '打开后缀名是dat的文件',
+  },
+  connectViaExtension: {
+    en: 'Connect via browser extension',
+    zh: '通过浏览器扩展连接',
+  },
+  ledger: {
+    en: 'Ledger',
+    zh: '莱杰',
+  },
+  connectViaLedger: {
+    en: 'Connect via ledger',
+    zh: '通过账本连接',
+  },
+  comingSoon: {
+    en: 'Coming Soon!',
+    zh: '即将到来',
   },
 };
 
@@ -207,6 +255,54 @@ const dashboard = {
     en: 'Account',
     zh: '账户',
   },
+  height: {
+    en: 'Height',
+    zh: '高度', // not sure
+  },
+  hash: {
+    en: 'Hash',
+    zh: '哈希',
+  },
+  value: {
+    en: 'Value',
+    zh: '价值',
+  },
+  time: {
+    en: 'Time',
+    zh: '时间',
+  },
+  cancel: {
+    en: 'Cancel',
+    zh: '取消',
+  },
+  confirm: {
+    en: 'Confirm',
+    zh: '确认',
+  },
+  total: {
+    en: 'Total',
+    zh: '总计',
+  },
+  fee: {
+    en: 'Transaction Fee',
+    zh: '费用',
+  },
+  youWillSend: {
+    en: 'You\'ll Send:',
+    zh: '您将发送：',
+  },
+  to: {
+    en: 'To',
+    zh: '至',
+  },
+  from: {
+    en: 'From',
+    zh: '从',
+  },
+  confirmTransaction: {
+    en: 'Confirm Transaction',
+    zh: '确认交易',
+  },
 };
 
 const download = {
@@ -262,7 +358,7 @@ const modals = {
     zh: '成功发送',
   },
   scanQrCode: {
-    en: 'SCAN QRCODE',
+    en: 'SCAN ME',
     zh: '扫描二维码',
   },
   show: {

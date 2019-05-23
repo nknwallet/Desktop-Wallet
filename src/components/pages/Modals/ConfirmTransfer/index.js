@@ -2,6 +2,7 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
+import language from 'Root/helpers/language';
 import equalIcon from 'Root/images/equal.svg';
 import shortHash from 'Root/helpers/shortHash';
 import closeModalAction from 'Root/actions/modal/close';
@@ -24,17 +25,17 @@ class ConfirmTransfer extends Component {
   render() {
     return (
       <div className={styles.container}>
-        <p className={styles.title}>Confirm Transaction</p>
+        <p className={styles.title}>{language.confirmTransaction[this.props.language]}</p>
 
         <table className={styles.addresses}>
           <tr>
-            <td className={styles.key}>From</td>
+            <td className={styles.key}>{language.from[this.props.language]}</td>
             <td className={styles.value}>{this.props.wallet.address}</td>
             <td className={styles.valueResponsive}>{shortHash(this.props.wallet.address, 6)}</td>
           </tr>
 
           <tr>
-            <td className={styles.key}>To</td>
+            <td className={styles.key}>{language.to[this.props.language]}</td>
             <td className={styles.value}>{this.props.to}</td>
             <td className={styles.valueResponsive}>{shortHash(this.props.to, 6)}</td>
           </tr>
@@ -42,7 +43,7 @@ class ConfirmTransfer extends Component {
 
         <div className={styles.prices}>
           <div className={styles.send}>
-            <p className={styles.key2}>{'You\'ll Send'}</p>
+            <p className={styles.key2}>{language.youWillSend[this.props.language]}</p>
             <p className={styles.value2}>
               {this.props.amount}
               &nbsp;
@@ -57,7 +58,7 @@ class ConfirmTransfer extends Component {
           </div>
 
           <div className={styles.send}>
-            <p className={styles.key3}>Transaction Fee</p>
+            <p className={styles.key3}>{language.fee[this.props.language]}</p>
             <p className={styles.value2}>
               {'0'}
               &nbsp;
@@ -73,7 +74,7 @@ class ConfirmTransfer extends Component {
           <div className={styles.line} />
 
           <div className={styles.send2}>
-            <p className={styles.key4}>Total</p>
+            <p className={styles.key4}>{language.total[this.props.language]}</p>
             <p className={styles.value2}>
               {this.props.amount}
               &nbsp;
@@ -90,7 +91,7 @@ class ConfirmTransfer extends Component {
 
         <div className={styles.pricesResponsive}>
           <div className={styles.send}>
-            <p className={styles.key2}>{'You\'ll Send'}</p>
+            <p className={styles.key2}>{language.youWillSend[this.props.language]}</p>
             <p className={styles.value2}>
               {this.props.amount}
               &nbsp;
@@ -99,7 +100,7 @@ class ConfirmTransfer extends Component {
           </div>
 
           <div className={styles.send}>
-            <p className={styles.key3}>Transaction Fee</p>
+            <p className={styles.key3}>{language.fee[this.props.language]}</p>
             <p className={styles.value2}>
               {'0'}
               &nbsp;
@@ -110,7 +111,7 @@ class ConfirmTransfer extends Component {
           <div className={styles.line} />
 
           <div className={styles.send2}>
-            <p className={styles.key4}>Total</p>
+            <p className={styles.key4}>{language.total[this.props.language]}</p>
             <p className={styles.value2}>
               {this.props.amount}
               &nbsp;
@@ -123,14 +124,14 @@ class ConfirmTransfer extends Component {
           onClick={this.handleConfirm}
           className={classnames(styles.button, styles.confirm)}
         >
-          Confirm
+          {language.confirm[this.props.language]}
         </button>
 
         <button
           onClick={this.handleCancel}
           className={classnames(styles.button, styles.cancel)}
         >
-          Cancel
+          {language.cancel[this.props.language]}
         </button>
       </div>
     );
@@ -138,6 +139,7 @@ class ConfirmTransfer extends Component {
 }
 
 export default connect(state => ({
+  language: state.language,
   price: state.wallet.price,
   wallet: state.wallet.wallet,
 }))(ConfirmTransfer);

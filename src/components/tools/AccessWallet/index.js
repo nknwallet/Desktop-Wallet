@@ -1,6 +1,9 @@
 import React from 'react';
 import classnames from 'classnames';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+
+import language from 'Root/helpers/language';
 
 import styles from './styles.less';
 
@@ -22,11 +25,13 @@ function AccessWallet(props) {
 
         {props.comingsoon
         && (
-          <p className={styles.comingsoon}>Coming Soon!</p>
+          <p className={styles.comingsoon}>{language.comingSoon[props.language]}</p>
         )}
       </div>
     </Link>
   );
 }
 
-export default AccessWallet;
+export default connect(state => ({
+  language: state.language,
+}))(AccessWallet);

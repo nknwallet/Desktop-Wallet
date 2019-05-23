@@ -1,5 +1,7 @@
 import React from 'react';
+import { connect } from 'react-redux';
 
+import language from 'Root/helpers/language';
 import openWalletIcon from 'Root/images/openWallet.svg';
 import createWalletIcon from 'Root/images/createWallet.svg';
 import ledgerWalletIcon from 'Root/images/ledgerWallet.png';
@@ -9,49 +11,51 @@ import browserWalletIcon from 'Root/images/browserWallet.svg';
 import Page from 'Root/components/tools/Page';
 import AccessWallet from 'Root/components/tools/AccessWallet';
 
-function Login() {
+function Login(props) {
   return (
     <Page
-      title="How would you like to access your wallet?"
+      title={language.howWouldYouLikeToAccessYourWallet[props.language]}
     >
       <AccessWallet
         to="/create-wallet"
-        title="Create Wallet"
         icon={createWalletIcon}
-        description="Create a new wallet"
+        title={language.createWallet[props.language]}
+        description={language.createNewWallet[props.language]}
       />
 
       <AccessWallet
         to="/open-wallet"
-        title="Open Wallet"
         icon={openWalletIcon}
-        description="Open with a .dat file"
+        title={language.openWallet[props.language]}
+        description={language.openWithDatFile[props.language]}
       />
 
       <AccessWallet
         to="/restore-wallet"
-        title="Restore Wallet"
         icon={restoreWalletIcon}
-        description="Restore by private key"
+        title={language.restoreWallet[props.language]}
+        description={language.restoreFromPrivateKey[props.language]}
       />
 
       <AccessWallet
         comingsoon
         to="/browser-wallet"
-        title="Browser Wallet"
         icon={browserWalletIcon}
-        description="Connect via browser or extension"
+        title={language.extensionWallet[props.language]}
+        description={language.connectViaExtension[props.language]}
       />
 
       <AccessWallet
         comingsoon
-        title="Ledger"
         to="/ledger-wallet"
         icon={ledgerWalletIcon}
-        description="Connect via ledger"
+        title={language.ledger[props.language]}
+        description={language.connectViaLedger[props.language]}
       />
     </Page>
   );
 }
 
-export default Login;
+export default connect(state => ({
+  language: state.language,
+}))(Login);

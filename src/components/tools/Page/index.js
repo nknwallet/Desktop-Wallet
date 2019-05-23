@@ -1,6 +1,8 @@
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 
+import language from 'Root/helpers/language';
 import newLogo from 'Root/images/newLogo.png';
 import Button from 'Root/components/tools/Button';
 import Details from 'Root/components/tools/Details';
@@ -44,7 +46,7 @@ class Page extends Component {
                 <div className={styles.back}>
                   <img src={leftArrow} alt="Back" />
 
-                  <p>Back</p>
+                  <p>{language.back[this.props.language]}</p>
                 </div>
               </Link>
             )}
@@ -68,20 +70,20 @@ class Page extends Component {
           <div className={styles.footer}>
             <Platform
               icon={phoneIcon}
-              title="Phone Wallet"
+              title={language.phoneWallet[this.props.language]}
               onClick={this.openComingSoonModal}
             />
 
             <Platform
               icon={desktopIcon}
               to="/desktop-intro"
-              title="Desktop Wallet"
+              title={language.desktopWallet[this.props.language]}
             />
 
             <Platform
               icon={browserIcon}
-              title="Extension Wallet"
               onClick={this.openComingSoonModal}
+              title={language.extensionWallet[this.props.language]}
             />
           </div>
         </div>
@@ -90,4 +92,6 @@ class Page extends Component {
   }
 }
 
-export default Page;
+export default connect(state => ({
+  language: state.language,
+}))(Page);

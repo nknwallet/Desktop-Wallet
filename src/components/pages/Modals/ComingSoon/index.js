@@ -1,13 +1,18 @@
 import React from 'react';
+import { connect } from 'react-redux';
+
+import language from 'Root/helpers/language';
 
 import styles from './styles.less';
 
-function ComingSoon() {
+function ComingSoon(props) {
   return (
     <div className={styles.container}>
-      <p>Coming Soon...</p>
+      <p>{language.comingSoon[props.language]}</p>
     </div>
   );
 }
 
-export default ComingSoon;
+export default connect(state => ({
+  language: state.language,
+}))(ComingSoon);

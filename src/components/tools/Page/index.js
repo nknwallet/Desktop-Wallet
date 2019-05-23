@@ -1,8 +1,6 @@
-import { shell } from 'electron';
 import { Link } from 'react-router-dom';
 import React, { Component } from 'react';
 
-import config from 'Root/config.json';
 import newLogo from 'Root/images/newLogo.png';
 import Button from 'Root/components/tools/Button';
 import Details from 'Root/components/tools/Details';
@@ -18,10 +16,6 @@ import LanguageSelect from 'Root/components/tools/LanguageSelect';
 import styles from './styles.less';
 
 class Page extends Component {
-  openBrowserWallet = () => {
-    shell.openExternal(config.website);
-  }
-
   openComingSoonModal = () => {
     comingSoonModal();
   }
@@ -86,8 +80,8 @@ class Page extends Component {
 
             <Platform
               icon={browserIcon}
-              title="Browser Wallet"
-              onClick={this.openBrowserWallet}
+              title="Extension Wallet"
+              onClick={this.openComingSoonModal}
             />
           </div>
         </div>

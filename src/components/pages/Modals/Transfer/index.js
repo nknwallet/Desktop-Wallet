@@ -15,6 +15,7 @@ class Transfer extends Component {
       amount: '',
       address: '',
     },
+    usd: 0,
   }
 
   handleSubmit = (e) => {
@@ -68,8 +69,39 @@ class Transfer extends Component {
     }
   }
 
+  handleChange = () => {
+    let errorAmount = '';
+
+    if (this.amount.value === '0') {
+      errorAmount = language.thisFieldIsNotValid[this.props.language];
+    }
+
+    if (Number.isNaN(Number.parseFloat(this.amount.value))) {
+      errorAmount = language.pleaseEnterANumber[this.props.language];
+    }
+
+    if (!this.amount.value) {
+      this.setState(state => ({
+        usd: 0,
+        errors: {
+          amount: errorAmount,
+          address: state.errors.address,
+        },
+      }));
+
+      return;
+    }
+
+    this.setState(state => ({
+      usd: Number.parseFloat(this.amount.value, 10),
+      errors: {
+        amount: errorAmount,
+        address: state.errors.address,
+      },
+    }));
+  }
+
   render() {
-    const amount = Number.parseFloat(this.amount.value, 10);
     const price = Number.parseFloat(this.props.wallet.price, 10);
 
     return (
@@ -90,6 +122,7 @@ class Transfer extends Component {
             type="number"
             step="0.0001"
             className={styles.input}
+            onChange={this.handleChange}
             ref={(c) => { this.amount = c; }}
             placeholder={language.howMuchNKNToTransfer[this.props.language]}
           />
@@ -97,7 +130,7 @@ class Transfer extends Component {
 
           <div className={styles.priceToUSD}>
             <p className={styles.nknPrice}>
-              {amount || '0'}
+              {this.state.usd}
               &nbsp;
               NKN
             </p>
@@ -106,7 +139,7 @@ class Transfer extends Component {
 
             <p className={styles.usdPrice}>
               $
-              {(price * amount).toFixed(2)}
+              {(price * this.state.usd).toFixed(2)}
             </p>
           </div>
 

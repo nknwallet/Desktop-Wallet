@@ -5,6 +5,7 @@ import { withRouter } from 'react-router-dom';
 import language from 'Root/helpers/language';
 import validate from 'Root/helpers/validate';
 import Page from 'Root/components/tools/Page';
+import namePattern from 'Root/helpers/namePattern';
 import TextField from 'Root/components/tools/TextField';
 import TextLabel from 'Root/components/tools/TextField/Label';
 import restoreWalletAction from 'Root/actions/wallet/restore';
@@ -32,14 +33,9 @@ class RestoreWallet extends Component {
     let hasError = false;
 
     if (this.name) {
-      if (this.name.length < 8 || this.name.length > 12) {
+      if (!namePattern(this.name)) {
         hasError = true;
-        errors.name = language.fieldMustBeEightToTwelveCharacters[this.props.language];
-      } else {
-        if (!/^[a-z]+$/.test(this.name)) { /* eslint-disable-line */
-          hasError = true;
-          errors.name = language.onlyLowerCaseLetters[this.props.language];
-        }
+        errors.name = language.thisFieldIsNotValid[this.props.language];
       }
     }
 

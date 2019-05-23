@@ -4,6 +4,7 @@ import { withRouter } from 'react-router-dom';
 
 import language from 'Root/helpers/language';
 import validate from 'Root/helpers/validate';
+import namePattern from 'Root/helpers/namePattern';
 import createWalletAction from 'Root/actions/wallet/create';
 
 import Page from 'Root/components/tools/Page';
@@ -31,14 +32,9 @@ class CreateWallet extends Component {
     let hasError = false;
 
     if (this.name) {
-      if (this.name.length < 8 || this.name.length > 12) {
+      if (!namePattern(this.name)) {
         hasError = true;
-        errors.name = language.fieldMustBeEightToTwelveCharacters[this.props.language];
-      } else {
-        if (!/^[a-z]+$/.test(this.name)) { /* eslint-disable-line */
-          hasError = true;
-          errors.name = language.onlyLowerCaseLetters[this.props.language];
-        }
+        errors.name = language.thisFieldIsNotValid[this.props.language];
       }
     }
 

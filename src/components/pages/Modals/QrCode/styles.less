@@ -76,14 +76,19 @@
 }
 
 @media only screen and (max-width: 600px) {
+  :local(.container) {
+    padding: 0 5px;
+  }
+
   :local(.qrBox) {
-    width: 240px;
-    height: auto !important;
+    width: 100%;
     margin-top: 0;
+    padding: 10px 0 0 0;
+    text-align: center;
+    align-items: center;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    text-align: center;
+    height: auto !important;
   }
 
   :local(.text) {
@@ -95,6 +100,7 @@
   }
 
   :local(.qrContainer) {
+    width: 80%;
     margin-left: 0;
     margin-top: 5px;
   }

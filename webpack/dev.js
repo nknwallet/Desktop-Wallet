@@ -3,11 +3,11 @@ const common = require('./common');
 
 module.exports = Object.assign(common, {
   mode: 'development',
-  // watch: true,
+  watch: true,
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: 'development',
     }),
   ],
-  devtool: 'source-map',
+  devtool: 'eval',
 });

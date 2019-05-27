@@ -10,8 +10,12 @@ import shortHash from 'Root/helpers/shortHash';
 import styles from './styles.less';
 
 class QrCodeModal extends Component {
+  state = {
+    address: this.props.wallet.wallet ? this.props.wallet.wallet.address : '',
+  }
+
   handleCopy = () => {
-    copyText(this.props.wallet.wallet.address);
+    copyText(this.state.address);
   }
 
   render() {
@@ -27,11 +31,11 @@ class QrCodeModal extends Component {
 
         <div className={styles.address}>
           <div className={classnames(styles.text, styles.longText)}>
-            {this.props.wallet.wallet.address}
+            {this.state.address}
           </div>
 
           <div className={classnames(styles.text, styles.shortText)}>
-            {shortHash(this.props.wallet.wallet.address, 6)}
+            {shortHash(this.state.address, 6)}
           </div>
 
           <div className={styles.copy} role="presentation" onClick={this.handleCopy}>

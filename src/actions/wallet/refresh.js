@@ -18,6 +18,6 @@ export default async ({ push }) => {
 
     push('/dashboard');
   } catch (error) {
-    console.log(error);
+    console.log('Error', error);
   }
 };

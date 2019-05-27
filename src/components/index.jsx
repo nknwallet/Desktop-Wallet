@@ -1,6 +1,8 @@
 import { connect } from 'react-redux';
 import React, { Fragment, Component } from 'react';
-import { BrowserRouter as Router, Switch, withRouter } from 'react-router-dom';
+import { Router, Switch, withRouter } from 'react-router-dom';
+
+import history from 'Root/history';
 
 import Modal from './tools/Modal';
 import Login from './pages/Login';
@@ -25,7 +27,7 @@ class App extends Component {
   render() {
     return (
       <Fragment>
-        <Router>
+        <Router history={history}>
           <Switch>
             <NotLoggedRoute exact path="/login" component={Login} />
             <NotLoggedRoute exact path="/open-wallet" component={OpenWallet} />

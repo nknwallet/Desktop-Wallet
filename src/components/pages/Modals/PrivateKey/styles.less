@@ -12,51 +12,11 @@
   padding-left: 0;
 }
 
-:local(.inputContainer) {
-  width: 370px;
-  height: 34px;
-  display: flex;
-  position: relative;
-  align-items: center;
-}
-
-:local(.eye) {
-  right: 15px;
-  cursor: pointer;
-  position: absolute;
-}
-
 :local(.label) {
   color: #5e6ea7;
   font-size: 16px;
   padding-bottom: 13px;
   font-family: "Helvetica Roman";
-}
-
-:local(.input) {
-  width: 100%;
-  height: 100%;
-  font-size: 11px;
-  border-radius: 3px;
-  padding-left: 15px;
-  transition: border 600ms;
-  background-color: #f4f5f9;
-  border: 2px solid #f4f5f9;
-
-  &::placeholder {
-    color: #9199b6;
-  }
-
-  &:active, &:focus {
-    border: 2px solid @blue;
-  }
-}
-
-:local(.error) {
-  color: #e00543;
-  margin: 10px 0;
-  font-size: 12px;
-  font-family: "Helvetica Bold"
 }
 
 :local(.button) {
@@ -68,13 +28,8 @@
   margin-top: 25px;
 }
 
-
 @media only screen and (max-width: 500px) {
   :local(.container) {
     margin: 0;
-  }
-
-  :local(.inputContainer) {
-    width: 100%;
   }
 }

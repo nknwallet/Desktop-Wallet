@@ -6,7 +6,7 @@ import openWalletIcon from 'Root/images/openWallet.svg';
 import createWalletIcon from 'Root/images/createWallet.svg';
 import ledgerWalletIcon from 'Root/images/ledgerWallet.png';
 import restoreWalletIcon from 'Root/images/restoreWallet.svg';
-import browserWalletIcon from 'Root/images/browserWallet.svg';
+// import browserWalletIcon from 'Root/images/browserWallet.svg';
 
 import Page from 'Root/components/tools/Page';
 import AccessWallet from 'Root/components/tools/AccessWallet';
@@ -37,13 +37,13 @@ function Login(props) {
         description={language.restoreFromPrivateKey[props.language]}
       />
 
-      <AccessWallet
+      {/* <AccessWallet
         comingsoon
         to="/browser-wallet"
         icon={browserWalletIcon}
         title={language.extensionWallet[props.language]}
         description={language.connectViaExtension[props.language]}
-      />
+      /> */}
 
       <AccessWallet
         comingsoon

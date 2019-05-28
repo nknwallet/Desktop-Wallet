@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 
 import language from 'Root/helpers/language';
 import equalIcon from 'Root/images/equal.svg';
+import SmallInput from 'Root/components/tools/SmallInput';
 import TextLabel from 'Root/components/tools/TextField/Label';
 import transferMoneyAction from 'Root/actions/wallet/transfer';
 
@@ -26,29 +27,32 @@ class Transfer extends Component {
       address: '',
     };
 
+    const amount = this.amount || '';
+    const address = this.address || '';
+
     let hasError = false;
 
-    if (!this.address.value) {
+    if (!address) {
       hasError = true;
       errors.address = language.thisFieldIsNotValid[this.props.language];
     }
 
-    if (!nknWallet.verifyAddress(this.address.value)) {
+    if (!nknWallet.verifyAddress(address)) {
       hasError = true;
       errors.address = language.addressIsInvalid[this.props.language];
     }
 
-    if (!this.amount.value) {
+    if (!amount) {
       hasError = true;
       errors.amount = language.thisFieldIsNotValid[this.props.language];
     }
 
-    if (this.amount.value === '0') {
+    if (amount === '0') {
       hasError = true;
       errors.amount = language.thisFieldIsNotValid[this.props.language];
     }
 
-    if (Number.isNaN(Number.parseFloat(this.amount.value))) {
+    if (Number.isNaN(Number.parseFloat(amount))) {
       hasError = true;
       errors.amount = language.pleaseEnterANumber[this.props.language];
     }
@@ -62,8 +66,8 @@ class Transfer extends Component {
 
     if (!hasError) {
       transferMoneyAction({
-        amount: this.amount.value,
-        address: this.address.value,
+        amount,
+        address,
         setState: this.setState.bind(this),
       });
     }
@@ -72,15 +76,15 @@ class Transfer extends Component {
   handleChange = () => {
     let errorAmount = '';
 
-    if (this.amount.value === '0') {
+    if (this.amount === '0') {
       errorAmount = language.thisFieldIsNotValid[this.props.language];
     }
 
-    if (Number.isNaN(Number.parseFloat(this.amount.value))) {
+    if (Number.isNaN(Number.parseFloat(this.amount))) {
       errorAmount = language.pleaseEnterANumber[this.props.language];
     }
 
-    if (!this.amount.value) {
+    if (!this.amount) {
       this.setState(state => ({
         usd: 0,
         errors: {
@@ -93,7 +97,7 @@ class Transfer extends Component {
     }
 
     this.setState(state => ({
-      usd: Number.parseFloat(this.amount.value, 10),
+      usd: Number.parseFloat(this.amount, 10),
       errors: {
         amount: errorAmount,
         address: state.errors.address,
@@ -109,24 +113,22 @@ class Transfer extends Component {
         <p className={styles.title}>{language.transferNKNTo[this.props.language]}</p>
         <form action="#" onSubmit={this.handleSubmit}>
           <TextLabel>{language.transferToAddress[this.props.language]}</TextLabel>
-          <input
+          <SmallInput
             type="text"
-            className={styles.input}
-            ref={(c) => { this.address = c; }}
+            error={this.state.errors.address}
+            inputRef={(c) => { this.address = c; }}
             placeholder={language.transferToAddress[this.props.language]}
           />
-          <p className={styles.error}>{this.state.errors.address}</p>
 
           <TextLabel>{language.amount[this.props.language]}</TextLabel>
-          <input
+          <SmallInput
             type="number"
             step="0.0001"
-            className={styles.input}
             onChange={this.handleChange}
-            ref={(c) => { this.amount = c; }}
+            error={this.state.errors.amount}
+            inputRef={(c) => { this.amount = c; }}
             placeholder={language.howMuchNKNToTransfer[this.props.language]}
           />
-          <p className={styles.error}>{this.state.errors.amount}</p>
 
           <div className={styles.priceToUSD}>
             <p className={styles.nknPrice}>

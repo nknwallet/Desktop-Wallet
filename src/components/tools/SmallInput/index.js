@@ -25,6 +25,10 @@ class SmallInput extends Component {
     if (this.props.inputRef) {
       this.props.inputRef(this.textField.value);
     }
+
+    if (this.props.onChange) {
+      this.props.onChange();
+    }
   }
 
   render() {
@@ -32,6 +36,7 @@ class SmallInput extends Component {
       <div className={styles.father}>
         <div className={styles.inputContainer}>
           <input
+            step={this.props.step}
             type={this.state.type}
             className={styles.input}
             onChange={this.handleChange}

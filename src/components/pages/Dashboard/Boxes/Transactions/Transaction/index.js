@@ -43,7 +43,7 @@ class Transaction extends Component {
         </a>
 
         <p className={styles.value}>
-          {this.props.data.payload.amount}
+          {this.props.data.payload.amount / 100000000}
         </p>
 
         <p className={styles.shortValue}>

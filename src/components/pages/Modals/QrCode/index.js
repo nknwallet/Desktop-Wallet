@@ -2,9 +2,8 @@ import classnames from 'classnames';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
-import copyText from 'Root/helpers/copy';
-import copyIcon from 'Root/images/copy.svg';
 import language from 'Root/helpers/language';
+import Copy from 'Root/components/tools/Copy';
 import shortHash from 'Root/helpers/shortHash';
 
 import styles from './styles.less';
@@ -12,10 +11,6 @@ import styles from './styles.less';
 class QrCodeModal extends Component {
   state = {
     address: this.props.wallet.wallet ? this.props.wallet.wallet.address : '',
-  }
-
-  handleCopy = () => {
-    copyText(this.state.address);
   }
 
   render() {
@@ -38,8 +33,8 @@ class QrCodeModal extends Component {
             {shortHash(this.state.address, 6)}
           </div>
 
-          <div className={styles.copy} role="presentation" onClick={this.handleCopy}>
-            <img src={copyIcon} alt="Copy" title="Copy" />
+          <div className={styles.copy}>
+            <Copy text={this.state.address} />
           </div>
         </div>
       </div>

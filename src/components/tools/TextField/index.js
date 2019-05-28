@@ -73,7 +73,7 @@ class TextField extends Component {
 
   render() {
     return (
-      <Fragment>
+      <div className={styles.father}>
         <div className={styles.container}>
           {this.props.type !== 'upload'
           && (
@@ -133,7 +133,7 @@ class TextField extends Component {
         </div>
 
         <Error text={this.props.error} />
-      </Fragment>
+      </div>
     );
   }
 }

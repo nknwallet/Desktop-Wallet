@@ -2,8 +2,8 @@
 
 :local(.page) {
   display: flex;
-  position: relative;
   overflow: hidden;
+  position: relative;
 }
 
 :local(.container) {
@@ -36,9 +36,8 @@
 
 :local(.title) {
   font-size: 23px;
-  // margin-top: 40px;
-  margin-bottom: 45px;
   color: @page-title;
+  margin-bottom: 45px;
   font-family: "Helvetica Bold";
 }
 
@@ -73,7 +72,7 @@
   }
 }
 
-@media only screen and (max-width: 950px) {
+@media only screen and (max-width: 1020px) {
   :local(.page) {
     flex-direction: column;
   }
@@ -106,15 +105,21 @@
   :local(.footer) {
     width: 100%;
     height: 150px;
+    padding-left: 0;
     padding-top: 15px;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
     align-self: center;
+    align-items: center;
     align-content: center;
+    justify-content: center;
 
     & div {
       margin-bottom: 15px;
     }
+  }
+}
+
+@media only screen and (max-width: 530px) {
+  :local(.footer) {
+    flex-direction: column;
   }
 }

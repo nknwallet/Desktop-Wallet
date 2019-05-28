@@ -16,22 +16,36 @@ function Transactions(props) {
       width={691}
       height={263}
       overflow="scroll"
-      title={language.lastTransactions[props.language]}
+      title={
+        transactions.length
+          ? language.lastTransactions[props.language]
+          : 'No Transactions'
+      }
     >
-      <div className={styles.labels}>
-        <p className={styles.label1}>{language.height[props.language]}</p>
-        <p className={styles.label2}>{language.hash[props.language]}</p>
-        <p className={styles.label3}>{language.value[props.language]}</p>
-        <p className={styles.label4}>{language.time[props.language]}</p>
-      </div>
+      {
+        transactions.length
+          ? (
+            <div className={styles.labels}>
+              <p className={styles.label1}>{language.height[props.language]}</p>
+              <p className={styles.label2}>{language.hash[props.language]}</p>
+              <p className={styles.label3}>{language.value[props.language]}</p>
+              <p className={styles.label4}>{language.time[props.language]}</p>
+            </div>
+          )
+          : ''
+      }
 
       {
-        transactions.map(data => (
-          <Transaction
-            data={data}
-            key={shortid.generate()}
-          />
-        ))
+        !transactions.length
+          ? (
+            ''
+          )
+          : transactions.map(data => (
+            <Transaction
+              data={data}
+              key={shortid.generate()}
+            />
+          ))
       }
     </Box>
   );

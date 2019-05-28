@@ -2,10 +2,9 @@ import { connect } from 'react-redux';
 import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 
-import copyText from 'Root/helpers/copy';
-import copyIcon from 'Root/images/copy.svg';
 import language from 'Root/helpers/language';
 import download from 'Root/helpers/download';
+import Copy from 'Root/components/tools/Copy';
 import walletIcon from 'Root/images/wallet.svg';
 import rightArrowIcon from 'Root/images/right-arrow.svg';
 import TextLabel from 'Root/components/tools/TextField/Label';
@@ -20,10 +19,6 @@ class DownloadWindow extends Component {
 
   handleNext = () => {
     this.props.history.push('/loading');
-  }
-
-  handleCopy = text => () => {
-    copyText(text);
   }
 
   render() {
@@ -48,11 +43,7 @@ class DownloadWindow extends Component {
             <div className={styles.value}>{this.props.wallet.wallet.getSeed()}</div>
 
             <div className={styles.copyIcon}>
-              <img
-                alt="Copy"
-                src={copyIcon}
-                onClick={this.handleCopy(this.props.wallet.wallet.getSeed())}
-              />
+              <Copy text={this.props.wallet.wallet.getSeed()} />
             </div>
           </div>
 
@@ -62,11 +53,7 @@ class DownloadWindow extends Component {
             <div className={styles.value}>{this.props.wallet.wallet.address}</div>
 
             <div className={styles.copyIcon}>
-              <img
-                alt="Copy"
-                src={copyIcon}
-                onClick={this.handleCopy(this.props.wallet.wallet.address)}
-              />
+              <Copy text={this.props.wallet.wallet.address} />
             </div>
           </div>
         </div>

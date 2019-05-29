@@ -2,6 +2,7 @@ import { shell } from 'electron';
 import { connect } from 'react-redux';
 import React, { Component } from 'react';
 
+import config from 'Root/config.json';
 import language from 'Root/helpers/language';
 import failureIcon from 'Root/images/error.png';
 import closeModalAction from 'Root/actions/modal/close';
@@ -17,9 +18,7 @@ class SuccessfulTransfer extends Component {
   handleClickHash = (e) => {
     e.preventDefault();
 
-    shell.openExternal(
-      `https://testnet.nkn.org/detail/tx/${this.props.hash}`,
-    );
+    shell.openExternal(`${config.transaction}/${this.props.hash}`);
   }
 
   render() {

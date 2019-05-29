@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-import copyText from 'Root/helpers/copy';
-import copyIcon from 'Root/images/copy.svg';
 import language from 'Root/helpers/language';
+import Copy from 'Root/components/tools/Copy';
 import closeModalAction from 'Root/actions/modal/close';
 import privateKeyIcon from 'Root/images/privateKey.svg';
 
@@ -16,10 +15,6 @@ class Show extends Component {
 
   handleClick = () => {
     closeModalAction();
-  }
-
-  handleCopy = () => {
-    copyText(this.state.privateKey);
   }
 
   render() {
@@ -37,18 +32,14 @@ class Show extends Component {
           </p>
         </div>
 
-        <p className={styles.text}>
-          {this.state.privateKey}
-        </p>
+        <div className={styles.result2}>
+          <div className={styles.text}>
+            {this.state.privateKey}
+          </div>
 
-        <img
-          alt="Copy"
-          src={copyIcon}
-          className={styles.icon}
-          onClick={this.handleCopy}
-        />
+          <Copy text={this.state.privateKey} />
+        </div>
 
-        <p />
 
         <button type="button" onClick={this.handleClick} className={styles.button}>
           {language.ok[this.props.language]}

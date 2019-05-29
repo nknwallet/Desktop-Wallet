@@ -11,7 +11,7 @@ export default async () => new Promise(async (resolve) => {
   const transactions = [];
 
   for (const i of data) {
-    const payload = await fetch(`https://api2.nknx.org/transactions/${i.id}/payload`).then(res => res.json());
+    const payload = await fetch(`https://api2.nknx.org/transactions/${i.id}/payload`).then(res => res.json()); // eslint-disable-line
 
     transactions.push({ ...i, payload });
   }

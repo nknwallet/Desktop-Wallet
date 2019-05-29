@@ -12,11 +12,9 @@ export default async ({ push, name, password }) => {
   const wallet = nknWallet.newWallet(password);
 
   wallet.registerName(name)
-    .then((data) => {
-      console.log(`Done ${data}`);
+    .then(() => {
     })
-    .catch((error) => {
-      console.log(error);
+    .catch(() => {
     });
 
   store.dispatch({

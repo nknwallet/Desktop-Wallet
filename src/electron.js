@@ -37,9 +37,9 @@ function createWindow() {
   win = new BrowserWindow({
     center: true,
     width: 1118,
-    height: 800,
-    minWidth: 1118,
-    minHeight: 800,
+    height: 830,
+    minWidth: 450,
+    minHeight: 600,
     title: 'NKNWallet',
     icon: join(__dirname, 'src/images/icons/256x256.png'),
   });

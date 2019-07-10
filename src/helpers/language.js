@@ -303,6 +303,10 @@ const dashboard = {
     en: 'Confirm Transaction',
     zh: '确认交易',
   },
+  connectWallet: {
+    en: 'Connect Wallet',
+    zh: '连接钱包',
+  },
 };
 
 const download = {

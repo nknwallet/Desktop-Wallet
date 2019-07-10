@@ -79,7 +79,7 @@ class Account extends Component {
               <img src={qrSmallIcon} alt="QR" />
 
               <p>
-                CONNECT WALLET
+                {language.connectWallet[this.props.language].toUpperCase()}
               </p>
             </div>
           </div>

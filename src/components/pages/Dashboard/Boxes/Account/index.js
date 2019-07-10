@@ -4,9 +4,11 @@ import { connect } from 'react-redux';
 import qrIcon from 'Root/images/qr.png';
 import Box from 'Root/components/tools/Box';
 import language from 'Root/helpers/language';
+import qrSmallIcon from 'Root/images/qr.svg';
 import submitIcon from 'Root/images/submit.png';
 import openQrCodeAction from 'Root/actions/modal/qrcode';
 import openTransferAction from 'Root/actions/modal/transfer';
+import openImportWalletAction from 'Root/actions/modal/importWallet';
 
 import styles from './styles.less';
 
@@ -17,6 +19,10 @@ class Account extends Component {
 
   handleTransfer = () => {
     openTransferAction();
+  }
+
+  handleImport = () => {
+    openImportWalletAction();
   }
 
   render() {
@@ -50,19 +56,33 @@ class Account extends Component {
             />
           </div>
 
-          <button
-            type="button"
-            className={styles.button}
-            onClick={this.handleTransfer}
-          >
-            <div className={styles.submitButton}>
-              <img src={submitIcon} alt="Submit" className={styles.submitIcon} />
+          <div className={styles.buttonsContainer}>
+            <button
+              type="button"
+              className={styles.button}
+              onClick={this.handleTransfer}
+            >
+              <div className={styles.submitButton}>
+                <img src={submitIcon} alt="Submit" className={styles.submitIcon} />
 
-              <p className={styles.buttonText}>
-                {language.send[this.props.language]}
+                <p className={styles.buttonText}>
+                  {language.send[this.props.language]}
+                </p>
+              </div>
+            </button>
+
+            <div
+              role="presentation"
+              onClick={this.handleImport}
+              className={styles.importButton}
+            >
+              <img src={qrSmallIcon} alt="QR" />
+
+              <p>
+                CONNECT WALLET
               </p>
             </div>
-          </button>
+          </div>
         </div>
       </Box>
     );

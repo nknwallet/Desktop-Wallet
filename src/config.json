@@ -1,8 +1,8 @@
 {
   "email": "support@nknwallet.io",
   "website": "https://nknwallet.io",
-  "rpcAddr": "https://devnet-seed.nkn.org",
   "twitter": "https://twitter.com/nknwallet",
   "transaction": "https://explorer.nknx.org/transactions",
+  "rpcAddr": "https://mainnet-rpc-node-0001.nkn.org/mainnet/api/wallet",
   "desktopRelease": "https://github.com/nknwallet/Desktop-Wallet/releases"
 }

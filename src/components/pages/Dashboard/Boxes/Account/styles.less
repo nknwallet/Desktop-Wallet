@@ -50,7 +50,6 @@
   color: white;
   height: 33px;
   cursor: pointer;
-  margin-top: 46px;
   border-radius: 2px;
   font-family: "Helvetica Roman";
   padding: 0 16px 0 16px;
@@ -82,6 +81,36 @@
 
 :local(.buttonText) {
   font-family: "Helvetica Roman";
+}
+
+:local(.buttonsContainer) {
+  display: flex;
+  margin-top: 46px;
+}
+
+:local(.importButton) {
+  width: 160px;
+  height: 32px;
+  padding: 9px 8px;
+  display: flex;
+  cursor: pointer;
+  margin-left: 17px;
+  align-items: center;
+  flex-direction: row;
+  border-radius: 1.6px;
+  background-color: #9199b6;
+  justify-content: space-between;
+
+  img {
+    width: 22px;
+    height: 22px;
+  }
+
+  p {
+    color: white;
+    font-size: 13px;
+    font-family: "Helvetica Bold";
+  }
 }
 
 @media only screen and (max-width: 320px) {

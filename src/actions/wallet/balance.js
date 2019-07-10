@@ -1,7 +1,7 @@
 import store from 'Root/store';
 import types from 'Root/actions';
 
-export default async () => new Promise((resolve, reject) => {
+export default async () => new Promise(async (resolve, reject) => {
   const { wallet } = store.getState().wallet;
 
   wallet.getBalance()

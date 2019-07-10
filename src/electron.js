@@ -8,33 +8,36 @@ if (squirrel) {
 }
 
 let win;
-
-const template = [
-  {
-    label: 'Application',
-    submenu: [
-      { label: 'Quit', accelerator: 'CmdOrCtrl+Q', click() { app.quit(); } },
-    ],
-  },
-  {
-    label: 'Edit',
-    submenu: [
-      { label: 'Undo', accelerator: 'CmdOrCtrl+Z', selector: 'undo:' },
-      { label: 'Redo', accelerator: 'Shift+CmdOrCtrl+Z', selector: 'redo:' },
-      { type: 'separator' },
-      { label: 'Cut', accelerator: 'CmdOrCtrl+X', selector: 'cut:' },
-      { label: 'Copy', accelerator: 'CmdOrCtrl+C', selector: 'copy:' },
-      { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' },
-      { label: 'Select All', accelerator: 'CmdOrCtrl+A', selector: 'selectAll:' },
-    ],
-  },
-];
-
-const menu = Menu.buildFromTemplate(template);
-Menu.setApplicationMenu(menu);
+//
+// const template = [
+//   {
+//     label: 'Application',
+//     submenu: [
+//       { label: 'Quit', accelerator: 'CmdOrCtrl+Q', click() { app.quit(); } },
+//     ],
+//   },
+//   {
+//     label: 'Edit',
+//     submenu: [
+//       { label: 'Undo', accelerator: 'CmdOrCtrl+Z', selector: 'undo:' },
+//       { label: 'Redo', accelerator: 'Shift+CmdOrCtrl+Z', selector: 'redo:' },
+//       { type: 'separator' },
+//       { label: 'Cut', accelerator: 'CmdOrCtrl+X', selector: 'cut:' },
+//       { label: 'Copy', accelerator: 'CmdOrCtrl+C', selector: 'copy:' },
+//       { label: 'Paste', accelerator: 'CmdOrCtrl+V', selector: 'paste:' },
+//       { label: 'Select All', accelerator: 'CmdOrCtrl+A', selector: 'selectAll:' },
+//     ],
+//   },
+// ];
+//
+// const menu = Menu.buildFromTemplate(template);
+// Menu.setApplicationMenu(menu);
 
 function createWindow() {
   win = new BrowserWindow({
+    webPreferences: {
+      nodeIntegration: true,
+    },
     center: true,
     width: 1118,
     height: 830,

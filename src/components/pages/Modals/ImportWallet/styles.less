@@ -1,0 +1,131 @@
+:local(.container) {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+:local(.chart) {
+  width: 415px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  margin: 40px 45px 48px 45px;
+  justify-content: space-between;
+
+  p {
+    color: #9199b6;
+    font-size: 18px;
+  }
+}
+
+:local(.circle) {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  border-radius: 50%;
+  align-items: center;
+  justify-content: center;
+  background-color: #f4f5f9;
+}
+
+:local(.phoneImport) {
+  width: 30px;
+  height: 40px;
+}
+
+:local(.laptopImport) {
+  width: 40px;
+  height: 38px;
+}
+
+:local(.qrBox) {
+  width: 415px;
+  height: 200px;
+  display: flex;
+  margin-top: 10px;
+  align-items: center;
+  align-content: center;
+  background-color: #072d4f;
+  justify-content: space-between;
+}
+
+:local(.qrImage) {
+  width: 175px;
+  height: 175px;
+}
+
+:local(.qrContainer) {
+  width: 180px;
+  height: 180px;
+  display: flex;
+  margin-left: 10px;
+  align-items: center;
+  align-content: center;
+  background-color: white;
+  justify-content: center;
+}
+
+:local(.scanMe) {
+  color: white;
+  font-size: 24px;
+  padding-right: 62px;
+  font-family: "Helvetica Bold";
+}
+
+:local(.text2) {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  :local(.text1) {
+    display: none;
+  }
+
+  :local(.text2) {
+    display: block;
+  }
+
+  :local(.chart) {
+    width: 100%;
+    margin: 30px 10px;
+  }
+
+  :local(.container) {
+    padding: 0 5px;
+  }
+
+  :local(.qrBox) {
+    width: 100%;
+    margin-top: 0;
+    padding: 10px 0 0 0;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: auto !important;
+  }
+
+  :local(.text) {
+    text-align: center;
+  }
+
+  :local(.shortText) {
+    display: flex !important;
+  }
+
+  :local(.qrContainer) {
+    width: 80%;
+    margin-left: 0;
+    margin-top: 5px;
+  }
+
+  :local(.longText) {
+    display: none !important;
+  }
+
+  :local(.scanMe) {
+    padding-right: 0;
+    padding: 15px;
+  }
+}

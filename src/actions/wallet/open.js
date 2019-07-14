@@ -16,30 +16,33 @@ export default async ({
   setState,
   name = 'mywallet',
 }) => {
-  const wallet = nknWallet.loadJsonWallet(JSON.stringify(file), password);
   const currentLanguage = store.getState().language;
 
-  if (wallet.code === 3) {
-    setState({
-      errors: {
-        password: language.passwordIsIncorrect[currentLanguage],
-      },
-    });
+  let wallet;
 
-    return;
-  }
+  try {
+    wallet = nknWallet.loadJsonWallet(JSON.stringify(file), password);
+  } catch (e) {
+    if (e === 'Wrong password') {
+      setState({
+        errors: {
+          password: language.passwordIsIncorrect[currentLanguage],
+        },
+      });
 
-  if (wallet.code === 4) {
-    setState({
-      errors: {
-        file: language.invalidFileFormat[currentLanguage],
-      },
-    });
+      return;
+    }
 
-    return;
-  }
+    if (e === 'Invalid wallet format') {
+      setState({
+        errors: {
+          file: language.invalidFileFormat[currentLanguage],
+        },
+      });
 
-  if (wallet.code) {
+      return;
+    }
+
     setState({
       errors: {
         file: language.error[currentLanguage],

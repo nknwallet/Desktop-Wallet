@@ -76,7 +76,7 @@
     "cross-env": "^5.2.0",
     "css-loader": "^1.0.1",
     "del": "^3.0.0",
-    "electron": "^5.0.6",
+    "electron": "^9.4.0",
     "electron-installer-debian": "^1.1.0",
     "electron-installer-dmg": "^2.0.0",
     "electron-installer-flatpak": "^0.8.0",
